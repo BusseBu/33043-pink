@@ -5,136 +5,138 @@
     <title>HTML Academy: Пинк</title>
   </head>
   <body>
-    <header>
-      <img class="logo" src="#">
-      <div class="mobile-icon hamburger"></div>
-      <nav class="top-menu">
-        <ul>
-          <li><a>Информация</a></li>
-          <li><a>Блог</a></li>
-          <li><a>Отзывы</a></li>
-          <li><a>Конкурс</a></li>
+    <header class="main_header">
+      <div class="logo"><img src="#"></div>
+      <div class="main_header__toggle-icon main_header__toggle_icon--closed"></div>
+      <nav class="top_navigation">
+        <ul class="top_navigation__list">
+          <li class="top-navigation__item"><a>Информация</a></li>
+          <li class="top-navigation__item"><a>Блог</a></li>
+          <li class="top-navigation__item"><a>Отзывы</a></li>
+          <li class="top-navigation__item"><a>Конкурс</a></li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="main_page">
       <section class="intro">
-        <h3 class="main-headline text-white">Взгляните на жизнь иначе!</h3>
-        <img class="intro-image" src="#">
+        <h3 class="main_headline">Взгляните на жизнь иначе!</h3>
+        <div class="intro__image" src="#">
+            <img src="#">
+        </div>
       </section>
       <section class="applications">
-        <button class="btn-download text-white">Скачать приложение</button>
-        <div class="icons-block">
-          <a href="#" class="icon apple"></a>
-          <a href="#" class="icon android"></a>
-          <a href="#" class="icon windows"></a>
+        <button class="applications__button">Скачать приложение</button>
+        <div class="applications__icons">
+          <a href="#" class="applications__icon applications__icon--apple"></a>
+          <a href="#" class="applications__icon applications__icon--android"></a>
+          <a href="#" class="applications__icon applications__icon--windows"></a>
         </div>
-        <div class="text text-white">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</div>
+        <p class="text text--standart">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
       </section>
       <section class="information">
-        <h3 class="main-headline">Устали от серости мегаполиса?</h3>
-        <h3 class="main-headline">Нам есть, что вам предложить!</h3>
-        <hr class="main-divider line">
-        <div class="info-block">
-          <div class="info">
-            <h4>Поднимает настроение</h4>
-            <p>Приложение позволит Вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
+        <h3 class="main_headline">Устали от серости мегаполиса?</h3>
+        <h3 class="main_headline">Нам есть, что вам предложить!</h3>
+        <hr class="main_divider main_divider--line">
+        <div class="information__item-wrap">
+          <div class="information__item">
+            <h4 class="sub_headline">Поднимает настроение</h4>
+            <p class="text text--standart">Приложение позволит Вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
           </div>
-          <div class="info">
-            <h4>Меняет мир вокруг</h4>
-            <p>Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+          <div class="information__item">
+            <h4 class="sub_headline">Меняет мир вокруг</h4>
+            <p class="text text--standart">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
           </div>
-          <div class="info">
-            <h4>Заводит новых друзей</h4>
-            <p>Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
+          <div class="information__item">
+            <h4 class="sub_headline">Заводит новых друзей</h4>
+            <p class="text text--standart">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
           </div>
         </div>
-        <img class="info-image" src="#">
+          <div class="information__image" src="#">
+              <img src="#">
+          </div>
       </section>
       <section class="reviews">
-        <div class="reviews-block">
-          <div class="review">
-            <h4>Николай Петров</h4>
-            <p>«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
+        <div class="reviews__wrap">
+          <div class="reviews__item">
+            <h4 class="sub_headline">Николай Петров</h4>
+            <p class="text text--standart">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
           </div>
-          <div class="review">
+          <div class="reviews__item">
             <h3></h3>
             <p></p>
           </div>
-          <div class="review">
+          <div class="reviews__item">
             <h3></h3>
             <p></p>
           </div>
         </div>
-        <div class="switches-block">
-          <div class="switch active"></div>
-          <div class="switch"></div>
-          <div class="switch"></div>
+        <div class="switches">
+          <div class="switches__item switches__item--active"></div>
+          <div class="switches__item"></div>
+          <div class="switches__item"></div>
         </div>
-        <hr class="main-divider line">
       </section>
+      <hr class="main_divider main_divider--line">
       <section class="prices">
-        <div class="prices-block">
-          <div class="buy-plan">
-            <header>
-              <div class="title"></div>
-              <div class="price"></div>
+        <div class="prices__wrap">
+          <div class="buy_plan">
+            <header class="buy_plan__header">
+              <div class="buy_plan__title"></div>
+              <div class="buy_plan__price"></div>
             </header>
           </div>
-          <div class="buy-plan">
-            <header class="text-up text-white">
-              <img class="hit" src="#">
-              <div class="title">Стандарт</div>
-              <div class="price">3,99 USD</div>
+          <div class="buy_plan">
+            <header class="buy_plan__header">
+              <img class="buy_plan__image-hit" src="#">
+              <div class="buy_plan__title">Стандарт</div>
+              <div class="buy_plan__price">3,99 USD</div>
             </header>
-            <div class="features text-up">
-              <div class="ft">
-                <div class="title">Розовый фильтр</div>
-                <div class="yes-no yes"></div>
+            <div class="buy_plan__features">
+              <div class="buy_plan__feature">
+                <div class="buy_plan__feature_title">Розовый фильтр</div>
+                <div class="buy_plan__feature_switch prices__feature_switch--yes"></div>
               </div>
-              <div class="ft">
-                <div class="title">Смайлики</div>
-                <div class="yes-no yes"></div>
+              <div class="buy_plan__feature">
+                <div class="buy_plan__feature_title">Смайлики</div>
+                <div class="buy-plan__feature_switch prices__feature_switch--no"></div>
               </div>
-              <div class="ft">
-                <div class="title">Комментарии</div>
-                <div class="yes-no no"></div>
+              <div class="buy_plan__feature">
+                <div class="buy_plan__feature_title">Комментарии</div>
+                <div class="buy_plan__feature_switch prices__feature_switch--no"></div>
               </div>
             </div>
           </div>
-          <div class="buy-plan">
-            <header>
-              <div class="title"></div>
-              <div class="price"></div>
+          <div class="buy_plan">
+            <header class="buy_plan__header">
+              <div class="buy_plan__title"></div>
+              <div class="buy_plan__price"></div>
             </header>
           </div>
         </div>
-        <div class="switches-block">
-          <div class="switch"></div>
-          <div class="switch active"></div>
-          <div class="switch"></div>
+        <div class="switches">
+          <div class="switches__item switches__item--active"></div>
+          <div class="switches__item"></div>
+          <div class="switches__item"></div>
         </div>
       </section>
       <section class="contacts">
-        <h3>Остались вопросы?<br>Свяжитесь с нами!</h3>
-        <div class="contacts-block">
+        <h3 class="main-headline">Остались вопросы?<br>Свяжитесь с нами!</h3>
+        <div class="contacts__wrap">
           <div class="contact">
-            <h4>Звоните:</h4>
-            <a href="tel:+7812555-66-66">+7 (812) 555-66-66</a>
+            <h4 class="sub_headline">Звоните:</h4>
+            <a class="contact__link" href="tel:+7812555-66-66">+7 (812) 555-66-66</a>
           </div>
           <div class="contact">
-            <h4>Пишите:</h4>
-            <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+            <h4 class="sub_headline">Пишите:</h4>
+            <a class="contact__link" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
           </div>
           <div class="contact">
-            <h4>Приезжайте в гости:</h4>
-            <p>ул. Большая<br>Конюшенная, 19/8</p>
+            <h4 class="sub_headline">Приезжайте в гости:</h4>
+            <p class="text text--standart">ул. Большая<br>Конюшенная, 19/8</p>
           </div>
         </div>
-        <div class="map-block">
-          <div class="map-decoration"></div>
-          <div class="map"></div>
-        </div>
+        <hr class="main_divider main_divider--arrow">
+        <div class="map"></div>
       </section>
     </main>
   </body>
