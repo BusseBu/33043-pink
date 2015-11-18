@@ -24,170 +24,170 @@
       <form action="/echo" method="post">
         <p class="text text--standart">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту!</p>
         <fieldset class="personal_form">
-          <div class="form_input form_input--full">
+          <div class="form_input">
             <label class="form_input__label" for="name">Имя: *</label>
             <input class="form_input__input" type="text" name="name" id="name" value="Введите ваше имя" required>
           </div>
-          <div class="form_input form_input--full">
+          <div class="form_input">
             <label class="form_input__label" for="last-name">Фамилия: *</label>
             <input class="form_input__input" type="text" name="last-name" id="last-name" value="Укажите фамилию" required>
           </div>
-          <div class="form_input form_input--full">
+          <div class="form_input">
             <label class="form_input__label" for="surname">Отчество:</label>
             <input class="form_input__input" type="text" name="surname" id="surname" value="Ну и отчество тоже">
           </div>
         </fieldset>
         <fieldset class="application_form">
           <legend class="form_legend">С каким приложением<br>путешествовали? *</legend>
-          <div class="form_input form_input--full form_input">
-            <label class="form_input__label form_input__label--dark">
-              <input type="radio" name="app-check" id="app-ios" checked required>
+          <div class="form_input_radio">
+            <label class="form_input_radio__label">
+              <input class="form-input__radio" type="radio" name="app-check" id="app-ios" checked required>
               Pink для iOS
             </label>
-            <label>
-              <input type="radio" name="app-check" id="app-android">
+            <label class="form_input_radio__label">
+              <input class="form-input_radio__radio" type="radio" name="app-check" id="app-android">
               Pink для Android
             </label>
-            <label>
-              <input type="radio" name="app-check" id="app-wphone">
+            <label class="form_input_radio__label">
+              <input class="form-input_radio__radio" type="radio" name="app-check" id="app-wphone">
               Windows Phone
             </label>
           </div>
         </fieldset>
-        <fieldset class="label-bottom">
-          <legend>Когда вы путешествовали? *</legend>
-          <div class="full">
-            <input type="text" name="depart-date" id="depart-date" value="1 апреля 2015" required>
-            <label for="depart-date">Дата выезда</label>
+        <fieldset class="travel_form">
+          <legend class="form_legend">Когда вы путешествовали? *</legend>
+          <div class="form_input">
+            <input class="form-input__input" type="text" name="depart-date" id="depart-date" value="1 апреля 2015" required>
+            <label class="form_input__label form_input__label--bottom" for="depart-date">Дата выезда</label>
           </div>
-          <div class="minus-plus">
-            <span class="minus"></span>
-            <input type="text" name="travel-duration" id="travel-duration" value="10 дней">
-            <span class="plus"></span>
-            <label for="travel-duration">Продолжительность</label>
+          <div class="form_input_add">
+            <span class="form_input_add__minus"></span>
+            <input class="form_input_add__input" type="text" name="travel-duration" id="travel-duration" value="10 дней">
+            <span class="form_input_add__plus"></span>
+            <label class="form_input_add__label form_input_add__label--bottom" for="travel-duration">Продолжительность</label>
           </div>
-          <div class="full">
-            <input type="text" name="return-date" id="return-date" value="1 апреля 2015" disabled>
-            <label for="return-date">Дата возвращения</label>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Количество попутчиков *</legend>
-          <div class="minus-plus">
-            <span class="minus"></span>
-            <input type="text" name="companions" id="companions" value="2 чел" disabled required>
-            <span class="plus"></span>
-          </div>
-          <hr class="form-divider">
-          <div class="companion">
-            <div class="list-number">
-              <label for="list-number-1">№</label>
-              <input type="text" name="list-number-1" id="list-number-1" value="1" disabled>
-            </div>
-            <div class="three-fourth">
-              <label for="comp-name-1">Имя: *</label>
-              <input type="text" name="comp-name-1" id="comp-name-1" value="Введите ваше имя" required>
-              <label for="comp-nickname-1">Прозвище</label>
-              <input type="text" name="comp-nickname-1" id="comp-nickname-1" value="Ну как же без этого!">
-            </div>
-          </div>
-          <div class="companion">
-            <div class="list-number">
-              <label for="list-number-2">№</label>
-              <input type="text" name="list-number-2" id="list-number-2" value="2" disabled>
-            </div>
-            <div class="three-fourth">
-              <label for="comp-name-2">Имя: *</label>
-              <input type="text" name="comp-name-2" id="comp-name-2" value="Введите ваше имя" required>
-              <label for="comp-nickname-2">Прозвище</label>
-              <input type="text" name="comp-nickname-2" id="comp-nickname-2" value="Ну как же без этого!">
-            </div>
+          <div class="form_input">
+            <input class="form-input__input" type="text" name="return-date" id="return-date" value="1 апреля 2015" disabled>
+            <label class="form_input__label form_input__label--bottom" for="return-date">Дата возвращения</label>
           </div>
         </fieldset>
         <fieldset>
-          <legend>Ваши безбашенные достижения в путешествии</legend>
-          <div class="full label-dark checkboxes">
-            <label>
-              <input type="checkbox" name="ach-check" id="ach-shark">
+          <legend class="form_legend">Количество попутчиков *</legend>
+          <div class="form_input_add">
+            <span class="form_input_add__minus"></span>
+            <input class="form-input_add__input" type="text" name="companions" id="companions" value="2 чел" disabled required>
+            <span class="form_input_add__plus"></span>
+          </div>
+          <hr class="form_divider">
+          <div class="companion">
+            <div class="number_input">
+              <label class="number_input__label" for="list-number-1">№</label>
+              <input class="number_input__input" type="text" name="list-number-1" id="list-number-1" value="1" disabled>
+            </div>
+            <div class="double_input">
+              <label class="double_input__label" for="comp-name-1">Имя: *</label>
+              <input class="double_input__input" type="text" name="comp-name-1" id="comp-name-1" value="Введите ваше имя" required>
+              <label class="double_input__label" for="comp-nickname-1">Прозвище</label>
+              <input class="double_input__input" type="text" name="comp-nickname-1" id="comp-nickname-1" value="Ну как же без этого!">
+            </div>
+          </div>
+          <div class="companion">
+            <div class="number_input">
+              <label class="number_input__label" for="list-number-2">№</label>
+              <input class="number_input__input" type="text" name="list-number-2" id="list-number-2" value="2" disabled>
+            </div>
+            <div class="three-fourth">
+              <label class="double_input__label" for="comp-name-2">Имя: *</label>
+              <input class="double_input__input" type="text" name="comp-name-2" id="comp-name-2" value="Введите ваше имя" required>
+              <label class="double_input__label" for="comp-nickname-2">Прозвище</label>
+              <input class="double_input__input" type="text" name="comp-nickname-2" id="comp-nickname-2" value="Ну как же без этого!">
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="achievements">
+          <legend class="form_legend">Ваши безбашенные достижения в путешествии</legend>
+          <div class="form_input_checkbox">
+            <label class="form_input_checkbox__label">
+              <input class="form_input_checkbox__input" type="checkbox" name="ach-check" id="ach-shark">
               Сделал селфи с акулой
             </label>
-            <label>
-              <input type="checkbox" name="ach-check" id="ach-beach">
+            <label class="form_input_checkbox__label">
+              <input class="form_input_checkbox__input" type="checkbox" name="ach-check" id="ach-beach">
               Обгорел на пляже
             </label>
-            <label>
-              <input type="checkbox" name="ach-check" id="ach-chuck">
+            <label class="form_input_checkbox__label">
+              <input class="form_input_checkbox__input" type="checkbox" name="ach-check" id="ach-chuck">
               Видел Чака Норриса
             </label>
-            <label>
-              <input type="checkbox" name="ach-check" id="ach-souv">
+            <label class="form_input_checkbox__label">
+              <input class="form_input_checkbox__input" type="checkbox" name="ach-check" id="ach-souv">
               Накупил сувениров
             </label>
-            <label>
-              <input type="checkbox" name="ach-check" id="ach-tower">
+            <label class="form_input_checkbox__label">
+              <input class="form_input_checkbox__input" type="checkbox" name="ach-check" id="ach-tower">
               Удержал башню
             </label>
-            <label>
-              <input type="checkbox" name="ach-check" id="ach-hotel">
+            <label class="form_input_checkbox__label">
+              <input class="form_input_checkbox__input" type="checkbox" name="ach-check" id="ach-hotel">
               Разгромил отель
             </label>
           </div>
         </fieldset>
-        <fieldset>
-          <label>Ваши фотографии из поездки *</label>
-          <button class="btn-upload">Загрузить фото</button>
-          <hr class="form-divider">
-          <div class="image-block">
-            <div class="image">
-              <div class="close"></div>
-              <img src="#">
+        <fieldset class="photos">
+          <legend class="form_legend">Ваши фотографии из поездки *</legend>
+          <button class="photos__btn">Загрузить фото</button>
+          <hr class="form_divider">
+          <div class="images">
+            <div class="images_item">
+              <div class="images_close"></div>
+              <img class="images_image" src="#">
             </div>
-            <div class="image">
-              <div class="close"></div>
-              <img src="#">
+            <div class="images_item">
+              <div class="images_close"></div>
+              <img class="images_image" src="#">
             </div>
-            <div class="image">
-              <div class="close"></div>
-              <img src="#">
+            <div class="images_item">
+              <div class="images_close"></div>
+              <img class="images_image" src="#">
             </div>
-            <div class="image">
-              <div class="close"></div>
-              <img src="#">
+            <div class="images_item">
+              <div class="images_close"></div>
+              <img class="images_image" src="#">
             </div>
-            <div class="image">
-              <div class="close"></div>
-              <img src="#">
+            <div class="images_item">
+              <div class="images_close"></div>
+              <img class="images_image" src="#">
             </div>
-            <div class="image">
-              <div class="close"></div>
-              <img src="#">
+            <div class="images_item">
+              <div class="images_close"></div>
+              <img class="images_image" src="#">
             </div>
-            <div class="image">
-              <div class="close"></div>
-              <img src="#">
+            <div class="images_item">
+              <div class="images_close"></div>
+              <img class="images_image" src="#">
             </div>
-            <div class="image">
-              <div class="close"></div>
-              <img src="#">
+            <div class="images_item">
+              <div class="images_close"></div>
+              <img class="images_image" src="#">
             </div>
           </div>
         </fieldset>
-        <fieldset>
-          <input type="submit" value="Отправить форму">
-          <div class="required text-up"><span class="star"></span>-обязательные поля</div>
+        <fieldset class="submit">
+          <input class="submit__input" type="submit" value="Отправить форму">
+          <div class="submit__required"><span class="submit__star"></span>-обязательные поля</div>
         </fieldset>
       </form>
     </main>
-    <footer>
-      <img class="logo-mini" src="#">
-      <div class="social-block">
-        <a href="#" class="social-btn twitter"></a>
-        <a href="#" class="social-btn facebook"></a>
-        <a href="#" class="social-btn youtube"></a>
+    <footer class="footer">
+      <img class="logo logo--mini" src="#">
+      <div class="social_icons">
+        <a href="#" class="social_icons__item social_icons__item--twitter"></a>
+        <a href="#" class="social_icons__item social_icons__item--facebook"></a>
+        <a href="#" class="social_icons__item social_icons__item--youtube"></a>
       </div>
-      <div class="developed">
+      <div class="footer__developed">
         Разработано
-        <img src="#">
+        <img class="footer__developed_icon" src="#">
       </div>
     </footer>
   </body>
