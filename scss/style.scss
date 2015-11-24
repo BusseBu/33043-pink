@@ -1,0 +1,84 @@
+@import 'variables';
+@import 'fonts';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.main-wrapper {
+  position: relative;
+  max-width: 320px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.main-header {
+  width: 100%;
+  height: 66px;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  &__line {
+    height: 26px;
+    padding: 20px;
+    clear: both;
+  }
+
+  &__toggle-icon {
+    float:right;
+    width: 50px;
+    height: 24px;
+    background: url('../img/nav-toggle.png') no-repeat 0 0;
+    background-size: cover;
+    z-index: 1;
+
+    &--opened {
+      background: url('../img/nav-toggle.png') no-repeat -100px 0;
+      background-size: cover;
+    }
+  }
+}
+
+.logo {
+  float: left;
+}
+
+.top-navigation {
+  background: $blue-menu;
+  z-index: 2;
+  color: #fff;
+  font-weight: 600;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    box-shadow: 0 -2px 0 -1px rgba(72, 84, 97, 1), 0 -3px 0 -1px rgba(0, 0, 0, 1);
+    padding: 25px;
+    text-transform: uppercase;
+  }
+  &__item:last-child {
+    border-bottom: 1px solid #000;
+  }
+}
+
+.main-headline {
+  font-size: 24px;
+  font-weight: 200;
+
+  &--white {
+    color: #fff;
+  }
+}
+
+.intro {
+  background: url('../img/intro-bg.jpg') no-repeat 50% 0;
+  height: 458px;
+  padding: 100px 30px 0;
+}

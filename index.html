@@ -3,10 +3,153 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Пинк</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
-
-    <p>Репозиторий создан для обучения на интенсивном онлайн-курсе «<a href="https://htmlacademy.ru/advanced_intensive">Продвинутый HTML и CSS</a>».</p>
-
+    <header class="main-header">
+      <div class="main-wrapper">
+        <div class="main-header__line">
+          <div class="logo">
+            <img src="#">
+          </div>
+          <div class="main-header__toggle-icon"></div>
+        </div>
+        <nav class="top-navigation">
+          <ul class="top-navigation__list">
+            <li class="top-navigation__item"><a>Информация</a></li>
+            <li class="top-navigation__item"><a>Блог</a></li>
+            <li class="top-navigation__item"><a>Отзывы</a></li>
+            <li class="top-navigation__item"><a>Конкурс</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main-page">
+      <div class="main-wrapper">
+        <section class="intro">
+          <h3 class="main-headline main-headline--white">Взгляните на жизнь иначе!</h3>
+          <div class="intro__image">
+            <div class="intro__hand">
+              <div class="pink-image pink-image--main"></div>
+            </div>
+          </div>
+        </section>
+        <section class="applications">
+          <button class="applications__button">Скачать приложение</button>
+          <div class="applications__icons">
+            <a href="#" class="applications__icon applications__icon--apple"></a>
+            <a href="#" class="applications__icon applications__icon--android"></a>
+            <a href="#" class="applications__icon applications__icon--windows"></a>
+          </div>
+          <p class="text text--standart">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
+        </section>
+        <section class="information">
+          <h3 class="main-headline">Устали от серости мегаполиса?</h3>
+          <h3 class="main-headline">Нам есть, что вам предложить!</h3>
+          <hr class="main-divider main-divider--line">
+          <div class="information__item-wrap">
+            <div class="information__item">
+              <h4 class="sub-headline">Поднимает настроение</h4>
+              <p class="text text--standart">Приложение позволит Вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
+            </div>
+            <div class="information__item">
+              <h4 class="sub-headline">Меняет мир вокруг</h4>
+              <p class="text text--standart">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+            </div>
+            <div class="information__item">
+              <h4 class="sub-headline">Заводит новых друзей</h4>
+              <p class="text text--standart">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
+            </div>
+          </div>
+            <div class="information__image">
+                <img src="#">
+            </div>
+        </section>
+        <section class="reviews">
+          <div class="reviews__wrap">
+            <div class="reviews__item">
+              <h4 class="sub-headline">Николай Петров</h4>
+              <p class="text text--standart">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
+            </div>
+            <div class="reviews__item">
+              <h3></h3>
+              <p></p>
+            </div>
+            <div class="reviews__item">
+              <h3></h3>
+              <p></p>
+            </div>
+          </div>
+          <div class="switches">
+            <div class="switches__item switches__item--active"></div>
+            <div class="switches__item"></div>
+            <div class="switches__item"></div>
+          </div>
+        </section>
+        <hr class="main-divider main-divider--line">
+        <section class="prices">
+          <div class="prices__wrap">
+            <div class="buy-plan">
+              <header class="buy-plan__header">
+                <div class="buy-plan__title"></div>
+                <div class="buy-plan__price"></div>
+              </header>
+            </div>
+            <div class="buy-plan">
+              <header class="buy-plan__header">
+                <img class="buy-plan__image-hit" src="#">
+                <div class="buy-plan__title">Стандарт</div>
+                <div class="buy-plan__price">3,99 USD</div>
+              </header>
+              <div class="buy-plan__features">
+                <div class="buy-plan__feature">
+                  <div class="buy-plan__feature-title">Розовый фильтр</div>
+                  <div class="buy-plan__feature-switch prices__feature-switch--yes"></div>
+                </div>
+                <div class="buy-plan__feature">
+                  <div class="buy-plan__feature-title">Смайлики</div>
+                  <div class="buy-plan__feature-switch prices__feature-switch--no"></div>
+                </div>
+                <div class="buy-plan__feature">
+                  <div class="buy-plan__feature-title">Комментарии</div>
+                  <div class="buy-plan__feature-switch prices__feature-switch--no"></div>
+                </div>
+              </div>
+            </div>
+            <div class="buy-plan">
+              <header class="buy-plan__header">
+                <div class="buy-plan__title"></div>
+                <div class="buy-plan__price"></div>
+              </header>
+            </div>
+          </div>
+          <div class="switches">
+            <div class="switches__item switches__item--active"></div>
+            <div class="switches__item"></div>
+            <div class="switches__item"></div>
+          </div>
+        </section>
+        <section class="contacts">
+          <h3 class="main-headline">Остались вопросы?<br>Свяжитесь с нами!</h3>
+          <div class="contacts__wrap">
+            <div class="contact">
+              <h4 class="sub-headline">Звоните:</h4>
+              <a class="contact__link" href="tel:+7812555-66-66">+7 (812) 555-66-66</a>
+            </div>
+            <div class="contact">
+              <h4 class="sub-headline">Пишите:</h4>
+              <a class="contact__link" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+            </div>
+            <div class="contact">
+              <h4 class="sub-headline">Приезжайте в гости:</h4>
+              <p class="text text--standart">ул. Большая<br>Конюшенная, 19/8</p>
+            </div>
+          </div>
+          <hr class="main-divider main-divider--arrow">
+          <div class="map"></div>
+        </section>
+        </div>
+    </main>
   </body>
 </html>
+
