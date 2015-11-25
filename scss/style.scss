@@ -1,8 +1,18 @@
 @import 'variables';
 @import 'fonts';
 
+html {
+  height:100%;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #626262;
+}
+
+body, p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
 }
@@ -19,12 +29,12 @@ body {
   height: 66px;
   position: absolute;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.3);
 
   &__line {
     height: 26px;
     padding: 20px;
     clear: both;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
   &__toggle-icon {
@@ -47,6 +57,7 @@ body {
 }
 
 .top-navigation {
+  display: none;
   background: $blue-menu;
   z-index: 2;
   color: #fff;
@@ -63,6 +74,7 @@ body {
     padding: 25px;
     text-transform: uppercase;
   }
+
   &__item:last-child {
     border-bottom: 1px solid #000;
   }
@@ -70,15 +82,117 @@ body {
 
 .main-headline {
   font-size: 24px;
-  font-weight: 200;
+  position: relative;
+  font-weight: 300;
+  padding: 0 30px;
 
   &--white {
     color: #fff;
+  }
+  &--80 {
+    top: 83px;
+  }
+  &--30 {
+    margin-bottom: 25px;
   }
 }
 
 .intro {
   background: url('../img/intro-bg.jpg') no-repeat 50% 0;
+  position: relative;
+  background-size: cover;
   height: 458px;
-  padding: 100px 30px 0;
+
+  &__image {
+    position: absolute;
+    bottom: -27px;
+    left: 0;
+    height: 313px;
+  }
+}
+
+.applications {
+  background-color: $blue-bg;
+  position: relative;
+  padding: 30px 0;
+  color: #fff;
+  z-index: 1;
+
+  &__button {
+    display: block;
+    margin: 0 auto 30px auto;
+    width: 280px;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 30px;
+    background: none;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  &__icons {
+    padding: 0 30px;
+  }
+
+  &__icon {
+    display:inline-block;
+    margin-right: 36px;
+    height: 57px;
+  }
+
+  &__icon--apple {
+    width: 46px;
+    background: url('../img/app-icons.png') no-repeat 0 0;
+  }
+
+  &__icon--android {
+    width: 42px;
+    background: url('../img/app-icons.png') no-repeat -46px 0;
+  }
+
+  &__icon--windows {
+    width: 44px;
+    background: url('../img/app-icons.png') no-repeat -88px 0;
+  }
+
+  &__icon:last-child {
+    margin-right: 0;
+  }
+}
+
+.text {
+  padding: 20px 30px 0 30px;
+
+  &--standart {
+    font-size: 14px;
+    font-weight: 200;
+  }
+
+}
+
+.information {
+  background: #fff;
+  padding-top: 30px;
+
+  &__items {
+    background: #f2f2f2;
+    padding-top: 50px;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+  }
+}
+
+.main-divider {
+  border: none;
+
+    &--line {
+      margin: 30px 0 0 0;
+      height: 30px;
+      background-image: linear-gradient(to left top, #f2f2f2 30px, #fff 30px);
+    }
+
 }
