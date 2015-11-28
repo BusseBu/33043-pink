@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+<<<<<<< HEAD
     <meta charset="utf-8">
     <title>Конкурс</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -203,5 +204,196 @@
         <img class="footer__developed-icon" src="#">
       </div>
     </footer>
+=======
+  <meta charset="utf-8">
+  <title>Конкурс</title>
+  </head>
+  <body>
+  <header>
+    <img class="logo" src="#">
+    <div class="mobile-icon hamburger"></div>
+    <nav class="top-menu">
+    <ul>
+      <li><a href="#">Информация</a></li>
+      <li><a href="#">Блог</a></li>
+      <li><a href="#">Отзывы</a></li>
+      <li><a href="#">Конкурс</a></li>
+    </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="intro">
+      <h3 class="main-headline text-white">Конкурс на самое безбашеное путешествие с Пинк</h3>
+    </section>
+    <form action="/echo" method="post">
+      <p class="motto">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту!</p>
+      <fieldset>
+        <div class="full">
+          <label for="name">Имя: *</label>
+          <input type="text" name="name" id="name" value="Введите ваше имя" required>
+        </div>
+        <div class="full">
+          <label for="last-name">Фамилия: *</label>
+          <input type="text" name="last-name" id="last-name" value="Укажите фамилию" required>
+        </div>
+        <div class="full">
+          <label for="surname">Отчество:</label>
+          <input type="text" name="surname" id="surname" value="Ну и отчество тоже">
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>С каким приложением<br>путешествовали? *</legend>
+        <div class="full label-dark radios">
+          <label>
+            <input type="radio" name="app-check" id="app-ios" checked required>
+            Pink для iOS
+          </label>
+          <label>
+            <input type="radio" name="app-check" id="app-android">
+            Pink для Android
+          </label>
+          <label>
+            <input type="radio" name="app-check" id="app-wphone">
+            Windows Phone
+          </label>
+        </div>
+      </fieldset>
+      <fieldset class="label-bottom">
+        <legend>Когда вы путешествовали? *</legend>
+        <div class="full">
+          <input type="text" name="depart-date" id="depart-date" value="1 апреля 2015" required>
+          <label for="depart-date">Дата выезда</label>
+        </div>
+        <div class="minus-plus">
+          <span class="minus"></span>
+          <input type="text" name="travel-duration" id="travel-duration" value="10 дней">
+          <span class="plus"></span>
+          <label for="travel-duration">Продолжительность</label>
+        </div>
+        <div class="full">
+          <input type="text" name="return-date" id="return-date" value="1 апреля 2015" disabled>
+          <label for="return-date">Дата возвращения</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Количество попутчиков *</legend>
+        <div class="minus-plus">
+          <span class="minus"></span>
+          <input type="text" name="companions" id="companions" value="2 чел" disabled required>
+          <span class="plus"></span>
+        </div>
+        <hr class="form-divider">
+        <div class="companion">
+          <div class="list-number">
+            <label for="list-number-1">№</label>
+            <input type="text" name="list-number-1" id="list-number-1" value="1" disabled>
+          </div>
+          <div class="three-fourth">
+            <label for="comp-name-1">Имя: *</label>
+            <input type="text" name="comp-name-1" id="comp-name-1" value="Введите ваше имя" required>
+            <label for="comp-nickname-1">Прозвище</label>
+            <input type="text" name="comp-nickname-1" id="comp-nickname-1" value="Ну как же без этого!">
+          </div>
+        </div>
+        <div class="companion">
+          <div class="list-number">
+            <label for="list-number-2">№</label>
+            <input type="text" name="list-number-2" id="list-number-2" value="2" disabled>
+          </div>
+          <div class="three-fourth">
+            <label for="comp-name-2">Имя: *</label>
+            <input type="text" name="comp-name-2" id="comp-name-2" value="Введите ваше имя" required>
+            <label for="comp-nickname-2">Прозвище</label>
+            <input type="text" name="comp-nickname-2" id="comp-nickname-2" value="Ну как же без этого!">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Ваши безбашенные достижения в путешествии</legend>
+        <div class="full label-dark checkboxes">
+          <label>
+            <input type="checkbox" name="ach-check" id="ach-shark">
+            Сделал селфи с акулой
+          </label>
+          <label>
+            <input type="checkbox" name="ach-check" id="ach-beach">
+            Обгорел на пляже
+          </label>
+          <label>
+            <input type="checkbox" name="ach-check" id="ach-chuck">
+            Видел Чака Норриса
+          </label>
+          <label>
+            <input type="checkbox" name="ach-check" id="ach-souv">
+            Накупил сувениров
+          </label>
+          <label>
+            <input type="checkbox" name="ach-check" id="ach-tower">
+            Удержал башню
+          </label>
+          <label>
+            <input type="checkbox" name="ach-check" id="ach-hotel">
+            Разгромил отель
+          </label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <label>Ваши фотографии из поездки *</label>
+        <button class="btn-upload">Загрузить фото</button>
+        <hr class="form-divider">
+        <div class="image-block">
+          <div class="image">
+            <div class="close"></div>
+            <img src="#">
+          </div>
+          <div class="image">
+            <div class="close"></div>
+            <img src="#">
+          </div>
+          <div class="image">
+            <div class="close"></div>
+            <img src="#">
+          </div>
+          <div class="image">
+            <div class="close"></div>
+            <img src="#">
+          </div>
+          <div class="image">
+            <div class="close"></div>
+            <img src="#">
+          </div>
+          <div class="image">
+            <div class="close"></div>
+            <img src="#">
+          </div>
+          <div class="image">
+            <div class="close"></div>
+            <img src="#">
+          </div>
+          <div class="image">
+            <div class="close"></div>
+            <img src="#">
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <input type="submit" value="Отправить форму">
+        <div class="required text-up"><span class="star"></span>-обязательные поля</div>
+      </fieldset>
+    </form>
+  </main>
+  <footer>
+    <img class="logo-mini" src="#">
+    <div class="social-block">
+      <a href="#" class="social-btn twitter"></a>
+      <a href="#" class="social-btn facebook"></a>
+      <a href="#" class="social-btn youtube"></a>
+    </div>
+    <div class="developed">
+      Разработано
+      <img src="#">
+    </div>
+  </footer>
+>>>>>>> master
   </body>
 </html>
