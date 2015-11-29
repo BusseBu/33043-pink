@@ -30,7 +30,7 @@
           <h3 class="main-headline main-headline--white main-headline--80">Конкурс на самое безбашеное путешествие с Пинк</h3>
         </section>
         <form action="/echo" method="post">
-          <p class="text text--standart">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту!</p>
+          <p class="text text--form">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту!</p>
           <fieldset class="personal-form">
             <div class="form-input">
               <label class="form-input__label" for="name">Имя: *</label>
@@ -48,22 +48,16 @@
           <fieldset class="application-form">
             <div class="form-legend">С каким приложением<br>путешествовали? *</div>
             <div class="form-input form-input--radio">
-              <label class="form-input--radio__label">
-                <input class="form-input--radio__radio" type="radio" name="app-check" id="app-ios" checked required>
-                Pink для iOS
-              </label>
+              <input class="form-input--radio__radio" type="radio" name="app-check" id="app-ios" checked required>
+              <label class="form-input--radio__label">Pink для iOS</label>
             </div>
             <div class="form-input form-input--radio">
-              <label class="form-input--radio__label">
-                <input class="form-input--radio__radio" type="radio" name="app-check" id="app-android">
-                Pink для Android
-              </label>
+              <input class="form-input--radio__radio" type="radio" name="app-check" id="app-android">
+              <label class="form-input--radio__label">Pink для Android</label>
             </div>
             <div class="form-input form-input--radio">
-              <label class="form-input--radio__label">
-                <input class="form-input--radio__radio" type="radio" name="app-check" id="app-wphone">
-                Windows Phone
-              </label>
+              <input class="form-input--radio__radio" type="radio" name="app-check" id="app-wphone">
+              <label class="form-input--radio__label">Windows Phone</label>
             </div>
           </fieldset>
           <fieldset class="travel-form">
@@ -72,10 +66,10 @@
               <input class="form-input__input" type="text" name="depart-date" id="depart-date" value="1 апреля 2015" required>
               <label class="form-input__label form-input__label--bottom" for="depart-date">Дата выезда</label>
             </div>
-            <div class="form-input">
-              <span class="form-input__minus">-</span>
+            <div class="form-input form-input--add">
+              <div class="form-input__plus-minus form-input__plus-minus--minus"></div>
               <input class="form-input__input form-input__input--add" type="text" name="travel-duration" id="travel-duration" value="10 дней">
-              <span class="form-input__plus">+</span>
+              <div class="form-input__plus-minus form-input__plus-minus--plus"></div>
               <label class="form-input__label form-input__label--bottom" for="travel-duration">Продолжительность</label>
             </div>
             <div class="form-input">
@@ -83,12 +77,12 @@
               <label class="form-input__label form-input__label--bottom" for="return-date">Дата возвращения</label>
             </div>
           </fieldset>
-          <fieldset>
+          <fieldset class="companions">
             <div class="form-legend">Количество попутчиков *</div>
-            <div class="form-input-add">
-              <span class="form-input__minus">-</span>
-              <input class="form-input__input form-input__input--add" type="text" name="companions" id="companions" value="2 чел" disabled required>
-              <span class="form-input__plus">+</span>
+            <div class="form-input form-input--add">
+              <div class="form-input__plus-minus form-input__plus-minus--minus"></div>
+              <input class="form-input__input form-input__input--add" type="text" name="travel-duration" id="companions" value="2 чел" disabled required>
+              <div class="form-input__plus-minus form-input__plus-minus--plus"></div>
             </div>
             <hr class="form-divider">
             <div class="companion">
@@ -99,7 +93,7 @@
               <div class="double-input">
                 <label class="double-input__label" for="comp-name-1">Имя: *</label>
                 <input class="double-input__input" type="text" name="comp-name-1" id="comp-name-1" value="Введите ваше имя" required>
-                <label class="double-input__label" for="comp-nickname-1">Прозвище</label>
+                <label class="double-input__label" for="comp-nickname-1">Прозвище:</label>
                 <input class="double-input__input" type="text" name="comp-nickname-1" id="comp-nickname-1" value="Ну как же без этого!">
               </div>
             </div>
@@ -111,96 +105,84 @@
               <div class="double-input">
                 <label class="double-input__label" for="comp-name-2">Имя: *</label>
                 <input class="double-input__input" type="text" name="comp-name-2" id="comp-name-2" value="Введите ваше имя" required>
-                <label class="double-input__label" for="comp-nickname-2">Прозвище</label>
+                <label class="double-input__label" for="comp-nickname-2">Прозвище:</label>
                 <input class="double-input__input" type="text" name="comp-nickname-2" id="comp-nickname-2" value="Ну как же без этого!">
               </div>
             </div>
           </fieldset>
           <fieldset class="achievements">
             <div class="form-legend">Ваши безбашенные достижения в путешествии</div>
-            <div class="form-input-checkbox">
-              <label class="form-input-checkbox__label">
-                <input class="form-input-checkbox__input" type="checkbox" name="ach-check" id="ach-shark">
-                Сделал селфи с акулой
-              </label>
-              <label class="form-input-checkbox__label">
-                <input class="form-input-checkbox__input" type="checkbox" name="ach-check" id="ach-beach">
-                Обгорел на пляже
-              </label>
-              <label class="form-input-checkbox__label">
-                <input class="form-input-checkbox__input" type="checkbox" name="ach-check" id="ach-chuck">
-                Видел Чака Норриса
-              </label>
-              <label class="form-input-checkbox__label">
-                <input class="form-input-checkbox__input" type="checkbox" name="ach-check" id="ach-souv">
-                Накупил сувениров
-              </label>
-              <label class="form-input-checkbox__label">
-                <input class="form-input-checkbox__input" type="checkbox" name="ach-check" id="ach-tower">
-                Удержал башню
-              </label>
-              <label class="form-input-checkbox__label">
-                <input class="form-input-checkbox__input" type="checkbox" name="ach-check" id="ach-hotel">
-                Разгромил отель
-              </label>
+            <div class="form-input form-input--checkbox">
+              <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-shark" checked>
+              <label class="form-input--checkbox__label">Сделал селфи с акулой</label>
+            </div>
+            <div class="form-input form-input--checkbox">
+              <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-beach" checked>
+              <label class="form-input--checkbox__label">Обгорел на пляже</label>
+            </div>
+            <div class="form-input form-input--checkbox">
+              <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-chuck">
+              <label class="form-input--checkbox__label">Видел Чака Норриса</label>
+            </div>
+            <div class="form-input form-input--checkbox">
+              <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-souv">
+              <label class="form-input--checkbox__label">Накупил сувениров</label>
+            </div>
+            <div class="form-input form-input--checkbox">
+              <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-tower" checked>
+              <label class="form-input--checkbox__label">Удержал башню</label>
+            </div>
+            <div class="form-input form-input--checkbox">
+              <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-hotel">
+              <label class="form-input--checkbox__label">Разгромил отель</label>
             </div>
           </fieldset>
           <fieldset class="photos">
             <div class="form-legend">Ваши фотографии из поездки *</div>
             <button class="photos__btn">Загрузить фото</button>
             <hr class="form-divider">
-            <div class="images">
-              <div class="images-item">
-                <div class="images-close"></div>
-                <img class="images-image" src="#">
+            <div class="photos__items">
+              <div class="photos__item">
+                <div class="photos__close"></div>
+                <img class="photos__image" src="img/upload-image.png">
+                <div class="photos__label">IMG-1.JPG</div>
               </div>
-              <div class="images-item">
-                <div class="images-close"></div>
-                <img class="images-image" src="#">
+              <div class="photos__item">
+                <div class="photos__close"></div>
+                <img class="photos__image" src="img/upload-image.png">
+                <div class="photos__label">IMG-2.JPG</div>
               </div>
-              <div class="images-item">
-                <div class="images-close"></div>
-                <img class="images-image" src="#">
+              <div class="photos__item">
+                <div class="photos__close"></div>
+                <img class="photos__image" src="img/upload-image.png">
+                <div class="photos__label">IMG-3.JPG</div>
               </div>
-              <div class="images-item">
-                <div class="images-close"></div>
-                <img class="images-image" src="#">
-              </div>
-              <div class="images-item">
-                <div class="images-close"></div>
-                <img class="images-image" src="#">
-              </div>
-              <div class="images-item">
-                <div class="images-close"></div>
-                <img class="images-image" src="#">
-              </div>
-              <div class="images-item">
-                <div class="images-close"></div>
-                <img class="images-image" src="#">
-              </div>
-              <div class="images-item">
-                <div class="images-close"></div>
-                <img class="images-image" src="#">
+              <div class="photos__item">
+                <div class="photos__close"></div>
+                <img class="photos__image" src="img/upload-image.png">
+                <div class="photos__label">IMG-4.JPG</div>
               </div>
             </div>
           </fieldset>
           <fieldset class="submit">
             <input class="submit__input" type="submit" value="Отправить форму">
-            <div class="submit__required"><span class="submit__star"></span>-обязательные поля</div>
+            <div class="submit__required"><span class="submit__star">*</span> – обязательные поля</div>
           </fieldset>
         </form>
       </div>
     </main>
     <footer class="footer">
-      <img class="logo logo--mini" src="#">
-      <div class="social-icons">
-        <a href="#" class="social-icons__item social-icons__item--twitter"></a>
-        <a href="#" class="social-icons__item social-icons__item--facebook"></a>
-        <a href="#" class="social-icons__item social-icons__item--youtube"></a>
-      </div>
-      <div class="footer__developed">
-        Разработано
-        <img class="footer__developed-icon" src="#">
+      <div class="main-wrapper main-wrapper--white">
+        <img class="logo logo--footer" src="img/pink-logo.png">
+        <div class="social-icons">
+          <a href="#" class="social-icons__item social-icons__item--twitter"></a>
+          <a href="#" class="social-icons__item social-icons__item--facebook"></a>
+          <a href="#" class="social-icons__item social-icons__item--youtube"></a>
+        </div>
+        <div class="footer__developed">
+          <div class="footer__developed-text">Разработано</div>
+          <img class="footer__developed-icon" src="img/htmlacademy.png">
+        </div>
       </div>
     </footer>
   </body>

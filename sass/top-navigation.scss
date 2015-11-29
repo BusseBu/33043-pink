@@ -1,0 +1,23 @@
+.top-navigation {
+  display: none;
+  background: $blue-menu;
+  z-index: 2;
+  color: #fff;
+  font-weight: 600;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    box-shadow: 0 -2px 0 -1px rgba(72, 84, 97, 1), 0 -3px 0 -1px rgba(0, 0, 0, 1);
+    padding: 25px;
+    text-transform: uppercase;
+  }
+
+  &__item:last-child {
+    border-bottom: 1px solid #000;
+  }
+}
