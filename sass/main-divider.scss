@@ -1,0 +1,14 @@
+.main-divider {
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  &--line {
+    height: 100px;
+    background-image: linear-gradient(-5deg, $grey-bg 70px, #fff 30px);
+  }
+  &--straight-line {
+    height: 95px;
+    background-image: linear-gradient(to bottom, $grey-bg 45px, #fff 45px);
+  }
+}

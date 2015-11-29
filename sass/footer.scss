@@ -1,0 +1,17 @@
+.footer {
+
+  &__developed {
+    padding-bottom: 40px;
+  }
+
+  &__developed-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+  }
+
+  &__developed-icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

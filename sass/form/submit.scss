@@ -1,0 +1,24 @@
+.submit {
+  &__input {
+    width: 100%;
+    background: #2aab6d;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    @include border-radius(2px);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  &__required {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  &__star {
+    color: $pink;
+  }
+}

@@ -1,0 +1,82 @@
+.prices {
+  background: $grey-bg;
+  padding-top: 20px;
+  overflow: hidden;
+
+  &__wrap {
+    height: 284px;
+    display: flex;
+    margin-left: -263px;
+  }
+}
+
+.buy-plan {
+  vertical-align: top;
+  min-width: 280px;
+  border: 1px solid $grey;
+  border-top: 0;
+  border-bottom: 2px solid $grey;
+  letter-spacing: 0;
+
+  &__header {
+    position: relative;
+    background: $blue-menu;
+    height: 60px;
+    padding: 20px;
+    color: #fff;
+  }
+
+  &__image-hit {
+    position:absolute;
+    left: -2px;
+    top: 0;
+    background: url('../img/hit.png');
+    width: 72px;
+    height: 73px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  &__feature {
+    position: relative;
+    text-align: left;
+    background: #fff;
+    padding: 20px;
+    border-bottom: 2px solid $grey;
+  }
+
+  &__feature:last-child {
+    border-bottom: none;
+  }
+
+  &__feature-title {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  &__feature-switch {
+    position: absolute;
+    right: 20px;
+    top: 17px;
+    width: 29px;
+    height: 26px;
+  }
+
+  &__feature-switch--yes {
+    background: url('../img/yes-no.png') no-repeat 0 0;
+  }
+
+  &__feature-switch--no {
+    background: url('../img/yes-no.png') no-repeat -29px 0;
+  }
+}

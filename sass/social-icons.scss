@@ -1,0 +1,26 @@
+.social-icons {
+  display: flex;
+  width: 170px;
+  margin: 0 auto 40px auto;
+  justify-content: space-between;
+
+  &__item {
+    width: 20px;
+    height: 20px;
+    @include border-radius(50%);
+    border: 12px solid #fff;
+    @include box-shadow(0, 0, 0, 3px, rgba(229, 229, 229, 1));
+
+    &--twitter {
+      background: #fff url('../img/social-icons.png') no-repeat 0 0;
+    }
+
+    &--facebook {
+      background: #fff url('../img/social-icons.png') no-repeat -22px 0;
+    }
+
+    &--youtube {
+      background: #fff url('../img/social-icons.png') no-repeat -46px 0;
+    }
+  }
+}
