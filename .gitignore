@@ -7,4 +7,4 @@ Thumbs.db
 *.sublime*
 *.log
 css/*.css
-
+*.css.map
