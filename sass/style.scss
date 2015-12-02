@@ -42,7 +42,29 @@ body, p, h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@import 'top-navigation';
+.top-navigation {
+  display: none;
+  background: $blue-menu;
+  z-index: 2;
+  color: #fff;
+  font-weight: 600;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    box-shadow: 0 -2px 0 -1px rgba(72, 84, 97, 1), 0 -3px 0 -1px rgba(0, 0, 0, 1);
+    padding: 25px;
+    text-transform: uppercase;
+  }
+
+  &__item:last-child {
+    border-bottom: 1px solid #000;
+  }
+}
 
 .main-headline {
   font-size: 24px;
@@ -61,18 +83,92 @@ body, p, h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-@import 'intro';
+.intro {
+  background: url('../img/intro-bg.jpg') no-repeat 50% 0;
+  position: relative;
+  background-size: cover;
+  padding-top: 85px;
+  min-height: 137px;
 
-@import 'text';
+  &__image {
+    left: -5px;
+    height: 285px;
+    text-align: left;
+    overflow: hidden;
 
-@import 'main-divider';
+    img {
+      margin-left: -12px;
+    }
+  }
+}
 
-@import 'index/index';
+.text {
+  padding: 0 20px 0 20px;
 
+  &--standart {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 24px;
+  }
 
-@import 'form/form';
+  &--review {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 30px;
+  }
+
+  &--form {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 500;
+  }
+}
+
+.main-divider {
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  &--line {
+    height: 100px;
+    background-image: linear-gradient(-5deg, $grey-bg 70px, #fff 30px);
+  }
+  &--straight-line {
+    height: 95px;
+    background-image: linear-gradient(to bottom, $grey-bg 45px, #fff 45px);
+  }
+}
+
+@import 'index';
+
+@import 'form';
 
 @import 'footer';
 
-@import 'social-icons';
+.social-icons {
+  display: flex;
+  width: 170px;
+  margin: 0 auto 40px auto;
+  justify-content: space-between;
+
+  &__item {
+    width: 20px;
+    height: 20px;
+    @include border-radius(50%);
+    border: 12px solid #fff;
+    @include box-shadow(0, 0, 0, 3px, rgba(229, 229, 229, 1));
+
+    &--twitter {
+      background: #fff url('../img/social-icons.png') no-repeat 0 0;
+    }
+
+    &--facebook {
+      background: #fff url('../img/social-icons.png') no-repeat -22px 0;
+    }
+
+    &--youtube {
+      background: #fff url('../img/social-icons.png') no-repeat -46px 0;
+    }
+  }
+}
 

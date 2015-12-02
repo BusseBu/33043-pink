@@ -1,0 +1,219 @@
+.applications {
+  background-color: $blue-bg;
+  position: relative;
+  padding: 28px 0;
+  color: #fff;
+  z-index: 1;
+
+  &__button {
+    display: block;
+    margin: 0 auto 30px auto;
+    width: 280px;
+    color: #fff;
+    border: 3px solid #fff;
+    @include border-radius(30px);
+    background: none;
+    padding: 11px 0 14px 0;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  &__icons {
+    width: 206px;
+    margin: 0 auto 22px auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  &__icon {
+    height: 57px;
+  }
+
+  &__icon--apple {
+    min-width: 46px;
+    background: url('../img/app-icons.png') no-repeat 0 0;
+  }
+
+  &__icon--android {
+    min-width: 42px;
+    background: url('../img/app-icons.png') no-repeat -46px 0;
+  }
+
+  &__icon--windows {
+    min-width: 44px;
+    background: url('../img/app-icons.png') no-repeat -88px 0;
+  }
+
+  &__icon:last-child {
+    margin-right: 0;
+  }
+}
+
+
+.information {
+  background: #fff;
+  padding-top: 30px;
+
+  &__items {
+    background: $grey-bg;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+  }
+
+  &__image {
+    height: 278px;
+  }
+}
+.reviews {
+  background: #fff;
+  padding: 40px 0 0 0;
+}
+
+.switches {
+  padding: 30px 0 0 0;
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+    width:5px;
+    height: 5px;
+    background-color: #bec2c7;
+    @include border-radius(50%);
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__item--active {
+    width: 7px;
+    height: 7px;
+    @include box-shadow(0, 0, 0, 3px, rgba(29, 38, 49, 1));
+    @include border-radius(50%);
+    background: #fff;
+  }
+}
+
+
+.prices {
+  background: $grey-bg;
+  padding-top: 20px;
+  overflow: hidden;
+
+  &__wrap {
+    height: 284px;
+    display: flex;
+    margin-left: -263px;
+  }
+}
+
+.buy-plan {
+  vertical-align: top;
+  min-width: 280px;
+  border: 1px solid $grey;
+  border-top: 0;
+  border-bottom: 2px solid $grey;
+  letter-spacing: 0;
+
+  &__header {
+    position: relative;
+    background: $blue-menu;
+    height: 60px;
+    padding: 20px;
+    color: #fff;
+  }
+
+  &__image-hit {
+    position:absolute;
+    left: -2px;
+    top: 0;
+    background: url('../img/hit.png');
+    width: 72px;
+    height: 73px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  &__feature {
+    position: relative;
+    text-align: left;
+    background: #fff;
+    padding: 20px;
+    border-bottom: 2px solid $grey;
+  }
+
+  &__feature:last-child {
+    border-bottom: none;
+  }
+
+  &__feature-title {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  &__feature-switch {
+    position: absolute;
+    right: 20px;
+    top: 17px;
+    width: 29px;
+    height: 26px;
+  }
+
+  &__feature-switch--yes {
+    background: url('../img/yes-no.png') no-repeat 0 0;
+  }
+
+  &__feature-switch--no {
+    background: url('../img/yes-no.png') no-repeat -29px 0;
+  }
+}
+
+.contacts {
+  background: #fff;
+
+  &__item {
+    margin-bottom: 30px;
+  }
+  &__link {
+    color: $pink;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 30px;
+  }
+  &__map {
+    position: relative;
+    height: 216px;
+    background: url('../img/map.jpg') no-repeat 0 0;
+  }
+
+  &__map-left-arrow {
+    float: left;
+    vertical-align: top;
+    width: 50%;
+    height: 40px;
+    background-image: linear-gradient(to left bottom, #fff 50%, transparent 50%);
+  }
+  &__map-right-arrow {
+    float: right;
+    vertical-align: top;
+    width: 50%;
+    height: 40px;
+    background-image: linear-gradient(to right bottom, #fff 50%, transparent 50%);
+  }
+}
