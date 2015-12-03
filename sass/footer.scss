@@ -13,7 +13,7 @@
     @include tablet {
       display: flex;
       padding: 40px;
-      justify-content: center;
+      justify-content: space-between;
     }
   }
 
@@ -24,6 +24,8 @@
 
   &__developed {
     padding-bottom: 40px;
+    display: flex;
+    justify-content: flex-end;
 
     @include tablet {
       width: 33%;
@@ -33,14 +35,42 @@
   }
 
   &__developed-text {
-    display: inline-block;
-    vertical-align: middle;
     margin-right: 15px;
+    padding: 14px 0;
+
+    @include tablet {
+      font-size: 14px;
+      margin-right: 12px;
+    }
   }
 
   &__developed-icon {
-    display: inline-block;
-    vertical-align: middle;
+    height: 48px;
+
+    svg {
+      margin-top: 9px;
+    }
   }
 
+}
+
+.social-icons {
+  display: flex;
+  top: 2px;
+  width: 170px;
+  margin: 0 auto 40px auto;
+  justify-content: space-between;
+
+  &__item {
+    width: 20px;
+    height: 20px;
+    @include border-radius(50%);
+    border: 12px solid #fff;
+    @include box-shadow(0, 0, 0, 3px, rgba(229, 229, 229, 1));
+  }
+
+  @include tablet {
+    margin: 4px 0 0;
+    width: 27%;
+  }
 }

@@ -1,14 +1,14 @@
 .applications {
   background-color: $blue-bg;
   position: relative;
-  padding: 28px 0;
+  padding: 29px 0;
   color: #fff;
   z-index: 1;
 
   &__button {
     display: block;
-    margin: 0 auto 30px auto;
-    width: 280px;
+    margin: 0 auto 32px auto;
+    width: 275px;
     color: #fff;
     border: 3px solid #fff;
     @include border-radius(30px);
@@ -46,12 +46,12 @@
 
   &__icon--android {
     min-width: 42px;
-    background: url('../img/android-logo.svg') no-repeat 0 10px;
+    background: url('../img/android-logo.svg') no-repeat 0 9px;
   }
 
   &__icon--windows {
     min-width: 44px;
-    background: url('../img/microsoft-logo.svg') no-repeat 0 15px;
+    background: url('../img/microsoft-logo.svg') no-repeat 0 13px;
   }
 
   &__icon:last-child {
@@ -62,6 +62,7 @@
     font-size: 14px;
     font-weight: 200;
     line-height: 24px;
+    padding: 0 20px;
 
     @include tablet {
       font-size: 18px;
@@ -81,27 +82,32 @@
 
 .information {
   background: #fff;
-  padding-top: 30px;
+  padding-top: 40px;
   position: relative;
 
   &__items-wrapper {
     background: $grey-bg;
-    padding-top: 50px;
-    display: flex;
-    flex-direction: row-reverse;
+    padding: 111px 20px 0;
 
+    @include tablet {
+      display: flex;
+      flex-direction: row-reverse;
+      padding-top: 50px;
+    }
   }
 
   &__items {
+    padding: 0 0 10px 0;
+
     @include tablet {
       width: 50%;
       text-align: left;
-      padding-top: 70px;
+      padding: 70px 0 0 0;
     }
   }
 
   &__item {
-    padding-bottom: 30px;
+    padding-bottom: 31px;
 
     @include tablet {
       padding-bottom: 34px;
@@ -120,6 +126,7 @@
 
   &__image {
     z-index: 1;
+    height: 278px;
 
     img {
       height: 278px;
@@ -186,7 +193,15 @@
 
 .reviews {
   background: #fff;
-  padding: 10px 40px 0 40px;
+  padding: 44px 20px 0;
+
+  &__wrap {
+    margin-bottom: 26px;
+
+    @include tablet {
+      margin-bottom: 33px;
+    }
+  }
 
   &__item {
 
@@ -196,9 +211,17 @@
     }
   }
 
+  &__author {
+    margin-bottom: 16px;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
   &__text {
     font-size: 14px;
-    line-height: 24px;
+    line-height: 30px;
     font-weight: 200;
 
     @include tablet {
@@ -227,11 +250,13 @@
     }
   }
 
+  @include tablet {
+    padding: 10px 40px 0;
+  }
+
 }
 
 .switches {
-  padding: 30px 0 0 0;
-
   &__item {
     display: inline-block;
     vertical-align: middle;
@@ -255,6 +280,8 @@
   }
 
   &--prices {
+    margin-bottom: 43px;
+
     @include tablet {
       display: none;
     }
@@ -269,10 +296,10 @@
   &__wrap {
     height: 284px;
     display: flex;
-    margin-left: -263px;
+    margin: 25px 0 30px -262px ;
 
     @include tablet {
-      margin-left: 0;
+      margin: 0;
       height: 100%;
       padding: 0 40px 70px 40px;
     }
@@ -280,8 +307,12 @@
 
   &__table {
     display: table;
-    width: 100%;
+    width: 825px;
     border-collapse: collapse;
+
+    @include tablet {
+      width: 100%;
+    }
   }
 
   &__head {
@@ -294,23 +325,29 @@
 
   &__th {
     display: table-cell;
-    width: 25%;
+    width: 34%;
     background: $blue-menu;
-    height: 100px;
+    height: 98px;
     vertical-align: middle;
     text-align: center;
     color: #fff;
     border-left: 2px solid $grey;
 
     @include tablet {
-      height: 80px;
+      height: 78px;
+      width: 25%;
     }
 
     &--desc {
+      display: none;
       background: $grey-bg;
       border-bottom: 2px solid $grey;
       margin-bottom: -2px;
       border-left: 0;
+
+      @include tablet {
+        display: table-cell;
+      }
     }
   }
 
@@ -323,24 +360,35 @@
   }
 
   &__td {
-    width: 25%;
-    height: 40px;
+    width: 34%;
     vertical-align: middle;
     text-align: center;
     display: table-cell;
     background: #fff;
     border: 2px solid $grey;
-    box-sizing: padding-box;
+    height: 59px;
+    position: relative;
+    padding: 0 22px;
 
     &--borderless {
       border-top: none;
     }
 
     &--desc {
+      display: none;
       font-size: 14px;
       text-align: left;
       padding: 0 15px;
       color: $blue-text;
+
+      @include tablet {
+        display: table-cell;
+      }
+    }
+
+    @include tablet {
+      width: 25%;
+      height: 45px;
     }
   }
 
@@ -351,6 +399,7 @@
 
     @include tablet {
       font-size: 16px;
+      margin-bottom: 5px;
     }
   }
 
@@ -365,17 +414,26 @@
   }
 
   &__td-title {
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: left;
+
     @include tablet {
       display: none;
     }
   }
 
   &__td-switch {
-    right: 0;
+    top: 17px;
+    right: 20px;
     width: 28px;
     height: 28px;
+    position: absolute;
 
     @include tablet {
+      position: relative;
+      top: 0;
+      right: 0;
       margin: auto;
     }
 
@@ -405,32 +463,39 @@
 
 .contacts {
   background: #fff;
-  padding-top: 40px;
+  padding-top: 44px;
 
   &__wrap {
+    margin-bottom: 50px;
 
     @include tablet {
       display: flex;
       flex-wrap: wrap;
+      margin-bottom: 0;
     }
   }
 
   &__headline-wrapper {
-    margin-bottom: 40px;
-  }
-
-  &__item {
     margin-bottom: 30px;
 
     @include tablet {
+      margin-bottom: 43px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 22px;
+
+    @include tablet {
       min-width: 50%;
-      margin-bottom: 37px;
+      margin-bottom: 45px;
     }
   }
 
   &__item:last-child {
     @include tablet {
       min-width: 100%;
+      margin-bottom: 20px;
     }
   }
 
@@ -439,15 +504,21 @@
     text-decoration: none;
     font-size: 24px;
     font-weight: 300;
-    line-height: 30px;
-  }
-  &__map {
-    position: relative;
-    height: 216px;
-    background: url('../img/map.jpg') no-repeat 38% 50%;
+    line-height: 24px;
 
     @include tablet {
-      height: 367px;
+      line-height: 30px;
+    }
+  }
+
+  &__map {
+    position: relative;
+    height: 198px;
+    background: url('../img/map.jpg') no-repeat 42% 51%;
+
+    @include tablet {
+      height: 385px;
+      background: url('../img/map.jpg') no-repeat 37% 48%;
     }
   }
 
@@ -456,6 +527,16 @@
     height: 100px;
     position: absolute;
     top: 0;
+
+    img {
+      width: 100%;
+      height: 30px;
+
+      @include tablet {
+        height: 80px;
+      }
+    }
+
   }
 
   &__map-marker {
@@ -465,7 +546,13 @@
     border: 10px solid #fff;
     background: $pink;
     position: absolute;
-    top: 50%;
-    left: 47%;
+    top: 46%;
+    left: 44%;
+
+    @include tablet {
+      top: 53%;
+      left: 47%;
+    }
+
   }
 }
