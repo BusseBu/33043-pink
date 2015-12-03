@@ -1,7 +1,35 @@
 .footer {
 
+  &--index {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__wrapper {
+
+    @include tablet {
+      display: flex;
+      padding: 40px;
+      justify-content: center;
+    }
+  }
+
+  &__logo {
+    width: 33%;
+    position: relative;
+  }
+
   &__developed {
     padding-bottom: 40px;
+
+    @include tablet {
+      width: 33%;
+      padding-bottom: 0;
+      text-align: right;
+    }
   }
 
   &__developed-text {
@@ -14,4 +42,5 @@
     display: inline-block;
     vertical-align: middle;
   }
+
 }

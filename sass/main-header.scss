@@ -9,18 +9,24 @@
     padding: 20px;
     clear: both;
     background-color: rgba(0, 0, 0, 0.3);
+
+    @include tablet {
+      height: 30px;
+      padding: 40px;
+    }
   }
 
   &__toggle-icon {
     float:right;
     width: 50px;
     height: 24px;
-    background: url('../img/nav-toggle.png') no-repeat 0 0;
+    background: url('../img/menu-burger.svg') no-repeat 0 0;
     background-size: cover;
     z-index: 1;
+    cursor: pointer;
 
     &--opened {
-      background: url('../img/nav-toggle.png') no-repeat -100px 0;
+      background: url('../img/menu-cross.svg') no-repeat 50% 0;
       background-size: cover;
     }
   }

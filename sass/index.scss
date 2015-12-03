@@ -17,6 +17,10 @@
     font-size: 18px;
     font-weight: 700;
     text-decoration: none;
+
+    @include tablet {
+      margin: 0 auto 43px auto;
+    }
   }
 
   &__icons {
@@ -25,6 +29,10 @@
     display: flex;
     justify-content: space-between;
     padding: 0 30px;
+
+    @include tablet {
+      margin: 0 auto 36px auto;
+    }
   }
 
   &__icon {
@@ -33,21 +41,40 @@
 
   &__icon--apple {
     min-width: 46px;
-    background: url('../img/app-icons.png') no-repeat 0 0;
+    background: url('../img/apple-logo.svg') no-repeat 0 0;
   }
 
   &__icon--android {
     min-width: 42px;
-    background: url('../img/app-icons.png') no-repeat -46px 0;
+    background: url('../img/android-logo.svg') no-repeat 0 10px;
   }
 
   &__icon--windows {
     min-width: 44px;
-    background: url('../img/app-icons.png') no-repeat -88px 0;
+    background: url('../img/microsoft-logo.svg') no-repeat 0 15px;
   }
 
   &__icon:last-child {
     margin-right: 0;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 24px;
+
+    @include tablet {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  @include tablet {
+    position: absolute;
+    top: 348px;
+    left: 10px;
+    background: none;
+    width: 50%;
   }
 }
 
@@ -55,22 +82,151 @@
 .information {
   background: #fff;
   padding-top: 30px;
+  position: relative;
+
+  &__items-wrapper {
+    background: $grey-bg;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row-reverse;
+
+  }
 
   &__items {
-    background: $grey-bg;
+    @include tablet {
+      width: 50%;
+      text-align: left;
+      padding-top: 70px;
+    }
   }
 
   &__item {
-    margin-bottom: 30px;
+    padding-bottom: 30px;
+
+    @include tablet {
+      padding-bottom: 34px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 24px;
+
+    @include tablet {
+      padding: 0 40px 0 0;
+    }
   }
 
   &__image {
-    height: 278px;
+    z-index: 1;
+
+    img {
+      height: 278px;
+
+      @include tablet {
+        height: 481px;
+      }
+    }
+
+    @include tablet {
+      width: 50%;
+      height: 481px;
+    }
+  }
+
+  @include tablet {
+    padding-top: 50px;
+  }
+
+}
+
+.article-brief {
+  display: none;
+  background: #fff;
+  padding: 60px 0;
+
+  @include tablet {
+    display: flex;
+  }
+
+  &__image {
+    position: relative;
+    width: 50%;
+  }
+  &__brief {
+    width: 50%;
+    text-align: left;
+    padding: 38px 0;
+  }
+  &__headline {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding-right: 40px;
+  }
+  &__text {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 24px;
+    padding-right: 40px;
+    margin-bottom: 10px;
+  }
+  &__more {
+    color: $pink;
+    font-size: 14px;
+    font-weight: 200;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
+
 .reviews {
   background: #fff;
-  padding: 40px 0 0 0;
+  padding: 10px 40px 0 40px;
+
+  &__item {
+
+    @include tablet {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 200;
+
+    @include tablet {
+      font-size: 18px;
+      line-height: 30px;
+      margin-bottom: 35px;
+    }
+  }
+
+  &__who {
+    display: none;
+
+    @include tablet {
+      display: block;
+      font-size: 14px;
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 700;
+
+    @include tablet {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
 }
 
 .switches {
@@ -97,98 +253,187 @@
     @include border-radius(50%);
     background: #fff;
   }
+
+  &--prices {
+    @include tablet {
+      display: none;
+    }
+  }
 }
 
 
 .prices {
-  background: $grey-bg;
-  padding-top: 20px;
   overflow: hidden;
+  background: $grey-bg;
 
   &__wrap {
     height: 284px;
     display: flex;
     margin-left: -263px;
+
+    @include tablet {
+      margin-left: 0;
+      height: 100%;
+      padding: 0 40px 70px 40px;
+    }
   }
-}
 
-.buy-plan {
-  vertical-align: top;
-  min-width: 280px;
-  border: 1px solid $grey;
-  border-top: 0;
-  border-bottom: 2px solid $grey;
-  letter-spacing: 0;
+  &__table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
 
-  &__header {
-    position: relative;
+  &__head {
+    display: table-row;
+  }
+
+  &__row {
+    display: table-row;
+  }
+
+  &__th {
+    display: table-cell;
+    width: 25%;
     background: $blue-menu;
-    height: 60px;
-    padding: 20px;
+    height: 100px;
+    vertical-align: middle;
+    text-align: center;
     color: #fff;
+    border-left: 2px solid $grey;
+
+    @include tablet {
+      height: 80px;
+    }
+
+    &--desc {
+      background: $grey-bg;
+      border-bottom: 2px solid $grey;
+      margin-bottom: -2px;
+      border-left: 0;
+    }
   }
 
-  &__image-hit {
-    position:absolute;
-    left: -2px;
-    top: 0;
-    background: url('../img/hit.png');
-    width: 72px;
-    height: 73px;
+  &__th:nth-child(2) {
+    border-left: 2px solid $blue-menu;
   }
 
-  &__title {
-    font-size: 18px;
-    font-weight: 900;
-    text-transform: uppercase;
+  &__th:last-child {
+    border-right: 2px solid $blue-menu;
   }
 
-  &__price {
-    font-size: 24px;
-    font-weight: 300;
-  }
-
-  &__feature {
-    position: relative;
-    text-align: left;
+  &__td {
+    width: 25%;
+    height: 40px;
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
     background: #fff;
-    padding: 20px;
-    border-bottom: 2px solid $grey;
+    border: 2px solid $grey;
+    box-sizing: padding-box;
+
+    &--borderless {
+      border-top: none;
+    }
+
+    &--desc {
+      font-size: 14px;
+      text-align: left;
+      padding: 0 15px;
+      color: $blue-text;
+    }
   }
 
-  &__feature:last-child {
-    border-bottom: none;
-  }
-
-  &__feature-title {
+  &__th-title {
+    font-size: 18px;
+    font-weight: 700;
     text-transform: uppercase;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__th-price {
+    font-size: 24px;
+    font-weight: 200;
+    text-transform: uppercase;
+
+    @include tablet {
+      font-size: 18px;
+    }
+  }
+
+  &__td-title {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__td-switch {
+    right: 0;
+    width: 28px;
+    height: 28px;
+
+    @include tablet {
+      margin: auto;
+    }
+
+  }
+
+  &__desc-header {
+    height: 58px;
+    padding: 20px;
+  }
+
+  &__desc-title {
+    height: 40px;
+    border: 1px solid $grey;
+    background: #fff;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 200;
+    line-height: 39px;
   }
 
-  &__feature-switch {
-    position: absolute;
-    right: 20px;
-    top: 17px;
-    width: 29px;
-    height: 26px;
+  &__desc-title:first-of-type {
+    border-top: 2px solid $grey;
   }
 
-  &__feature-switch--yes {
-    background: url('../img/yes-no.png') no-repeat 0 0;
-  }
-
-  &__feature-switch--no {
-    background: url('../img/yes-no.png') no-repeat -29px 0;
+  @include tablet {
   }
 }
 
 .contacts {
   background: #fff;
+  padding-top: 40px;
+
+  &__wrap {
+
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__headline-wrapper {
+    margin-bottom: 40px;
+  }
 
   &__item {
     margin-bottom: 30px;
+
+    @include tablet {
+      min-width: 50%;
+      margin-bottom: 37px;
+    }
   }
+
+  &__item:last-child {
+    @include tablet {
+      min-width: 100%;
+    }
+  }
+
   &__link {
     color: $pink;
     text-decoration: none;
@@ -199,21 +444,28 @@
   &__map {
     position: relative;
     height: 216px;
-    background: url('../img/map.jpg') no-repeat 0 0;
+    background: url('../img/map.jpg') no-repeat 38% 50%;
+
+    @include tablet {
+      height: 367px;
+    }
   }
 
-  &__map-left-arrow {
-    float: left;
-    vertical-align: top;
-    width: 50%;
-    height: 40px;
-    background-image: linear-gradient(to left bottom, #fff 50%, transparent 50%);
+  &__map-arrow {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
   }
-  &__map-right-arrow {
-    float: right;
-    vertical-align: top;
-    width: 50%;
-    height: 40px;
-    background-image: linear-gradient(to right bottom, #fff 50%, transparent 50%);
+
+  &__map-marker {
+    width: 17px;
+    height: 17px;
+    @include border-radius(50%);
+    border: 10px solid #fff;
+    background: $pink;
+    position: absolute;
+    top: 50%;
+    left: 47%;
   }
 }

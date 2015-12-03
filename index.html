@@ -6,12 +6,27 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
+  <svg style="display:none">
+    <symbol viewBox="0 0 32 32" id="yes">
+      <path xmlns="http://www.w3.org/2000/svg" d="M29.936,0.439c-0.586-0.586-1.535-0.586-2.121,0L10.188,18.066l-7.627-7.627c-0.586-0.586-1.535-0.586-2.121,0
+      s-0.586,1.535,0,2.121l8.688,8.688c0.293,0.293,0.677,0.439,1.061,0.439s0.768-0.146,1.061-0.439L29.936,2.561
+      C30.521,1.975,30.521,1.025,29.936,0.439z"/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="no">
+    <path xmlns="http://www.w3.org/2000/svg" d="M15.497,13.376L26.312,2.562c0.586-0.585,0.586-1.535,0-2.121s-1.535-0.586-2.121,0L13.376,11.255L2.562,0.439
+    c-0.586-0.586-1.535-0.586-2.121,0c-0.586,0.585-0.586,1.535,0,2.121l10.814,10.815L0.439,24.19c-0.586,0.586-0.586,1.535,0,2.121
+    c0.293,0.293,0.677,0.439,1.061,0.439s0.768-0.146,1.061-0.439l10.815-10.814L24.19,26.312c0.293,0.293,0.677,0.439,1.061,0.439
+    s0.768-0.146,1.061-0.439c0.586-0.586,0.586-1.535,0-2.121L15.497,13.376z"/>
+    </symbol>
+  </svg>
+  <svg style="display:none" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" height="94.074px" viewBox="0 0 1200 94.074">
+    <polygon id="main-divider" points="1200,0 0,0 0,94.074 "/>
+  </svg>
     <header class="main-header">
       <div class="main-wrapper">
         <div class="main-header__line">
-          <a class="logo" href="/">
-            <img src="img/pink-logo--white.png" alt="Главная">
-          </a>
+          <a class="logo" href="/"></a>
           <div class="main-header__toggle-icon"></div>
         </div>
         <nav class="top-navigation">
@@ -27,47 +42,90 @@
     <main class="main-page">
       <div class="main-wrapper">
         <section class="intro">
-          <h3 class="main-headline main-headline--white main-headline--80">Взгляните на жизнь иначе!</h3>
-          <div class="intro__image">
-              <img src="img/iphone-5-in-hand.png" />
+          <h3 class="main-headline main-headline--white main-headline--intro">Взгляните на жизнь иначе!</h3>
+          <div class="intro__image"></div>
+          <div class="applications">
+            <a href="#" class="applications__button">Скачать приложение</a>
+            <div class="applications__icons">
+              <a href="#" class="applications__icon applications__icon--apple"></a>
+              <a href="#" class="applications__icon applications__icon--android"></a>
+              <a href="#" class="applications__icon applications__icon--windows"></a>
+            </div>
+            <p class="applications__text">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
           </div>
-        </section>
-        <section class="applications">
-          <a href="#" class="applications__button">Скачать приложение</a>
-          <div class="applications__icons">
-            <a href="#" class="applications__icon applications__icon--apple"></a>
-            <a href="#" class="applications__icon applications__icon--android"></a>
-            <a href="#" class="applications__icon applications__icon--windows"></a>
-          </div>
-          <p class="text text--standart">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
         </section>
         <section class="information">
-          <h3 class="main-headline main-headline--30">Устали от серости мегаполиса?</h3>
-          <h3 class="main-headline">Нам есть, что вам предложить!</h3>
-          <hr class="main-divider main-divider--line">
-          <div class="information__items">
-            <div class="information__item">
-              <h4 class="sub-headline">Поднимает настроение</h4>
-              <p class="text text--standart">Приложение позволит Вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
-            </div>
-            <div class="information__item">
-              <h4 class="sub-headline">Меняет мир вокруг</h4>
-              <p class="text text--standart">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
-            </div>
-            <div class="information__item">
-              <h4 class="sub-headline">Заводит новых друзей</h4>
-              <p class="text text--standart">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
+          <div class="information__headline-wrapper">
+            <h3 class="main-headline">Устали от серости мегаполиса?</h3>
+            <h3 class="main-headline">Нам есть, что вам<br />предложить!</h3>
+          </div>
+          <div class="main-divider">
+            <svg width="100%" height="100" fill="#ffffff"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#main-divider"></use></svg>
+          </div>
+          <div class="information__items-wrapper">
+            <div class="information__items">
+              <div class="information__item">
+                <h4 class="sub-headline">Поднимает настроение</h4>
+                <p class="information__text">Приложение позволит Вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
+              </div>
+              <div class="information__item">
+                <h4 class="sub-headline">Меняет мир вокруг</h4>
+                <p class="information__text">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+              </div>
+              <div class="information__item">
+                <h4 class="sub-headline">Заводит новых друзей</h4>
+                <p class="information__text">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
+              </div>
             </div>
             <div class="information__image">
-              <img src="img/iphone-screen-3-cut.png">
+              <img src="img/screen-mobile-3.png" srcset="img/iphone-screen-tablet-3@1x.png 700w">
             </div>
+          </div>
+        </section>
+        <section class="article-brief">
+          <div class="article-brief__image">
+            <svg width="260" height="300" viewBox="0 0 298 345">
+              <g fill="#dedede" opacity="0.5" id="article-brief__image-timer">
+                <path d="M293.057,157.98c-5.442-20.657-15.198-39.563-28.273-55.688l8.567-8.563c6.074-6.077,6.074-15.928,0-21.999
+                c-3.334-3.34-7.78-4.656-12.129-4.333c-3.596,0.254-7.146,1.596-9.866,4.333l-8.563,8.56c-9.083-7.354-19.081-13.552-29.734-18.627
+                c-9.617-4.558-19.751-8.195-30.338-10.669c-0.089-0.016-0.205-0.016-0.311-0.038c-4.587-1.065-9.204-1.985-13.962-2.613v-7.98
+                V40.21v-1.306h6.879c10.737,0,19.446-8.709,19.446-19.474c0-10.724-8.709-19.43-19.446-19.43h-6.879h-38.891h-8.062
+                c-1.713,0-3.356,0.288-4.96,0.697c0,0-0.009,0.029-0.02,0.029c-8.326,2.202-14.463,9.715-14.463,18.704
+                c0,10.765,8.709,19.474,19.442,19.474h8.062v9.439C79.47,54.876,37.337,86.339,15.7,129.791
+                c-4.32,8.658-7.893,17.745-10.454,27.238C1.846,169.485,0,182.555,0,196.089c0,64.417,40.952,119.159,98.227,139.946
+                c15.871,5.734,32.922,9.062,50.772,9.062c7.435,0,14.736-0.559,21.853-1.633c0.762-0.096,1.484-0.321,2.251-0.451
+                c20.966-3.432,40.528-11.17,57.596-22.392c23.571-15.496,42.378-37.464,54.081-63.389c8.424-18.701,13.222-39.326,13.222-61.144
+                C298.001,182.92,296.276,170.153,293.057,157.98z M226.848,273.943c-14.194,14.189-31.581,23.877-50.54,28.735
+                c-6.501,1.626-13.258,2.51-20.067,2.966c-0.971,0.061-1.881,0.23-2.845,0.241c-1.476,0.072-2.916,0.298-4.396,0.298
+                c-4.044,0-8.062-0.26-12.034-0.688c-24.859-2.698-47.885-13.609-65.823-31.552c-20.794-20.793-32.258-48.454-32.258-77.854
+                c0-2.328,0.198-4.599,0.334-6.896c1.659-26.815,12.766-51.821,31.924-70.969c2.383-2.372,4.875-4.595,7.421-6.736l0.016-0.013
+                c19.75-16.48,44.379-25.5,70.421-25.5c4.758,0,9.438,0.327,14.051,0.929c14.462,1.872,28.247,6.572,40.743,13.759
+                c0.136,0.083,0.286,0.184,0.409,0.279c8.15,4.745,15.798,10.447,22.646,17.282c1.608,1.621,3.067,3.334,4.549,5.031
+                c0.054,0.054,0.104,0.12,0.167,0.184c3.025,3.447,5.729,7.142,8.292,10.888c1.629,2.442,3.264,4.894,4.694,7.431
+                c8.845,15.449,13.851,32.852,14.386,51.07c0.038,1.088,0.152,2.147,0.152,3.261C259.088,225.489,247.645,253.15,226.848,273.943z" />
+              </g>
+              <g id="article-brief__image-circle">
+                <circle r="36%" cy="57%" cx="50%" stroke="#d22856" stroke-width="12" fill-opacity="0"/>
+              </g>
+              <g id="article-brief__image-text">
+                <text x="26%" y="69%" font-familу="Open Sans" font-size="120" font-weight="900" fill="#d22856">24</text>
+              </g>
+            </svg>
+          </div>
+          <div class="article-brief__brief">
+            <h3 class="article-brief__headline">Эффект<br /> на 24 часа!</h3>
+            <p class="article-brief__text">Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</p>
+            <a class="article-brief__more" href="#">Узнать больше об исследовании</a>
           </div>
         </section>
         <section class="reviews">
           <div class="reviews__wrap">
             <div class="reviews__item">
-              <h4 class="sub-headline">Николай Петров</h4>
-              <p class="text text--review">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
+              <div class="reviews__author">
+                <h4 class="reviews__name">Николай Петров</h4>
+                <p class="reviews__who">25лет, водитель трамвая</p>
+              </div>
+              <p class="reviews__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
             </div>
             <div class="reviews__item">
               <h3></h3>
@@ -84,66 +142,94 @@
             <div class="switches__item"></div>
           </div>
         </section>
-        <hr class="main-divider main-divider--line">
         <section class="prices">
+          <div class="main-divider main-divider--prices">
+            <svg width="100%" height="100" fill="#ffffff"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#main-divider"></use></svg>
+          </div>
           <div class="prices__wrap">
-            <div class="buy-plan">
-              <header class="buy-plan__header">
-                <div class="buy-plan__title">Стандарт</div>
-                <div class="buy-plan__price">3,99 USD</div>
-              </header>
-              <div class="buy-plan__feature">
-                <div class="buy-plan__feature-title">Розовый фильтр</div>
-                <div class="buy-plan__feature-switch buy-plan__feature-switch--yes"></div>
+            <div class="prices__table">
+              <div class="prices__head">
+                <div class="prices__th prices__th--desc"></div>
+                <div class="prices__th">
+                  <div class="prices__th-title">База</div>
+                  <div class="prices__th-price">1,99 USD</div>
+                </div>
+                <div class="prices__th">
+                  <div class="prices__image-hit"></div>
+                  <div class="prices__th-title">Стандарт</div>
+                  <div class="prices__th-price">3,99 USD</div>
+                </div>
+                <div class="prices__th">
+                  <div class="prices__th-title">Анлим</div>
+                  <div class="prices__th-price">9,99 USD</div>
+                </div>
               </div>
-              <div class="buy-plan__feature">
-                <div class="buy-plan__feature-title">Смайлики</div>
-                <div class="buy-plan__feature-switch buy-plan__feature-switch--yes"></div>
+              <div class="prices__row">
+                <div class="prices__td prices__td--desc prices__td--borderless">Розовый фильтр</div>
+                <div class="prices__td prices__td--borderless">
+                  <div class="prices__td-title">Розовый фильтр</div>
+                  <div class="prices__td-switch prices__td-switch--yes">
+                    <svg width="28" height="28" viewBox="0 -5 28 28" fill="#3dc644"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#yes"></use></svg>
+                  </div>
+                </div>
+                <div class="prices__td prices__td--borderless">
+                  <div class="prices__td-title">Розовый фильтр</div>
+                  <div class="prices__td-switch prices__td-switch--yes">
+                    <svg width="28" height="28" viewBox="0 -5 28 28" fill="#3dc644"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#yes"></use></svg>
+                  </div>
+                </div>
+                <div class="prices__td prices__td--borderless">
+                  <div class="prices__td-title">Розовый фильтр</div>
+                  <div class="prices__td-switch prices__td-switch--yes">
+                    <svg width="28" height="28" viewBox="0 -5 28 28" fill="#3dc644"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#yes"></use></svg>
+                  </div>
+                </div>
               </div>
-              <div class="buy-plan__feature">
-                <div class="buy-plan__feature-title">Комментарии</div>
-                <div class="buy-plan__feature-switch buy-plan__feature-switch--no"></div>
+              <div class="prices__row">
+                <div class="prices__td prices__td--desc">Смайлики</div>
+                <div class="prices__td">
+                  <div class="prices__td-title">Смайлики</div>
+                  <div class="prices__td-switch prices__td-switch--no">
+                    <svg width="28" height="28" viewBox="-2 -2 28 28" fill="#f25b26"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
+                  </div>
+                </div>
+                <div class="prices__td">
+                  <div class="prices__td-title">Смайлики</div>
+                  <div class="prices__td-switch prices__td-switch--yes">
+                    <svg width="28" height="28" viewBox="0 -5 28 28" fill="#3dc644"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#yes"></use></svg>
+                  </div>
+                </div>
+                <div class="prices__td">
+                  <div class="prices__td-title">Смайлики</div>
+                  <div class="prices__td-switch prices__td-switch--yes">
+                    <svg width="28" height="28" viewBox="0 -5 28 28" fill="#3dc644"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#yes"></use></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="prices__row">
+                <div class="prices__td prices__td--desc">Комментарии</div>
+                <div class="prices__td">
+                  <div class="prices__td-title">Комментарии</div>
+                  <div class="prices__td-switch prices__td-switch--no">
+                    <svg width="28" height="28" viewBox="-2 -2 28 28" fill="#f25b26"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
+                  </div>
+                </div>
+                <div class="prices__td">
+                  <div class="prices__td-title">Комментарии</div>
+                  <div class="prices__td-switch prices__td-switch--no">
+                    <svg width="28" height="28" viewBox="-2 -2 28 28" fill="#f25b26"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
+                  </div>
+                </div>
+                <div class="prices__td">
+                  <div class="prices__td-title">Комментарии</div>
+                  <div class="prices__td-switch prices__td-switch--yes">
+                    <svg width="28" height="28" viewBox="0 -5 28 28" fill="#3dc644"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#yes"></use></svg>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="buy-plan">
-              <header class="buy-plan__header">
-                <div class="buy-plan__image-hit"></div>
-                <div class="buy-plan__title">Стандарт</div>
-                <div class="buy-plan__price">3,99 USD</div>
-              </header>
-              <div class="buy-plan__feature">
-                <div class="buy-plan__feature-title">Розовый фильтр</div>
-                <div class="buy-plan__feature-switch buy-plan__feature-switch--yes"></div>
-              </div>
-              <div class="buy-plan__feature">
-                <div class="buy-plan__feature-title">Смайлики</div>
-                <div class="buy-plan__feature-switch buy-plan__feature-switch--yes"></div>
-              </div>
-              <div class="buy-plan__feature">
-                <div class="buy-plan__feature-title">Комментарии</div>
-                <div class="buy-plan__feature-switch buy-plan__feature-switch--no"></div>
-              </div>
-            </div>
-            <div class="buy-plan">
-              <header class="buy-plan__header">
-                <div class="buy-plan__title">Стандарт</div>
-                <div class="buy-plan__price">3,99 USD</div>
-              </header>
-              <div class="buy-plan__feature">
-                <div class="buy-plan__feature-title">Розовый фильтр</div>
-                <div class="buy-plan__feature-switch buy-plan__feature-switch--yes"></div>
-              </div>
-              <div class="buy-plan__feature">
-                <div class="buy-plan__feature-title">Смайлики</div>
-                <div class="buy-plan__feature-switch buy-plan__feature-switch--yes"></div>
-              </div>
-              <div class="buy-plan__feature">
-                <div class="buy-plan__feature-title">Комментарии</div>
-                <div class="buy-plan__feature-switch buy-plan__feature-switch--no"></div>
-              </div>
-            </div>
-        </div>
-          <div class="switches">
+          </div>
+          <div class="switches switches--prices">
             <div class="switches__item"></div>
             <div class="switches__item switches__item--active"></div>
             <div class="switches__item"></div>
@@ -151,7 +237,10 @@
         </section>
         <hr class="main-divider main-divider--straight-line">
         <section class="contacts">
-          <h3 class="main-headline main-headline--30">Остались вопросы?<br>Свяжитесь с нами!</h3>
+          <div class="contacts__headline-wrapper">
+            <h3 class="main-headline">Остались вопросы?</h3>
+            <h3 class="main-headline">Свяжитесь с нами!</h3>
+          </div>
           <div class="contacts__wrap">
             <div class="contacts__item">
               <h4 class="sub-headline">Звоните:</h4>
@@ -167,12 +256,32 @@
             </div>
           </div>
           <div class="contacts__map">
-            <div class="contacts__map-left-arrow"></div>
-            <div class="contacts__map-right-arrow"></div>
+            <div class="contacts__map-arrow">
+              <img width="100%" height="80" src="img/triangle-white-footer.svg" />
+            </div>
+            <div class="contacts__map-marker"></div>
           </div>
         </section>
         </div>
     </main>
+    <footer class="footer footer--index">
+      <div class="main-wrapper main-wrapper--white">
+        <div class="footer__wrapper">
+          <div class="footer__logo">
+            <img class="logo logo--footer" width="146" height="40" src="img/logotype-blue-tablet.svg">
+          </div>
+          <div class="social-icons">
+            <a href="#" class="social-icons__item social-icons__item--twitter"></a>
+            <a href="#" class="social-icons__item social-icons__item--facebook"></a>
+            <a href="#" class="social-icons__item social-icons__item--youtube"></a>
+          </div>
+          <div class="footer__developed">
+            <div class="footer__developed-text">Разработано</div>
+            <img class="footer__developed-icon" width="30" height="50" src="img/htmlacademy.svg">
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
 
