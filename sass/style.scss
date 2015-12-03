@@ -129,10 +129,6 @@ body, p, h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-bottom: 12px;
 
-  @include tablet {
-    margin-bottom: 5px;
-  }
-
   &--contacts {
     margin-bottom: 5px;
   }
@@ -191,6 +187,12 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
   &--prices {
     position: relative;
+  }
+
+  svg {
+    use {
+      transform: translate(450px, 0px);
+    }
   }
 }
 

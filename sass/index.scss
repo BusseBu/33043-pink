@@ -92,7 +92,7 @@
     @include tablet {
       display: flex;
       flex-direction: row-reverse;
-      padding-top: 50px;
+      padding: 50px 0 0;
     }
   }
 
@@ -336,6 +336,7 @@
     text-align: center;
     color: #fff;
     border-left: 2px solid $grey;
+    border-bottom: 2px solid $blue-menu;
 
     @include tablet {
       height: 78px;
