@@ -295,8 +295,8 @@
 
   &__wrap {
     height: 284px;
-    display: flex;
-    margin: 25px 0 30px -262px ;
+    position: relative;
+    margin: 25px 0 30px 0 ;
 
     @include tablet {
       margin: 0;
@@ -307,11 +307,15 @@
 
   &__table {
     display: table;
-    width: 825px;
+    position: absolute;
+    left: -80%;
+    width: 260%;
     border-collapse: collapse;
 
     @include tablet {
       width: 100%;
+      position: relative;
+      left: 0;
     }
   }
 
@@ -325,7 +329,7 @@
 
   &__th {
     display: table-cell;
-    width: 34%;
+    width: 33%;
     background: $blue-menu;
     height: 98px;
     vertical-align: middle;
@@ -360,7 +364,7 @@
   }
 
   &__td {
-    width: 34%;
+    width: 33%;
     vertical-align: middle;
     text-align: center;
     display: table-cell;
