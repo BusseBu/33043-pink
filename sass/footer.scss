@@ -9,6 +9,8 @@
   }
 
   &__wrapper {
+    display: block;
+    padding: 13px 20px;
 
     @include tablet {
       display: flex;
@@ -18,28 +20,37 @@
   }
 
   &__logo {
-    width: 33%;
     position: relative;
+    width: 100%;
+    margin-bottom: 37px;
+
+    @include tablet {
+      width: 33%;
+      margin: 0;
+    }
   }
 
   &__developed {
+    width: 100%;
     padding-bottom: 40px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 
     @include tablet {
       width: 33%;
       padding-bottom: 0;
       text-align: right;
+      justify-content: flex-end;
     }
   }
 
   &__developed-text {
     margin-right: 15px;
     padding: 14px 0;
+    font-size: 14px;
 
     @include tablet {
-      font-size: 14px;
+
       margin-right: 12px;
     }
   }
@@ -58,7 +69,7 @@
   display: flex;
   top: 2px;
   width: 170px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 34px auto;
   justify-content: space-between;
 
   &__item {

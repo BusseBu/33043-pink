@@ -1,20 +1,70 @@
 form {
   background: #fff;
   padding-top: 28px;
+
+  &>div {
+    padding: 40px 20px 44px 20px;
+
+    @include tablet {
+      padding: 40px;
+    }
+  }
+
+  &>div:nth-child(n+1) {
+    background: $grey-bg;
+
+    @include tablet {
+      background: #fff;
+    }
+  }
+
+  &>div:nth-child(2n) {
+    background: #fff;
+  }
+
+  @include tablet {
+    padding-top: 74px;
+  }
 }
 
 fieldset {
-  margin:0;
-  padding:40px 20px;
-  border:0;
+  margin: 0;
+  border: 0;
+  padding: 30px 0 0 0;
+
+  @include tablet {
+    border: 2px solid $grey;
+    padding: 57px;
+  }
 }
 
-fieldset:nth-child(n+1) {
-  background: $grey-bg;
+.form {
+  &__center-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 277px;
+
+    @include tablet {
+      width: 236px;
+    }
+  }
+
+  &__flex-wrapper {
+
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+  }
 }
 
-fieldset:nth-child(2n) {
-  background: #fff;
+.fieldset {
+  &--borderless {
+    border: 0;
+    padding: 0;
+  }
 }
 
 input:disabled {
@@ -25,15 +75,32 @@ input:disabled {
   font-size: 14px;
   color: $pink;
   text-transform: uppercase;
-  margin-bottom: 30px;
+  box-sizing: border-box;
+  position: relative;
+  top: -5px;
+  line-height: 19px;
+  margin: auto;
+
+  span {
+    display: block;
+    margin: auto;
+  }
+
+  @include tablet {
+    top: 0;
+    padding: 0 20px;
+  }
 }
 
 .form-input {
-  margin-bottom: 20px;
-  width: 280px;
+  width: 100%;
+  margin-bottom: 22px;
   text-align: left;
+  position: relative;
 
   &--radio {
+    margin-bottom: 44px;
+
     &__radio {
       display: none;
 
@@ -49,8 +116,8 @@ input:disabled {
           height: 15px;
           @include border-radius(50%);
           border: 10px solid #fff;
-          @include box-shadow(0, 0, 0, 1px, rgba(229, 229, 229, 1));
-          margin-right: 20px;
+          @include box-shadow(0, 0, 0, 2px, rgba(229, 229, 229, 1));
+          margin: -3px 25px 0 0;
           cursor:pointer;
         }
       }
@@ -62,7 +129,7 @@ input:disabled {
   }
 
   &--checkbox {
-    margin-bottom: 40px;
+    margin-bottom: 46px;
 
 
     &__checkbox {
@@ -85,25 +152,33 @@ input:disabled {
         height: 35px;
         @include border-radius(2px);
         border: 2px solid $grey;
-        margin-right: 20px;
+        margin: -3px 20px 0 0;
         cursor:pointer;
       }
     }
   }
 
   &__label {
-    width: 280px;
     font-size: 14px;
     color: $pink;
     text-transform: uppercase;
     display: block;
     text-align: left;
-    padding: 0 0 10px 20px;
+    padding: 0 0 10px 23px;
     letter-spacing: 0;
+
+    @include tablet {
+      padding: 0 0 10px 30px;
+    }
 
     &--bottom {
       text-align: center;
-      padding: 10px 0 0 0;
+      padding: 13px 0 0 0;
+
+      @include tablet {
+        text-align: left;
+        padding: 15px 0 0 30px;
+      }
     }
   }
 
@@ -116,37 +191,60 @@ input:disabled {
   }
 
   &__input {
-    width: 235px;
+    width: 100%;
     border: 2px solid #e7e7e7;
-    padding: 20px;
-    height: 20px;
+    padding: 20px 22px;
+    height: 63px;
     font-size: 18px;
     color: #283645;
+    box-sizing: border-box;
+    margin: 0 auto;
 
     &--add {
-      width: 112px;
+      width: 218px;
       display: inline-block;
       vertical-align: middle;
+      text-align: center;
+
+      @include tablet {
+        width: 236px;
+      }
+    }
+
+    &--flex {
+      width: 240px;
     }
   }
 
   &__plus-minus {
+    position: absolute;
     border: 2px solid #e7e7e7;
     display: inline-block;
     vertical-align: middle;
     letter-spacing: -7px;
-    width: 60px;
-    height: 60px;
+    width: 57px;
+    height: 59px;
     cursor: pointer;
 
     &--minus {
+      top: 0;
+      left: 0;
       background: #fff url('../img/plus-minus.png') no-repeat 0 0;
-      border-right: 0;
     }
     &--plus {
+      top: 0;
+      right: 0;
       background: #fff url('../img/plus-minus.png') no-repeat -60px 0;
-      border-left: 0;
     }
+  }
+
+  &--flex {
+    width: 48%;
+    margin-bottom: 35px;
+  }
+
+  &--flex:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -160,11 +258,15 @@ input:disabled {
 }
 
 .form-divider {
-  margin: 50px 0;
+  margin: 50px 0 33px 0;
   border: none;
   height: 2px;
   width: 100%;
   background-color: $grey;
+
+  &--photos {
+    margin: 33px 0 35px 0;
+  }
 }
 
 .number-input {
@@ -232,7 +334,7 @@ input:disabled {
 
   &__btn {
     width: 100%;
-    height: 60px;
+    height: 63px;
     border: 2px solid $grey;
     background: #fff;
     font-size: 18px;
@@ -272,6 +374,7 @@ input:disabled {
   &__image {
     width: 67px;
     height: 68px;
+    margin-bottom: 2px;
   }
 
   &__label {
@@ -280,10 +383,13 @@ input:disabled {
 }
 
 .submit {
+  padding-top: 25px;
+
+
   &__input {
     width: 100%;
     background: #2aab6d;
-    padding: 20px;
+    padding: 19px;
     font-size: 18px;
     font-weight: 700;
     color: #fff;

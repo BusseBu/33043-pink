@@ -337,6 +337,7 @@
     color: #fff;
     border-left: 2px solid $grey;
     border-bottom: 2px solid $blue-menu;
+    background-clip: padding-box;
 
     @include tablet {
       height: 78px;
@@ -374,6 +375,7 @@
     height: 59px;
     position: relative;
     padding: 0 22px;
+    background-clip: padding-box;
 
     &--borderless {
       border-top: none;
