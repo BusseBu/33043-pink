@@ -23,10 +23,12 @@
     position: relative;
     width: 100%;
     margin-bottom: 37px;
+    text-align: center;
 
     @include tablet {
       width: 33%;
       margin: 0;
+      text-align: left;
     }
   }
 

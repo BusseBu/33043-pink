@@ -7,6 +7,12 @@
   </head>
   <body>
     <svg style="display:none">
+      <symbol viewBox="0 0 32 32" id="no">
+        <path xmlns="http://www.w3.org/2000/svg" d="M15.497,13.376L26.312,2.562c0.586-0.585,0.586-1.535,0-2.121s-1.535-0.586-2.121,0L13.376,11.255L2.562,0.439
+      c-0.586-0.586-1.535-0.586-2.121,0c-0.586,0.585-0.586,1.535,0,2.121l10.814,10.815L0.439,24.19c-0.586,0.586-0.586,1.535,0,2.121
+      c0.293,0.293,0.677,0.439,1.061,0.439s0.768-0.146,1.061-0.439l10.815-10.814L24.19,26.312c0.293,0.293,0.677,0.439,1.061,0.439
+      s0.768-0.146,1.061-0.439c0.586-0.586,0.586-1.535,0-2.121L15.497,13.376z"/>
+      </symbol>
       <symbol viewBox="0 0 17.5 14.663" id="twitter">
         <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M11.283,0.153c1.736-0.485,3.074,0.263,3.685,1.151    c0.694-0.226,1.372-0.47,2.072-0.691c-0.004,0.841-0.538,1.478-0.883,1.727C16.861,2.506,17.5,1.86,17.5,1.86    c-0.175,0.976-1.035,1.746-1.611,1.977C15.65,10.429,12.617,14.793,5.507,14.66c-0.538,0,0.077,0-0.46,0    c-0.422,0-4.29-0.45-5.047-1.843c2.341,0.192,4.011-0.412,4.835-1.15c-0.989-0.293-2.761-0.464-3.07-2.881    c0.362,0.105,0.583,0.223,1.228,0.117C1.757,8.067,0.385,7.366,0.461,5.218c0.294,0.32,1.1,0.523,1.381,0.461    c-0.725-0.235-2.03-3.281-0.921-4.836C2.794,2.654,4.769,4.364,8.29,4.528C8.506,2.288,9.461,0.787,11.283,0.153z"/>
       </symbol>
@@ -21,6 +27,9 @@
       </symbol>
       <symbol width="49.945px" height="24.007px" viewBox="0 0 49.945 24.007" id="menu-burger">
         <path xmlns="http://www.w3.org/2000/svg" id="path-1_1_" d="M1.137,0C0.51,0,0,0.428,0,1.01v1.981c0,0.558,0.494,1.01,1.138,1.01h47.671     c0.628,0,1.138-0.428,1.138-1.01V1.01c0-0.558-0.494-1.01-1.138-1.01H1.137z M1.137,10.003C0.51,10.003,0,10.431,0,11.013v1.98     c0,0.557,0.494,1.01,1.138,1.01h47.671c0.628,0,1.138-0.428,1.138-1.01v-1.98c0-0.558-0.494-1.01-1.138-1.01H1.137z      M1.137,20.005C0.51,20.005,0,20.434,0,21.016v1.981c0,0.557,0.494,1.01,1.138,1.01h47.671c0.628,0,1.138-0.428,1.138-1.01     v-1.981c0-0.558-0.494-1.011-1.138-1.011H1.137z"/>
+      </symbol>
+      <symbol width="23.866px" height="23.866px" viewBox="0 0 23.866 23.866" id="menu-cross">
+        <path xmlns="http://www.w3.org/2000/svg" d="M15.087,11.933l8.56-8.559c0.293-0.293,0.293-0.768,0-1.061L21.554,0.22C21.413,0.079,21.223,0,21.023,0  s-0.39,0.079-0.53,0.22l-8.56,8.56L3.373,0.22c-0.282-0.282-0.78-0.282-1.061,0L0.22,2.313c-0.293,0.293-0.293,0.768,0,1.061  l8.56,8.559l-8.56,8.559c-0.293,0.293-0.293,0.768,0,1.061l2.093,2.094c0.141,0.141,0.331,0.22,0.53,0.22  c0.199,0,0.39-0.079,0.53-0.22l8.561-8.56l8.56,8.56c0.141,0.141,0.331,0.22,0.53,0.22s0.39-0.079,0.53-0.22l2.093-2.094  c0.293-0.293,0.293-0.768,0-1.061L15.087,11.933z"/>
       </symbol>
     </svg>
     <header class="main-header">
@@ -86,24 +95,18 @@
               <legend align="center" class="form-legend"><span>Когда вы путешествовали? *</span></legend>
               <div class="form__flex-wrapper">
                 <div class="form-input form-input--flex">
-                  <div class="form__center-wrapper">
                     <input class="form-input__input form-input__input--flex" type="text" name="depart-date" id="depart-date" value="1 апреля 2015" required>
                     <label class="form-input__label form-input__label--bottom" for="depart-date">Дата выезда</label>
                    </div>
-                </div>
                 <div class="form-input form-input--add form-input--flex">
-                  <div class="form__center-wrapper">
-                    <div class="form-input__plus-minus form-input__plus-minus--minus"></div>
-                    <input class="form-input__input form-input__input--add" type="text" name="travel-duration" id="travel-duration" value="10 дней">
-                    <div class="form-input__plus-minus form-input__plus-minus--plus"></div>
-                  </div>
+                  <div class="form-input__plus-minus form-input__plus-minus--minus"></div>
+                  <input class="form-input__input form-input__input--add" type="text" name="travel-duration" id="travel-duration" value="10 дней">
+                  <div class="form-input__plus-minus form-input__plus-minus--plus"></div>
                   <label class="form-input__label form-input__label--bottom" for="travel-duration">Продолжительность</label>
                 </div>
                 <div class="form-input form-input--flex">
-                  <div class="form__center-wrapper">
-                    <input class="form-input__input form-input__input--flex" type="text" name="return-date" id="return-date" value="1 апреля 2015" disabled>
-                    <label class="form-input__label form-input__label--bottom" for="return-date">Дата возвращения</label>
-                  </div>
+                  <input class="form-input__input form-input__input--flex" type="text" name="return-date" id="return-date" value="1 апреля 2015" disabled>
+                  <label class="form-input__label form-input__label--bottom" for="return-date">Дата возвращения</label>
                 </div>
               </div>
             </fieldset>
@@ -111,12 +114,10 @@
           <div class="companions">
             <fieldset>
               <legend align="center" class="form-legend"><span>Количество попутчиков *</span></legend>
-              <div class="form-input form-input--add">
-                <div class="form__center-wrapper">
-                  <div class="form-input__plus-minus form-input__plus-minus--minus"></div>
-                  <input class="form-input__input form-input__input--add" type="text" name="travel-duration" id="companions" value="2 чел" disabled required>
-                  <div class="form-input__plus-minus form-input__plus-minus--plus"></div>
-                </div>
+              <div class="form-input form-input--add form-input--add-wider">
+                <div class="form-input__plus-minus form-input__plus-minus--minus"></div>
+                <input class="form-input__input form-input__input--add form-input__input--add-wider" type="text" name="travel-duration" id="companions" value="2 чел" disabled required>
+                <div class="form-input__plus-minus form-input__plus-minus--plus"></div>
               </div>
               <hr class="form-divider">
               <div class="companion">
@@ -130,6 +131,7 @@
                   <label class="double-input__label" for="comp-nickname-1">Прозвище:</label>
                   <input class="double-input__input" type="text" name="comp-nickname-1" id="comp-nickname-1" value="Ну как же без этого!">
                 </div>
+                <div class="companion__delete">удалить</div>
               </div>
               <div class="companion">
                 <div class="number-input">
@@ -142,6 +144,7 @@
                   <label class="double-input__label" for="comp-nickname-2">Прозвище:</label>
                   <input class="double-input__input" type="text" name="comp-nickname-2" id="comp-nickname-2" value="Ну как же без этого!">
                 </div>
+                <div class="companion__delete">удалить</div>
               </div>
             </fieldset>
           </div>
@@ -181,22 +184,30 @@
               <hr class="form-divider form-divider--photos">
               <div class="photos__items">
                 <div class="photos__item">
-                  <div class="photos__close"></div>
+                  <div class="photos__close">
+                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
+                  </div>
                   <img class="photos__image" src="img/upload-image.png">
                   <div class="photos__label">IMG-1.JPG</div>
                 </div>
                 <div class="photos__item">
-                  <div class="photos__close"></div>
+                  <div class="photos__close">
+                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
+                  </div>
                   <img class="photos__image" src="img/upload-image.png">
                   <div class="photos__label">IMG-2.JPG</div>
                 </div>
                 <div class="photos__item">
-                  <div class="photos__close"></div>
+                  <div class="photos__close">
+                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
+                  </div>
                   <img class="photos__image" src="img/upload-image.png">
                   <div class="photos__label">IMG-3.JPG</div>
                 </div>
                 <div class="photos__item">
-                  <div class="photos__close"></div>
+                  <div class="photos__close">
+                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
+                  </div>
                   <img class="photos__image" src="img/upload-image.png">
                   <div class="photos__label">IMG-4.JPG</div>
                 </div>
@@ -204,10 +215,8 @@
             </fieldset>
           </div>
           <div class="submit">
-            <fieldset class="submit">
-              <input class="submit__input" type="submit" value="Отправить форму">
-              <div class="submit__required"><span class="submit__star">*</span> – обязательные поля</div>
-            </fieldset>
+            <input class="submit__input" type="submit" value="Отправить форму">
+            <div class="submit__required"><span class="submit__star">*</span><span class="submit__text"> – обязательные поля</span></div>
           </div>
         </form>
       </div>

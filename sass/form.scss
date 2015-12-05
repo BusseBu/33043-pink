@@ -6,7 +6,7 @@ form {
     padding: 40px 20px 44px 20px;
 
     @include tablet {
-      padding: 40px;
+      padding: 0 40px 58px;
     }
   }
 
@@ -34,7 +34,7 @@ fieldset {
 
   @include tablet {
     border: 2px solid $grey;
-    padding: 57px;
+    padding: 34px 57px 38px;
   }
 }
 
@@ -67,8 +67,19 @@ fieldset {
   }
 }
 
+
 input:disabled {
   background: #f2f2f2;
+}
+
+.application-form {
+
+  fieldset {
+
+    @include tablet {
+      padding: 49px 60px 56px;
+    }
+  }
 }
 
 .form-legend {
@@ -88,7 +99,7 @@ input:disabled {
 
   @include tablet {
     top: 0;
-    padding: 0 20px;
+    padding: 0 25px;
   }
 }
 
@@ -99,7 +110,7 @@ input:disabled {
   position: relative;
 
   &--radio {
-    margin-bottom: 44px;
+    margin-bottom: 43px;
 
     &__radio {
       display: none;
@@ -168,7 +179,7 @@ input:disabled {
     letter-spacing: 0;
 
     @include tablet {
-      padding: 0 0 10px 30px;
+      padding: 0 0 10px 22px;
     }
 
     &--bottom {
@@ -187,7 +198,23 @@ input:disabled {
   }
 
   &--add {
+    width: 280px;
     letter-spacing: -7px;
+
+    @include tablet {
+      width: 236px;
+    }
+  }
+
+  &--add-wider {
+
+    @include tablet {
+      width: 252px;
+
+      input:disabled {
+        background: #fff;
+      }
+    }
   }
 
   &__input {
@@ -201,18 +228,17 @@ input:disabled {
     margin: 0 auto;
 
     &--add {
-      width: 218px;
+      width: 100%;
       display: inline-block;
       vertical-align: middle;
       text-align: center;
-
-      @include tablet {
-        width: 236px;
-      }
     }
 
-    &--flex {
-      width: 240px;
+    &--add-wider {
+
+      @include tablet {
+        border: none;
+      }
     }
   }
 
@@ -222,7 +248,7 @@ input:disabled {
     display: inline-block;
     vertical-align: middle;
     letter-spacing: -7px;
-    width: 57px;
+    width: 59px;
     height: 59px;
     cursor: pointer;
 
@@ -239,8 +265,13 @@ input:disabled {
   }
 
   &--flex {
-    width: 48%;
-    margin-bottom: 35px;
+
+    width: 280px;
+
+    @include tablet {
+      width: 48%;
+      margin-bottom: 32px;
+    }
   }
 
   &--flex:last-child {
@@ -249,11 +280,32 @@ input:disabled {
 }
 
 .companion {
+  text-align: left;
   letter-spacing: -7px;
   margin-bottom: 35px;
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  &__delete {
+    display: none;
+    text-align: right;
+    letter-spacing: 0;
+    text-transform: uppercase;
+
+    @include tablet {
+      display: inline-block;
+      width: 19%;
+      vertical-align: top;
+      padding-top: 50px;
+      font-size: 14px;
+    }
+  }
+
+  @include tablet {
+    letter-spacing: 15px;
+    margin-bottom: 25px;
   }
 }
 
@@ -266,6 +318,10 @@ input:disabled {
 
   &--photos {
     margin: 33px 0 35px 0;
+  }
+
+  @include tablet {
+    margin: 41px 0 35px 0;
   }
 }
 
@@ -292,6 +348,11 @@ input:disabled {
     text-align: center;
     font-size: 18px;
     padding: 0;
+
+    @include tablet {
+      border-right: 2px solid $grey;
+    }
+
   }
 }
 
@@ -302,13 +363,14 @@ input:disabled {
   margin-bottom: 20px;
 
   &__input {
-    width: 174px;
+    width: 100%;
     border: 2px solid #e7e7e7;
     padding: 20px;
-    height: 20px;
+    height: 64px;
     font-size: 18px;
     color: #283645;
     margin-bottom: 20px;
+    box-sizing: border-box;
 
     &:last-child {
       margin-bottom: 0;
@@ -326,6 +388,10 @@ input:disabled {
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @include tablet {
+    width: 60%;
   }
 }
 
@@ -352,44 +418,79 @@ input:disabled {
   }
 
   &__item {
-    min-width: 77px;
+    min-width: 24%;
     position: relative;
-    margin-bottom: 25px;
+    margin: 0 10% 7% 0;
     text-align: left;
+
+    @include tablet {
+      margin: 0 10% 50px 0;
+    }
+  }
+
+  &__item:nth-child(3n) {
+    margin-right: 0;
   }
 
   &__close {
     position: absolute;
-    top: -15px;
-    right: -9px;
-    width: 20px;
-    height: 20px;
+    top: -13px;
+    right: -14px;
+    width: 19px;
+    height: 19px;
+    background: #fff;
     @include border-radius(50%);
-    background: #fff url('../img/no-grey.png') no-repeat 50% 50%;
     border: 5px solid #fff;
     @include box-shadow(0, 0, 0, 2px, rgba(229, 229, 229, 1));
     cursor: pointer;
+    text-align: center;
+
+    svg {
+      width: 12px;
+      height: 12px;
+      fill: #cacaca;
+
+      @include tablet {
+        width: 24px;
+        height: 24px;
+        padding-top: 10px;
+      }
+    }
+
+    @include tablet {
+      top: -23px;
+      right: -25px;
+      width: 41px;
+      height: 41px;
+    }
   }
 
   &__image {
-    width: 67px;
-    height: 68px;
+    width: 100%;
     margin-bottom: 2px;
+
+    @include tablet {
+      margin-bottom: 8px;
+    }
   }
 
   &__label {
     font-size: 12px;
+  }
+
+  fieldset {
+    padding-bottom: 0;
   }
 }
 
 .submit {
   padding-top: 25px;
 
-
   &__input {
     width: 100%;
     background: #2aab6d;
     padding: 19px;
+    height: 63px;
     font-size: 18px;
     font-weight: 700;
     color: #fff;
@@ -398,14 +499,29 @@ input:disabled {
     margin-bottom: 40px;
     text-transform: uppercase;
     cursor: pointer;
+
+    @include tablet {
+      width: 300px;
+      margin-bottom: 0;
+    }
   }
 
   &__required {
     font-size: 14px;
     text-transform: uppercase;
+
+    @include tablet {
+      padding: 21px 0;
+    }
   }
 
   &__star {
     color: $pink;
+  }
+
+  @include tablet {
+    padding-top: 65px;
+    display: flex;
+    justify-content: space-between;
   }
 }
