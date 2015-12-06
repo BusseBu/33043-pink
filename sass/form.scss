@@ -89,6 +89,14 @@ input:disabled {
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+  &--column {
+
+    @include desktop {
+      flex-direction: column;
+      height: 165px;
+    }
+  }
 }
 
 .personal-form {
@@ -174,6 +182,10 @@ input:disabled {
     margin-bottom: 0;
   }
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   &--radio {
     margin-bottom: 43px;
 
@@ -196,11 +208,24 @@ input:disabled {
           margin: -3px 25px 0 0;
           cursor:pointer;
         }
+
+        &:hover {
+          &:before {
+            @include box-shadow(0, 0, 0, 2px, rgba(40, 54, 69, 1));
+          }
+        }
+
+        &:active {
+          &:before {
+            @include box-shadow(0, 0, 0, 2px, rgba(210, 40, 86, 1));
+          }
+        }
       }
 
       &:checked + label:before {
         background: $pink;
       }
+
     }
 
     @include desktop {
@@ -211,7 +236,6 @@ input:disabled {
 
   &--checkbox {
     margin-bottom: 46px;
-
 
     &__checkbox {
       display: none;
@@ -236,6 +260,22 @@ input:disabled {
         margin: -3px 20px 0 0;
         cursor:pointer;
       }
+
+      &:hover {
+        &:before {
+          border: 2px solid $blue-text;
+        }
+      }
+
+      &:active {
+        &:before {
+          border: 2px solid $pink;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 46px;
     }
 
   }
@@ -271,9 +311,6 @@ input:disabled {
     }
   }
 
-  &:last-child {
-    margin-bottom: 0;
-  }
 
   &--add {
     width: 280px;
@@ -299,6 +336,23 @@ input:disabled {
     }
   }
 
+  &__minus {
+    height: 3px;
+    width: 27px;
+    background: #283645;
+    margin: 29px auto;
+  }
+
+  &__plus {
+    position: absolute;
+    height: 3px;
+    width: 27px;
+    background: #283645;
+    top: 29px;
+    left: 16px;
+    transform: rotate(90deg);
+  }
+
   &__input {
     width: 100%;
     border: 2px solid #e7e7e7;
@@ -309,17 +363,42 @@ input:disabled {
     box-sizing: border-box;
     margin: 0 auto;
 
+    &:hover {
+      border: 2px solid $blue-text;
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid $pink;
+    }
+
     &--add {
       width: 100%;
       display: inline-block;
       vertical-align: middle;
       text-align: center;
+
+      &:hover {
+        border: 2px solid $grey;
+      }
+
+      &:focus {
+        outline: none;
+        border: 2px solid $grey;
+      }
     }
 
     &--add-wider {
 
       @include tablet {
-        border: none;
+        border: 0;
+      }
+
+      &:hover {
+
+        @include tablet {
+          border: 0;
+        }
       }
     }
   }
@@ -337,12 +416,26 @@ input:disabled {
     &--minus {
       top: 0;
       left: 0;
-      background: #fff url('../img/plus-minus.png') no-repeat 0 0;
     }
     &--plus {
       top: 0;
       right: 0;
-      background: #fff url('../img/plus-minus.png') no-repeat -60px 0;
+    }
+
+    &:hover {
+      border: 2px solid $blue-text;
+    }
+
+    &:active {
+      background: $blue-text;
+
+      .form-input__minus {
+        background: #fff;
+      }
+
+      .form-input__plus {
+        background: #fff;
+      }
     }
   }
 
@@ -392,6 +485,14 @@ input:disabled {
       display: block;
       padding-top: 50px;
       font-size: 14px;
+    }
+
+    &:hover {
+      color: $pink;
+    }
+
+    &:active {
+      opacity: 0.3;
     }
   }
 
@@ -490,6 +591,15 @@ input:disabled {
     &:last-child {
       margin-bottom: 0;
     }
+
+    &:hover {
+      border: 2px solid $blue-text;
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid $pink;
+    }
   }
 
   &__label {
@@ -530,6 +640,17 @@ input:disabled {
     cursor: pointer;
     font-weight: 700;
     color: #283645;
+
+    &:hover {
+      border: 2px solid $blue-text;
+      outline: none;
+    }
+
+    &:active {
+      background: $blue-text;
+      color: #fff;
+      outline: none;
+    }
   }
 
   &__items {
@@ -539,13 +660,14 @@ input:disabled {
   }
 
   &__item {
-    min-width: 100px;
+    min-width: 80px;
     position: relative;
     text-align: left;
+    margin-right: 13px;
 
     @include tablet {
-      min-width: 150px;
-      margin-right: 20px;
+      min-width: 120px;
+      margin-right: 54px;
     }
   }
 
@@ -561,6 +683,7 @@ input:disabled {
     @include box-shadow(0, 0, 0, 2px, rgba(229, 229, 229, 1));
     cursor: pointer;
     text-align: center;
+    z-index: 1;
 
     svg {
       width: 12px;
@@ -579,6 +702,23 @@ input:disabled {
       left: 95px;
       width: 41px;
       height: 41px;
+    }
+
+    &:hover {
+      @include box-shadow(0, 0, 0, 2px, rgba(40, 54, 69, 1));
+
+      svg {
+        fill: $blue-text;
+      }
+    }
+
+    &:active {
+      border: 5px solid $blue-text;
+      background: $blue-text;
+
+      svg {
+        fill: #fff;
+      }
     }
   }
 
@@ -626,6 +766,18 @@ input:disabled {
     @include tablet {
       width: 300px;
       margin-bottom: 0;
+    }
+
+    &:hover {
+      outline: 0;
+      background: #1c9b5e;
+    }
+
+    &:active {
+      outline: 0;
+      span {
+        opacity: 0.3;
+      }
     }
   }
 

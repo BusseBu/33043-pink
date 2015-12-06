@@ -28,6 +28,17 @@
       padding: 9px 0 11px;
       margin: 0 auto 66px;
     }
+
+    &:hover {
+      background: #fff;
+      color: $pink;
+    }
+
+    &:active {
+      span {
+        opacity: 0.3;
+      }
+    }
   }
 
   &__icons {
@@ -86,6 +97,7 @@
   @include tablet {
     position: absolute;
     top: 348px;
+    left: 20px;
     background: none;
     width: 50%;
   }
@@ -93,6 +105,7 @@
   @include desktop {
     width: 47%;
     top: 417px;
+    left: 0;
   }
 }
 
@@ -371,8 +384,26 @@
     cursor: pointer;
     display: none;
 
+    svg {
+      fill: #bec2c7;
+    }
+
     &--right {
       transform: scale(-1,1);
+    }
+
+    @include desktop {
+      display: block;
+    }
+
+    &:hover {
+      svg {
+        fill: #7e868f;
+      }
+    }
+
+    &:active {
+      opacity: 0.3;
     }
   }
 
@@ -403,6 +434,10 @@
 
     svg {
       margin-right: 2px;
+    }
+
+    @include desktop {
+      display: block;
     }
   }
 
@@ -476,10 +511,20 @@
     display: inline-block;
     vertical-align: middle;
     margin-right: 15px;
-    width:5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
     background-color: #bec2c7;
     @include border-radius(50%);
+    cursor: pointer;
+
+    &:hover {
+      background-color: #7e868f;
+    }
+
+    &:active {
+      background-color: #bec2c7;
+      opacity: 0.3;
+    }
   }
 
   &__item:last-child {
@@ -773,6 +818,15 @@
       @include desktop {
         min-width: 33%;
         order: 3;
+      }
+
+      a:hover {
+        color: $blue-text;
+        text-decoration: underline;
+      }
+
+      a:active {
+        opacity: 0.3;
       }
     }
 

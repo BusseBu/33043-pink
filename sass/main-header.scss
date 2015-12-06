@@ -18,19 +18,32 @@
 
   &__toggle-icon {
     float:right;
-    width: 50px;
-    height: 24px;
     background-size: cover;
     z-index: 1;
     cursor: pointer;
 
-    &--opened {
-      background: url('../img/menu-cross.svg') no-repeat 50% 0;
-      background-size: cover;
+    svg {
+      width: 50px;
+      height: 24px;
+      fill: #fff;
     }
 
     @include desktop {
       display: none;
+    }
+
+    &:hover {
+
+      svg {
+        fill: $pink;
+      }
+    }
+
+    &:active {
+
+      svg {
+        opacity: 0.3;
+      }
     }
   }
 }

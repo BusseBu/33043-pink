@@ -23,30 +23,33 @@
     }
   }
 
-  &__logo {
-    position: relative;
-    width: 100%;
-    margin-bottom: 37px;
-    text-align: center;
-
-    @include tablet {
-      width: 33%;
-      margin: 0;
-      text-align: left;
-    }
-  }
-
   &__developed {
     width: 100%;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
     display: flex;
     justify-content: center;
+    cursor: pointer;
+    color: $blue-text;
 
     @include tablet {
       width: 33%;
-      padding-bottom: 0;
+      margin-bottom: 0;
       text-align: right;
       justify-content: flex-end;
+    }
+
+    &:hover {
+      color: $blue-text;
+      svg {
+        fill: $blue-text;
+      }
+    }
+
+    &:active {
+      color: $blue-text;
+      svg {
+        opacity: 0.3;
+      }
     }
   }
 
@@ -70,6 +73,7 @@
     height: 48px;
 
     svg {
+      fill: $pink;
       margin-top: 9px;
     }
   }
@@ -79,7 +83,7 @@
   display: flex;
   top: 2px;
   width: 170px;
-  margin: 0 auto 34px auto;
+  margin: 38px auto 34px auto;
   justify-content: space-between;
 
   &__item {
@@ -88,6 +92,14 @@
     @include border-radius(50%);
     border: 12px solid #fff;
     @include box-shadow(0, 0, 0, 3px, rgba(229, 229, 229, 1));
+
+    &:hover {
+      @include box-shadow(0, 0, 0, 3px, rgba(40, 54, 69, 1));
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
   }
 
   @include tablet {

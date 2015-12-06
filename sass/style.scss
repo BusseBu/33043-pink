@@ -19,6 +19,14 @@ body, p, h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:active {
+  color: $blue-text;
+}
+
 .main-wrapper {
   position: relative;
   width: 100%;
@@ -41,36 +49,169 @@ body, p, h1, h2, h3, h4, h5, h6 {
   position: absolute;
   left: 20px;
   top: 20px;
-  width: 74px;
-  height: 22px;
-  background: url('../img/logotype-white-mobile.svg');
+  text-decoration: none;
+
+  &__pink-star {
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 146px;
+    height: 40px;
+    fill: $pink;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__stars {
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 146px;
+    height: 40px;
+    fill: $pink;
+
+    &--footer {
+      fill: $blue-bg;
+    }
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__glasses {
+    display: none;
+    width: 59px;
+    height: 40px;
+    margin-right: 5px;
+    fill: #fff;
+
+    &--footer {
+      fill: $pink;
+      margin-right: 6px;
+    }
+
+    @include desktop {
+      display: inline;
+    }
+
+  }
+
+  &__full-glasses {
+    width: 59px;
+    height: 40px;
+    display: none;
+    margin-right: 5px;
+    fill: #fff;
+
+    &--footer {
+      display: inline;
+      fill: $pink;
+      margin-right: 6px;
+    }
+
+    @include tablet {
+      display: inline;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__letters {
+    display: inline;
+    width: 74px;
+    height: 22px;
+    fill: #fff;
+
+    &--footer {
+      fill: $blue-bg;
+    }
+
+    @include tablet {
+      width: 76px;
+      height: 24px;
+    }
+  }
 
   @include tablet {
     left: 40px;
     top: 25px;
     width: 146px;
     height: 40px;
-    background: url('../img/logotype-white-tablet.svg');
   }
 
   @include desktop {
     left: 130px;
-    background: url('../img/logotype-white-desktop.svg');
   }
 
   &--footer {
     position: relative;
+    width: 100%;
+    margin-bottom: 37px;
     text-align: center;
-    margin: 0 auto;
-    width: 150px;
-    height: 44px;
     left: 0;
     top: 0;
 
     @include tablet {
+      width: 33%;
       margin: 0;
-      top: -4px;
-      left: 0;
+      text-align: left;
+    }
+  }
+
+  &:hover {
+    svg {
+      fill: $pink;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+
+    .logo__pink-star {
+      fill: #fff;
+
+      &--footer {
+        fill: $pink;
+      }
+    }
+
+    .logo__stars {
+      fill: $pink;
+
+      &--footer {
+        fill: $blue-bg;
+      }
+    }
+
+    .logo__glasses {
+      fill: #fff;
+
+      &--footer {
+        fill: $pink;
+      }
+    }
+
+    .logo__full-glasses {
+      fill: #fff;
+
+      &--footer {
+        fill: $pink;
+      }
+    }
+
+    .logo__letters {
+      fill: #fff;
+
+      &--footer {
+        fill: $blue-bg;
+      }
     }
   }
 }
@@ -92,10 +233,16 @@ body, p, h1, h2, h3, h4, h5, h6 {
     }
   }
 
+  &__underline {
+    display: none;
+  }
+
   &__item {
     box-shadow: 0 -2px 0 -1px rgba(72, 84, 97, 1), 0 -3px 0 -1px rgba(0, 0, 0, 1);
     padding: 25px;
     text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
 
     @include desktop {
       background: none;
@@ -111,13 +258,44 @@ body, p, h1, h2, h3, h4, h5, h6 {
       text-decoration: none;
       color: #fff;
     }
-  }
 
-  &__item:last-child {
-    border-bottom: 1px solid #000;
+    &:last-child {
+      border-bottom: 1px solid #000;
 
-    @include desktop {
-      margin-right: 0;
+      @include desktop {
+        margin-right: 0;
+        border-bottom: 0;
+      }
+    }
+
+    &:hover {
+      a {
+        color: $pink;
+
+        @include desktop {
+          color: #fff;
+        }
+      }
+
+      .top-navigation__underline {
+        @include desktop {
+          display: block;
+          width: 100%;
+          height: 2px;
+          margin-top: 5px;
+          background: #fff;
+          top: 20px;
+        }
+      }
+    }
+    &:active {
+      a {
+        opacity: 0.3
+      }
+
+      .top-navigation__underline {
+        display: none;
+      }
     }
   }
 
@@ -141,13 +319,15 @@ body, p, h1, h2, h3, h4, h5, h6 {
   h2 {
     font-size: 24px;
     font-weight: 300;
-    padding: 0 30px 27px 30px;
+    padding: 0 30px 27px;
 
     @include tablet {
       width: 300px;
       font-size: 40px;
       line-height: 48px;
       margin: 0 auto;
+      padding: 0 30px;
+      box-sizing: border-box;
     }
 
     @include desktop {
@@ -160,7 +340,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
     width: 50%;
     position: absolute;
     top: 200px;
-    left: 10px;
+    left: 20px;
   }
 
   @include desktop {
@@ -181,6 +361,12 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
   &--contacts:first-child {
     padding-bottom: 0;
+  }
+
+  @include tablet {
+    font-size: 40px;
+    line-height: 48px;
+    padding: 0 40px;
   }
 
   @include desktop {
