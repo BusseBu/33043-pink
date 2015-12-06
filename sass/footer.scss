@@ -17,6 +17,10 @@
       padding: 40px;
       justify-content: space-between;
     }
+
+    @include desktop {
+      padding: 75px 130px;
+    }
   }
 
   &__logo {
@@ -52,8 +56,13 @@
     font-size: 14px;
 
     @include tablet {
-
       margin-right: 12px;
+    }
+
+    @include desktop {
+      margin-right: 14px;
+      font-size: 18px;
+      padding: 11px 0;
     }
   }
 
@@ -64,7 +73,6 @@
       margin-top: 9px;
     }
   }
-
 }
 
 .social-icons {
@@ -84,6 +92,6 @@
 
   @include tablet {
     margin: 4px 0 0;
-    width: 27%;
+    width: 169px;
   }
 }

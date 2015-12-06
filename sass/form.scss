@@ -8,6 +8,10 @@ form {
     @include tablet {
       padding: 0 40px 58px;
     }
+
+    @include desktop {
+      padding: 0 130px 57px;
+    }
   }
 
   &>div:nth-child(n+1) {
@@ -38,38 +42,64 @@ fieldset {
   }
 }
 
-.form {
-  &__center-wrapper {
-    position: relative;
-    margin: 0 auto;
-    width: 277px;
-
-    @include tablet {
-      width: 236px;
-    }
-  }
-
-  &__flex-wrapper {
-
-    @include tablet {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-  }
-}
-
-.fieldset {
-  &--borderless {
-    border: 0;
-    padding: 0;
-  }
-}
-
-
 input:disabled {
   background: #f2f2f2;
+}
+
+
+.form-main-headline {
+  position: relative;
+  line-height: 30px;
+  color: #fff;
+  padding: 0 30px 51px 30px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 300;
+
+    @include tablet {
+      font-size: 50px;
+      line-height: 60px;
+      margin: 0 auto;
+    }
+
+    @include desktop {
+      padding: 0;
+    }
+  }
+
+  @include tablet {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 40px 80px;
+  }
+
+  @include desktop {
+    padding: 0 130px 100px;
+  }
+}
+
+.form-flex-wrapper {
+
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.personal-form {
+
+  fieldset {
+
+    @include tablet {
+      border: 0;
+      padding: 0;
+    }
+  }
 }
 
 .application-form {
@@ -78,6 +108,36 @@ input:disabled {
 
     @include tablet {
       padding: 49px 60px 56px;
+    }
+  }
+}
+
+.travel-form {
+
+  fieldset {
+
+    @include desktop {
+      padding: 32px 57px 19px;
+    }
+  }
+}
+
+.companions {
+
+  fieldset {
+
+    @include desktop {
+      padding: 34px 57px 37px;
+    }
+  }
+}
+
+.achievements {
+
+  fieldset {
+
+    @include desktop {
+      padding: 45px 57px 10px;
     }
   }
 }
@@ -109,6 +169,11 @@ input:disabled {
   text-align: left;
   position: relative;
 
+  @include desktop {
+    width: 32%;
+    margin-bottom: 0;
+  }
+
   &--radio {
     margin-bottom: 43px;
 
@@ -136,6 +201,11 @@ input:disabled {
       &:checked + label:before {
         background: $pink;
       }
+    }
+
+    @include desktop {
+      margin-bottom: 0;
+      width: auto;
     }
   }
 
@@ -167,6 +237,7 @@ input:disabled {
         cursor:pointer;
       }
     }
+
   }
 
   &__label {
@@ -184,11 +255,18 @@ input:disabled {
 
     &--bottom {
       text-align: center;
-      padding: 13px 0 0 0;
+      padding: 13px 0 0;
 
       @include tablet {
         text-align: left;
         padding: 15px 0 0 30px;
+      }
+    }
+
+    &--center {
+      @include tablet {
+        text-align: center;
+        padding: 15px 0 0;
       }
     }
   }
@@ -203,6 +281,10 @@ input:disabled {
 
     @include tablet {
       width: 236px;
+    }
+
+    @include desktop {
+      width: 252px;
     }
   }
 
@@ -265,12 +347,15 @@ input:disabled {
   }
 
   &--flex {
-
     width: 280px;
 
     @include tablet {
-      width: 48%;
+      width: 240px;
       margin-bottom: 32px;
+    }
+
+    @include desktop {
+      margin-bottom: 0;
     }
   }
 
@@ -279,33 +364,43 @@ input:disabled {
   }
 }
 
+
+
 .companion {
   text-align: left;
-  letter-spacing: -7px;
   margin-bottom: 35px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 
   &:last-child {
     margin-bottom: 0;
   }
 
+  &__wrapper {
+    display: flex;
+    justify-content: flex-start;
+  }
+
   &__delete {
     display: none;
     text-align: right;
-    letter-spacing: 0;
     text-transform: uppercase;
+    cursor: pointer;
 
     @include tablet {
-      display: inline-block;
-      width: 19%;
-      vertical-align: top;
+      display: block;
       padding-top: 50px;
       font-size: 14px;
     }
   }
 
   @include tablet {
-    letter-spacing: 15px;
     margin-bottom: 25px;
+  }
+
+  @include desktop {
+    margin-bottom: 7px;
   }
 }
 
@@ -316,20 +411,23 @@ input:disabled {
   width: 100%;
   background-color: $grey;
 
-  &--photos {
-    margin: 33px 0 35px 0;
+  @include tablet {
+    margin: 41px 0 34px 0;
   }
 
-  @include tablet {
-    margin: 41px 0 35px 0;
+  &--photos {
+    margin: 33px 0 35px 0;
+
+    @include desktop {
+      margin: 40px 0 63px 0;
+    }
   }
+
 }
 
 .number-input {
-  display: inline-block;
-  vertical-align: top;
 
-  &__label {
+   &__label {
     font-size: 14px;
     color: $pink;
     text-transform: uppercase;
@@ -352,15 +450,32 @@ input:disabled {
     @include tablet {
       border-right: 2px solid $grey;
     }
+  }
 
+  @include tablet {
+    margin-right: 20px;
   }
 }
 
 .double-input {
-  display: inline-block;
-  vertical-align: top;
-  width: 218px;
-  margin-bottom: 20px;
+
+  &__wrap {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    width: 100%;
+
+    &--comp-name {
+
+      @include tablet {
+        margin-right: 15px;
+      }
+    }
+
+    @include tablet {
+      width: 300px;
+    }
+  }
 
   &__input {
     width: 100%;
@@ -376,6 +491,7 @@ input:disabled {
       margin-bottom: 0;
     }
   }
+
   &__label {
     display: block;
     text-transform: uppercase;
@@ -384,15 +500,20 @@ input:disabled {
     color: $pink;
     text-align: left;
     padding: 0 0 10px 20px;
+
+    @include desktop {
+      padding: 0 0 10px 22px;
+    }
   }
 
   &:last-child {
     margin-bottom: 0;
   }
 
-  @include tablet {
-    width: 60%;
+  @include desktop {
+    margin-right: 15px;
   }
+
 }
 
 .photos {
@@ -413,29 +534,25 @@ input:disabled {
 
   &__items {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
 
   &__item {
-    min-width: 24%;
+    min-width: 100px;
     position: relative;
-    margin: 0 10% 7% 0;
     text-align: left;
 
     @include tablet {
-      margin: 0 10% 50px 0;
+      min-width: 150px;
+      margin-right: 20px;
     }
-  }
-
-  &__item:nth-child(3n) {
-    margin-right: 0;
   }
 
   &__close {
     position: absolute;
     top: -13px;
-    right: -14px;
+    left: 65px;
     width: 19px;
     height: 19px;
     background: #fff;
@@ -459,27 +576,33 @@ input:disabled {
 
     @include tablet {
       top: -23px;
-      right: -25px;
+      left: 95px;
       width: 41px;
       height: 41px;
     }
   }
 
   &__image {
-    width: 100%;
+    width: 80px;
     margin-bottom: 2px;
 
     @include tablet {
+      width: 120px;
       margin-bottom: 8px;
     }
   }
 
   &__label {
     font-size: 12px;
+    margin-bottom: 27px;
   }
 
   fieldset {
     padding-bottom: 0;
+
+    @include desktop {
+      padding-bottom: 30px;
+    }
   }
 }
 
@@ -519,9 +642,21 @@ input:disabled {
     color: $pink;
   }
 
+  &__add-text {
+    display: none;
+
+    @include desktop {
+      display: inline;
+    }
+  }
+
   @include tablet {
     padding-top: 65px;
     display: flex;
     justify-content: space-between;
+  }
+
+  @include desktop {
+    padding-bottom: 0;
   }
 }

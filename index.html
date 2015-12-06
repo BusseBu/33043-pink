@@ -37,6 +37,12 @@
       <symbol width="23.866px" height="23.866px" viewBox="0 0 23.866 23.866" id="menu-cross">
         <path xmlns="http://www.w3.org/2000/svg" d="M15.087,11.933l8.56-8.559c0.293-0.293,0.293-0.768,0-1.061L21.554,0.22C21.413,0.079,21.223,0,21.023,0  s-0.39,0.079-0.53,0.22l-8.56,8.56L3.373,0.22c-0.282-0.282-0.78-0.282-1.061,0L0.22,2.313c-0.293,0.293-0.293,0.768,0,1.061  l8.56,8.559l-8.56,8.559c-0.293,0.293-0.293,0.768,0,1.061l2.093,2.094c0.141,0.141,0.331,0.22,0.53,0.22  c0.199,0,0.39-0.079,0.53-0.22l8.561-8.56l8.56,8.56c0.141,0.141,0.331,0.22,0.53,0.22s0.39-0.079,0.53-0.22l2.093-2.094  c0.293-0.293,0.293-0.768,0-1.061L15.087,11.933z"/>
       </symbol>
+      <symbol width="78.673px" height="63.788px" viewBox="0 0 78.673 63.788" id="quote">
+        <path xmlns="http://www.w3.org/2000/svg" d="M72.354,39.632c-2.797-2.401-6.636-3.604-11.518-3.604h-5.67c0.473-4.081,1.278-7.397,2.421-9.948   c1.141-2.551,2.854-5.044,5.139-7.477c2.363-2.51,4.685-4.531,6.97-6.063c2.283-1.53,5.274-3.356,8.978-5.477L74.42,0   c-2.441,1.495-5.474,3.42-9.096,5.779c-3.623,2.359-7.048,5.228-10.276,8.607c-3.151,3.302-5.83,7.056-8.033,11.261   c-2.206,4.204-3.308,8.861-3.308,13.97c0,7.232,1.456,13.07,4.371,17.511c2.913,4.44,7.755,6.661,14.529,6.661   c4.33,0,7.737-1.436,10.218-4.311s3.721-5.967,3.721-9.273C76.546,45.559,75.147,42.034,72.354,39.632z"/>
+      </symbol>
+      <symbol width="21.706px" height="41.719px" viewBox="0 0 21.706 41.719" id="arrow-left">
+        <path xmlns="http://www.w3.org/2000/svg" d="M2.045,20.859L21.458,1.446c0.331-0.331,0.331-0.867,0-1.198c-0.33-0.331-0.867-0.331-1.197,0L0.248,20.261  c-0.331,0.33-0.331,0.867,0,1.197l20.013,20.013c0.164,0.165,0.382,0.248,0.599,0.248s0.434-0.083,0.599-0.248  c0.331-0.331,0.331-0.867,0-1.198L2.045,20.859z"/>
+      </symbol>
     </svg>
     <svg style="display:none" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          width="100%" height="94.074px" viewBox="0 0 1200 94.074">
@@ -52,10 +58,10 @@
         </div>
         <nav class="top-navigation">
           <ul class="top-navigation__list">
-            <li class="top-navigation__item"><a>Информация</a></li>
-            <li class="top-navigation__item"><a>Блог</a></li>
-            <li class="top-navigation__item"><a>Отзывы</a></li>
-            <li class="top-navigation__item"><a>Конкурс</a></li>
+            <li class="top-navigation__item"><a href="#">Информация</a></li>
+            <li class="top-navigation__item"><a href="#">Блог</a></li>
+            <li class="top-navigation__item"><a href="#">Отзывы</a></li>
+            <li class="top-navigation__item"><a href="#">Конкурс</a></li>
           </ul>
         </nav>
       </div>
@@ -63,7 +69,9 @@
     <main class="main-page">
       <div class="main-wrapper">
         <section class="intro">
-          <h2 class="main-headline main-headline--white">Взгляните на жизнь иначе!</h2>
+          <div class="main-headline">
+            <h2>Взгляните на жизнь иначе!</h2>
+          </div>
           <div class="intro__image"></div>
           <div class="applications">
             <a href="#" class="applications__button">Скачать приложение</a>
@@ -86,15 +94,24 @@
           <div class="information__items-wrapper">
             <div class="information__items">
               <div class="information__item">
-                <h4 class="sub-headline">Поднимает настроение</h4>
+                <div class="information__small-image">
+                  <img width="292" height="302" src="img/iphone-screen-desktop-1@1x.png" />
+                </div>
+                <h4 class="information__headline">Поднимает настроение</h4>
                 <p class="information__text">Приложение позволит Вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
               </div>
               <div class="information__item">
-                <h4 class="sub-headline">Меняет мир вокруг</h4>
+                <div class="information__small-image">
+                  <img width="292" height="302" src="img/iphone-screen-desktop-2@1x.png" />
+                </div>
+                <h4 class="information__headline">Меняет мир вокруг</h4>
                 <p class="information__text">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
               </div>
               <div class="information__item">
-                <h4 class="sub-headline">Заводит новых друзей</h4>
+                <div class="information__small-image">
+                  <img width="292" height="302" src="img/iphone-screen-desktop-3@1x.png" />
+                </div>
+                <h4 class="information__headline">Заводит новых друзей</h4>
                 <p class="information__text">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
               </div>
             </div>
@@ -105,7 +122,7 @@
         </section>
         <section class="article-brief">
           <div class="article-brief__image">
-            <svg width="260" height="300" viewBox="0 0 298 345">
+            <svg viewBox="0 0 298 345">
               <g fill="#dedede" opacity="0.5" id="article-brief__image-timer">
                 <path d="M293.057,157.98c-5.442-20.657-15.198-39.563-28.273-55.688l8.567-8.563c6.074-6.077,6.074-15.928,0-21.999
                 c-3.334-3.34-7.78-4.656-12.129-4.333c-3.596,0.254-7.146,1.596-9.866,4.333l-8.563,8.56c-9.083-7.354-19.081-13.552-29.734-18.627
@@ -134,19 +151,26 @@
             </svg>
           </div>
           <div class="article-brief__brief">
-            <h3 class="article-brief__headline">Эффект<br /> на 24 часа!</h3>
+            <h3 class="article-brief__headline">Эффект на 24 часа!</h3>
             <p class="article-brief__text">Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</p>
             <a class="article-brief__more" href="#">Узнать больше об исследовании</a>
           </div>
         </section>
         <section class="reviews">
+          <div class="reviews__arrow reviews__arrow--left">
+            <svg width="21.706px" height="41.719px" fill="#bec2c7" viewBox="0 0 21.706 41.719"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left"></use></svg>
+          </div>
           <div class="reviews__wrap">
             <div class="reviews__item">
               <div class="reviews__author">
                 <h4 class="reviews__name">Николай Петров</h4>
-                <p class="reviews__who">25лет, водитель трамвая</p>
+                <p class="reviews__who">25 лет, водитель трамвая</p>
               </div>
               <p class="reviews__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на привычные серые вещи! А еще я познакомился со своей будущей женой в комментариях к выложенной фотографии!»</p>
+              <div class="reviews__quotes">
+                <svg width="34" height="63" fill="#efefef" viewbox="43 0 33 64"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
+                <svg width="34" height="63" fill="#efefef" viewbox="43 0 33 64"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
+              </div>
             </div>
             <div class="reviews__item">
               <h3></h3>
@@ -161,6 +185,9 @@
             <div class="switches__item switches__item--active"></div>
             <div class="switches__item"></div>
             <div class="switches__item"></div>
+          </div>
+          <div class="reviews__arrow reviews__arrow--right">
+            <svg width="21.706px" height="41.719px" fill="#bec2c7" viewBox="0 0 21.706 41.719"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-left"></use></svg>
           </div>
         </section>
         <section class="prices">
@@ -262,16 +289,16 @@
             <h3 class="headline">Свяжитесь с нами!</h3>
           </div>
           <div class="contacts__wrap">
-            <div class="contacts__item">
-              <h4 class="sub-headline sub-headline--contacts">Звоните:</h4>
+            <div class="contacts__item contacts__item--phone">
+              <h4 class="contacts__item-headline sub-headline--contacts">Звоните:</h4>
               <a class="contacts__link" href="tel:+7812555-66-66">+7 (812) 555-66-66</a>
             </div>
-            <div class="contacts__item">
-              <h4 class="sub-headline sub-headline--contacts">Пишите:</h4>
+            <div class="contacts__item contacts__item--mail">
+              <h4 class="contacts__item-headline sub-headline--contacts">Пишите:</h4>
               <a class="contacts__link" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
             </div>
-            <div class="contacts__item">
-              <h4 class="sub-headline sub-headline--contacts">Приезжайте в гости:</h4>
+            <div class="contacts__item contacts__item--address">
+              <h4 class="contacts__item-headline sub-headline--contacts">Приезжайте в гости:</h4>
               <p class="contacts__link">ул. Большая<br>Конюшенная, 19/8</p>
             </div>
           </div>

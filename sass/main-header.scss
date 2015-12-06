@@ -28,5 +28,9 @@
       background: url('../img/menu-cross.svg') no-repeat 50% 0;
       background-size: cover;
     }
+
+    @include desktop {
+      display: none;
+    }
   }
 }

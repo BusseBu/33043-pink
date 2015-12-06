@@ -31,7 +31,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
   }
 
   @include tablet {
-    max-width: 700px;
+    max-width: 1200px;
   }
 }
 
@@ -51,6 +51,11 @@ body, p, h1, h2, h3, h4, h5, h6 {
     width: 146px;
     height: 40px;
     background: url('../img/logotype-white-tablet.svg');
+  }
+
+  @include desktop {
+    left: 130px;
+    background: url('../img/logotype-white-desktop.svg');
   }
 
   &--footer {
@@ -81,52 +86,87 @@ body, p, h1, h2, h3, h4, h5, h6 {
     list-style: none;
     margin: 0;
     padding: 0;
+
+    @include desktop {
+      display: flex;
+    }
   }
 
   &__item {
     box-shadow: 0 -2px 0 -1px rgba(72, 84, 97, 1), 0 -3px 0 -1px rgba(0, 0, 0, 1);
     padding: 25px;
     text-transform: uppercase;
+
+    @include desktop {
+      background: none;
+      font-size: 18px;
+      text-transform: none;
+      font-weight: 200;
+      box-shadow: none;
+      margin-right: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
   }
 
   &__item:last-child {
     border-bottom: 1px solid #000;
+
+    @include desktop {
+      margin-right: 0;
+    }
+  }
+
+  @include desktop {
+    display: block;
+  }
+
+  @include desktop {
+    position: absolute;
+    right: 103px;
+    top: 16px;
+    background: none;
   }
 }
 
 .main-headline {
-  font-size: 24px;
   position: relative;
-  font-weight: 300;
-  padding: 0 30px 27px 30px;
   line-height: 30px;
-  color: $blue-text;
+  color: #fff;
 
-  &--white {
-    color: #fff;
+  h2 {
+    font-size: 24px;
+    font-weight: 300;
+    padding: 0 30px 27px 30px;
+
+    @include tablet {
+      width: 300px;
+      font-size: 40px;
+      line-height: 48px;
+      margin: 0 auto;
+    }
+
+    @include desktop {
+      font-size: 50px;
+      line-height: 60px;
+    }
   }
 
   @include tablet {
+    width: 50%;
     position: absolute;
-    left: 57px;
     top: 200px;
-    width: 30%;
-    padding: 0 30px;
-    font-size: 40px;
-    line-height: 48px;
+    left: 10px;
   }
 
-  &--form {
-    @include tablet {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      font-size: 50px;
-      line-height: 60px;
-      padding: 0 50px 80px;
-      box-sizing: border-box;
-    }
+  @include desktop {
+    width: 47%;
+    left: 0;
+    top: 213px;
   }
 }
 
@@ -142,46 +182,71 @@ body, p, h1, h2, h3, h4, h5, h6 {
   &--contacts:first-child {
     padding-bottom: 0;
   }
+
+  @include desktop {
+    font-size: 50px;
+    line-height: 60px;
+    padding: 0 130px;
+  }
 }
 
 .headline:last-child {
   padding-bottom: 0;
 }
 
-.sub-headline {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 12px;
-
-  &--contacts {
-    margin-bottom: 5px;
-  }
-}
-
 .intro {
   background: url('../img/background-mobile@1x.jpg') no-repeat 50% 0;
   position: relative;
-  background-size: cover;
   padding-top: 85px;
   min-height: 137px;
+  background-size: cover;
 
   &__image {
     height: 285px;
     width: 320px;
     margin: 0 auto;
-    text-align: left;
+    text-align: right;
     background: url('../img/iphone-hand-mobile.png') no-repeat 0 0;
 
     @include tablet {
       height: 544px;
       width: 656px;
       background: url('../img/iphone-hand-tablet@1x.png') no-repeat 0 0;
+      margin-right: 15%;
+      text-align: right;
+    }
+
+    @include desktop {
+      height: 645px;
+      width: 884px;
+      margin-right: 14%;
+      background: url('../img/iphone-hand-desktop@1x.png') no-repeat 0 0;
     }
   }
 
   @include tablet {
     padding-top: 183px;
     background: url('../img/background-tablet@1x.jpg') no-repeat 50% 0;
+    background-size: cover;
+  }
+
+  @include desktop {
+    padding-top: 204px;
+    background: url('../img/background-fullsize.jpg') no-repeat 50% 0;
+    background-size: cover;
+  }
+
+  &--form {
+
+    padding-top: 96px;
+
+    @include tablet {
+      padding-top: 180px;
+    }
+
+    @include desktop {
+      padding-top: 172px;
+    }
   }
 }
 
@@ -203,12 +268,13 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
     @include tablet {
       font-size: 18px;
-      padding: 18px 100px 42px;
+      padding: 18px 70px 42px;
     }
-  }
 
-  &--intro {
-    font-size: 18px;
+    @include desktop {
+      font-size: 18px;
+      padding: 18px 200px 72px;
+    }
   }
 
   span {
@@ -217,35 +283,10 @@ body, p, h1, h2, h3, h4, h5, h6 {
     @include tablet {
       display: block;
     }
-  }
-}
 
-.main-divider {
-  position: absolute;
-  width: 100%;
-
-  &--information{
-    svg {
-      use {
-        transform: translate(0, 0px);
-
-        @include tablet {
-          transform: translate(450px, 0px);
-        }
-      }
+    @include desktop {
+      display: inline;
     }
-  }
-
-
-  &--prices {
-    position: relative;
-
-    svg {
-      use {
-        transform: translate(0px, 0px);
-      }
-    }
-
   }
 }
 

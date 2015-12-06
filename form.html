@@ -42,67 +42,73 @@
         </div>
         <nav class="top-navigation">
           <ul class="top-navigation__list">
-            <li class="top-navigation__item"><a>Информация</a></li>
-            <li class="top-navigation__item"><a>Блог</a></li>
-            <li class="top-navigation__item"><a>Отзывы</a></li>
-            <li class="top-navigation__item"><a>Конкурс</a></li>
+            <li class="top-navigation__item"><a href="#">Информация</a></li>
+            <li class="top-navigation__item"><a href="#">Блог</a></li>
+            <li class="top-navigation__item"><a href="#">Отзывы</a></li>
+            <li class="top-navigation__item"><a href="#">Конкурс</a></li>
           </ul>
         </nav>
       </div>
     </header>
     <main class="form-page">
       <div class="main-wrapper">
-        <section class="intro">
-          <h2 class="main-headline main-headline--white main-headline--form">Конкурс на самое безбашеное путешествие с Пинк</h2>
+        <section class="intro intro--form">
+          <div class="form-main-headline">
+            <h2>Конкурс на самое безбашенное путешествие с Пинк</h2>
+          </div>
         </section>
         <form action="/echo" method="post">
-          <p class="text text--form">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту!<span>Пожалуйста, заполните форму ниже:</span></p>
+          <p class="text text--form">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span>Пожалуйста, заполните форму ниже:</span></p>
           <div class="personal-form">
-            <fieldset class="fieldset--borderless">
-              <div class="form-input">
-                <label class="form-input__label" for="name">Имя: *</label>
-                <input class="form-input__input" type="text" name="name" id="name" value="Введите ваше имя" required>
-              </div>
-              <div class="form-input">
-                <label class="form-input__label" for="last-name">Фамилия: *</label>
-                <input class="form-input__input" type="text" name="last-name" id="last-name" value="Укажите фамилию" required>
-              </div>
-              <div class="form-input">
-                <label class="form-input__label" for="surname">Отчество:</label>
-                <input class="form-input__input" type="text" name="surname" id="surname" value="Ну и отчество тоже">
+            <fieldset>
+              <div class="form-flex-wrapper">
+                <div class="form-input">
+                  <label class="form-input__label" for="name">Имя: *</label>
+                  <input class="form-input__input" type="text" name="name" id="name" value="Введите ваше имя" required>
+                </div>
+                <div class="form-input">
+                  <label class="form-input__label" for="last-name">Фамилия: *</label>
+                  <input class="form-input__input" type="text" name="last-name" id="last-name" value="Укажите фамилию" required>
+                </div>
+                <div class="form-input">
+                  <label class="form-input__label" for="surname">Отчество:</label>
+                  <input class="form-input__input" type="text" name="surname" id="surname" value="Ну и отчество тоже">
+                </div>
               </div>
             </fieldset>
           </div>
           <div class="application-form">
             <fieldset>
               <legend align="center" class="form-legend"><span>С каким приложением путешествовали? *</span></legend>
-              <div class="form-input form-input--radio">
-                <input class="form-input--radio__radio" type="radio" name="app-check" id="app-ios" checked required>
-                <label for="app-ios" class="form-input--radio__label">Pink для iOS</label>
-              </div>
-              <div class="form-input form-input--radio">
-                <input class="form-input--radio__radio" type="radio" name="app-check" id="app-android">
-                <label for="app-android" class="form-input--radio__label">Pink для Android</label>
-              </div>
-              <div class="form-input form-input--radio">
-                <input class="form-input--radio__radio" type="radio" name="app-check" id="app-wphone">
-                <label for="app-wphone" class="form-input--radio__label">Windows Phone</label>
+              <div class="form-flex-wrapper">
+                <div class="form-input form-input--radio">
+                  <input class="form-input--radio__radio" type="radio" name="app-check" id="app-ios" checked required>
+                  <label for="app-ios" class="form-input--radio__label">Pink для iOS</label>
+                </div>
+                <div class="form-input form-input--radio">
+                  <input class="form-input--radio__radio" type="radio" name="app-check" id="app-android">
+                  <label for="app-android" class="form-input--radio__label">Pink для Android</label>
+                </div>
+                <div class="form-input form-input--radio">
+                  <input class="form-input--radio__radio" type="radio" name="app-check" id="app-wphone">
+                  <label for="app-wphone" class="form-input--radio__label">Windows Phone</label>
+                </div>
               </div>
             </fieldset>
           </div>
           <div class="travel-form">
             <fieldset>
               <legend align="center" class="form-legend"><span>Когда вы путешествовали? *</span></legend>
-              <div class="form__flex-wrapper">
+              <div class="form-flex-wrapper">
                 <div class="form-input form-input--flex">
                     <input class="form-input__input form-input__input--flex" type="text" name="depart-date" id="depart-date" value="1 апреля 2015" required>
                     <label class="form-input__label form-input__label--bottom" for="depart-date">Дата выезда</label>
                    </div>
-                <div class="form-input form-input--add form-input--flex">
+                <div class="form-input form-input--add">
                   <div class="form-input__plus-minus form-input__plus-minus--minus"></div>
                   <input class="form-input__input form-input__input--add" type="text" name="travel-duration" id="travel-duration" value="10 дней">
                   <div class="form-input__plus-minus form-input__plus-minus--plus"></div>
-                  <label class="form-input__label form-input__label--bottom" for="travel-duration">Продолжительность</label>
+                  <label class="form-input__label form-input__label--bottom form-input__label--center" for="travel-duration">Продолжительность</label>
                 </div>
                 <div class="form-input form-input--flex">
                   <input class="form-input__input form-input__input--flex" type="text" name="return-date" id="return-date" value="1 апреля 2015" disabled>
@@ -121,28 +127,40 @@
               </div>
               <hr class="form-divider">
               <div class="companion">
-                <div class="number-input">
-                  <label class="number-input__label" for="list-number-1">№</label>
-                  <input class="number-input__input" type="text" name="list-number-1" id="list-number-1" value="1" disabled>
-                </div>
-                <div class="double-input">
-                  <label class="double-input__label" for="comp-name-1">Имя: *</label>
-                  <input class="double-input__input" type="text" name="comp-name-1" id="comp-name-1" value="Введите ваше имя" required>
-                  <label class="double-input__label" for="comp-nickname-1">Прозвище:</label>
-                  <input class="double-input__input" type="text" name="comp-nickname-1" id="comp-nickname-1" value="Ну как же без этого!">
+                <div class="companion__wrapper">
+                  <div class="number-input">
+                    <label class="number-input__label" for="list-number-1">№</label>
+                    <input class="number-input__input" type="text" name="list-number-1" id="list-number-1" value="1" disabled>
+                  </div>
+                  <div class="double-input">
+                    <div class="double-input__wrap double-input__wrap--comp-name">
+                      <label class="double-input__label" for="comp-name-1">Имя: *</label>
+                      <input class="double-input__input" type="text" name="comp-name-1" id="comp-name-1" value="Введите ваше имя" required>
+                    </div>
+                    <div class="double-input__wrap double-input__wrap--comp-nickname">
+                      <label class="double-input__label" for="comp-nickname-1">Прозвище:</label>
+                      <input class="double-input__input" type="text" name="comp-nickname-1" id="comp-nickname-1" value="Ну как же без этого!">
+                    </div>
+                  </div>
                 </div>
                 <div class="companion__delete">удалить</div>
               </div>
               <div class="companion">
-                <div class="number-input">
-                  <label class="number-input__label" for="list-number-2">№</label>
-                  <input class="number-input__input" type="text" name="list-number-2" id="list-number-2" value="2" disabled>
-                </div>
-                <div class="double-input">
-                  <label class="double-input__label" for="comp-name-2">Имя: *</label>
-                  <input class="double-input__input" type="text" name="comp-name-2" id="comp-name-2" value="Введите ваше имя" required>
-                  <label class="double-input__label" for="comp-nickname-2">Прозвище:</label>
-                  <input class="double-input__input" type="text" name="comp-nickname-2" id="comp-nickname-2" value="Ну как же без этого!">
+                <div class="companion__wrapper">
+                  <div class="number-input">
+                    <label class="number-input__label" for="list-number-2">№</label>
+                    <input class="number-input__input" type="text" name="list-number-2" id="list-number-2" value="2" disabled>
+                  </div>
+                  <div class="double-input">
+                    <div class="double-input__wrap double-input__wrap--comp-name">
+                      <label class="double-input__label" for="comp-name-2">Имя: *</label>
+                      <input class="double-input__input" type="text" name="comp-name-2" id="comp-name-2" value="Введите ваше имя" required>
+                    </div>
+                    <div class="double-input__wrap double-input__wrap--comp-nickname">
+                      <label class="double-input__label" for="comp-nickname-2">Прозвище:</label>
+                      <input class="double-input__input" type="text" name="comp-nickname-2" id="comp-nickname-2" value="Ну как же без этого!">
+                    </div>
+                  </div>
                 </div>
                 <div class="companion__delete">удалить</div>
               </div>
@@ -151,29 +169,31 @@
           <div class="achievements">
             <fieldset>
               <legend align="center" class="form-legend"><span>Ваши безбашенные достижения в путешествии</span></legend>
-              <div class="form-input form-input--checkbox">
-                <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-shark" checked>
-                <label for="ach-shark" class="form-input--checkbox__label">Сделал селфи с акулой</label>
-              </div>
-              <div class="form-input form-input--checkbox">
-                <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-beach" checked>
-                <label for="ach-beach" class="form-input--checkbox__label">Обгорел на пляже</label>
-              </div>
-              <div class="form-input form-input--checkbox">
-                <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-chuck">
-                <label for="ach-chuck" class="form-input--checkbox__label">Видел Чака Норриса</label>
-              </div>
-              <div class="form-input form-input--checkbox">
-                <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-souv">
-                <label for="ach-souv" class="form-input--checkbox__label">Накупил сувениров</label>
-              </div>
-              <div class="form-input form-input--checkbox">
-                <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-tower" checked>
-                <label for="ach-tower" class="form-input--checkbox__label">Удержал башню</label>
-              </div>
-              <div class="form-input form-input--checkbox">
-                <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-hotel">
-                <label for="ach-hotel" class="form-input--checkbox__label">Разгромил отель</label>
+              <div class="form-flex-wrapper">
+                <div class="form-input form-input--checkbox">
+                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-shark" checked>
+                  <label for="ach-shark" class="form-input--checkbox__label">Сделал селфи с акулой</label>
+                </div>
+                <div class="form-input form-input--checkbox">
+                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-beach" checked>
+                  <label for="ach-beach" class="form-input--checkbox__label">Обгорел на пляже</label>
+                </div>
+                <div class="form-input form-input--checkbox">
+                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-chuck">
+                  <label for="ach-chuck" class="form-input--checkbox__label">Видел Чака Норриса</label>
+                </div>
+                <div class="form-input form-input--checkbox">
+                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-souv">
+                  <label for="ach-souv" class="form-input--checkbox__label">Накупил сувениров</label>
+                </div>
+                <div class="form-input form-input--checkbox">
+                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-tower" checked>
+                  <label for="ach-tower" class="form-input--checkbox__label">Удержал башню</label>
+                </div>
+                <div class="form-input form-input--checkbox">
+                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-hotel">
+                  <label for="ach-hotel" class="form-input--checkbox__label">Разгромил отель</label>
+                </div>
               </div>
             </fieldset>
           </div>
@@ -211,12 +231,40 @@
                   <img class="photos__image" src="img/upload-image.png">
                   <div class="photos__label">IMG-4.JPG</div>
                 </div>
+                <div class="photos__item">
+                  <div class="photos__close">
+                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
+                  </div>
+                  <img class="photos__image" src="img/upload-image.png">
+                  <div class="photos__label">IMG-4.JPG</div>
+                </div>
+                <div class="photos__item">
+                  <div class="photos__close">
+                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
+                  </div>
+                  <img class="photos__image" src="img/upload-image.png">
+                  <div class="photos__label">IMG-4.JPG</div>
+                </div>
+                <div class="photos__item">
+                  <div class="photos__close">
+                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
+                  </div>
+                  <img class="photos__image" src="img/upload-image.png">
+                  <div class="photos__label">IMG-4.JPG</div>
+                </div>
+                <div class="photos__item">
+                  <div class="photos__close">
+                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
+                  </div>
+                  <img class="photos__image" src="img/upload-image.png">
+                  <div class="photos__label">IMG-4.JPG</div>
+                </div>
               </div>
             </fieldset>
           </div>
           <div class="submit">
             <input class="submit__input" type="submit" value="Отправить форму">
-            <div class="submit__required"><span class="submit__star">*</span><span class="submit__text"> – обязательные поля</span></div>
+            <div class="submit__required"><span class="submit__star">*</span><span class="submit__text"> – обязательные<span class="submit__add-text"> для заполнения</span> поля</span></div>
           </div>
         </form>
       </div>
