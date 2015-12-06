@@ -597,6 +597,8 @@
 
   &__th {
     display: table-cell;
+    position: relative;
+    overflow: hidden;
     width: 33%;
     background: $blue-menu;
     height: 98px;
@@ -635,6 +637,30 @@
 
   &__th:last-child {
     border-right: 2px solid $blue-menu;
+  }
+
+  &__hit {
+    position: absolute;
+    top: 9px;
+    left: -28px;
+    padding: 4px;
+    width: 105px;
+    height: 30px;
+    background: $pink;
+    text-transform: uppercase;
+    font-size: 14px;
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+
+    @include tablet {
+      top: 4px;
+      left: -34px;
+    }
+
+    @include desktop {
+      top: 9px;
+      left: -28px;
+    }
   }
 
   &__td {
