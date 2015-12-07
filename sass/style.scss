@@ -381,44 +381,39 @@ a:active {
 }
 
 .intro {
-  background: url('../img/background-mobile@1x.jpg') no-repeat 50% 0;
   position: relative;
   padding-top: 85px;
   min-height: 137px;
-  background-size: cover;
+  overflow: hidden;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: -25%;
+    z-index: -2;
+  }
 
   &__image {
-    height: 285px;
-    width: 320px;
     margin: 0 auto;
     text-align: right;
-    background: url('../img/iphone-hand-mobile.png') no-repeat 0 0;
 
     @include tablet {
-      height: 544px;
-      width: 656px;
-      background: url('../img/iphone-hand-tablet@1x.png') no-repeat 0 0;
       margin-right: 15%;
       text-align: right;
     }
 
     @include desktop {
-      height: 645px;
-      width: 884px;
       margin-right: 14%;
-      background: url('../img/iphone-hand-desktop@1x.png') no-repeat 0 0;
     }
   }
 
   @include tablet {
     padding-top: 183px;
-    background: url('../img/background-tablet@1x.jpg') no-repeat 50% 0;
     background-size: cover;
   }
 
   @include desktop {
     padding-top: 204px;
-    background: url('../img/background-fullsize.jpg') no-repeat 50% 0;
     background-size: cover;
   }
 
