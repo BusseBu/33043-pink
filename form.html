@@ -83,16 +83,21 @@
     <main class="form-page">
       <div class="main-wrapper">
         <section class="intro intro--form">
-          <img class="intro__background"
-                  src="img/background-fullsize.jpg"
-                  srcset="img/background-mobile@1x.jpg 320w 1x,
-             img/background-mobile@2x.jpg 320w 2x,
-             img/background-mobile@2x.jpg 320w 3x,
-             img/background-tablet@1x.jpg 700w 1x,
-             img/background-tablet@2x.jpg 700w 2x,
-             img/background-fullsize.jpg 1200w"
-                  sizes="(max-width: 1200px) 100vw, 1200px"
-          >
+          <picture class="intro__background">
+            <source media="(max-width: 700px)"
+                    srcset="img/background-mobile@1x.jpg 1x,
+                            img/background-mobile@2x.jpg 2x,
+                            img/background-mobile@3x.jpg 3x"
+                    sizes="100vw">
+            <source media="(max-width: 1200px)"
+                    srcset="img/background-tablet@1x.jpg 1x,
+                            img/background-tablet@2x.jpg 2x"
+                    sizes="100vw">
+            <source media="(max-width: 2500px)"
+                    srcset="img/background-fullsize.jpg"
+                    sizes="1300px">
+            <img src="img/background-fullsize.jpg" />
+          </picture>
           <div class="form-main-headline">
             <h2>Конкурс на самое безбашенное путешествие с Пинк</h2>
           </div>

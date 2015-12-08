@@ -27,6 +27,10 @@ a:active {
   color: $blue-text;
 }
 
+img {
+  vertical-align:bottom;
+}
+
 .main-wrapper {
   position: relative;
   width: 100%;
@@ -315,6 +319,7 @@ a:active {
   position: relative;
   line-height: 30px;
   color: #fff;
+  text-align: center;
 
   h2 {
     font-size: 24px;
@@ -389,25 +394,35 @@ a:active {
   &__background {
     position: absolute;
     top: 0;
-    left: -25%;
+    left: 0;
     z-index: -2;
+
+
+    img {
+      @include desktop {
+        width: 1300px;
+      }
+    }
   }
 
   &__image {
+    height: 285px;
+    width: 320px;
     margin: 0 auto;
-    text-align: right;
 
     @include tablet {
-      margin-right: 15%;
-      text-align: right;
+      height: 544px;
+      width: 656px;
     }
 
     @include desktop {
-      margin-right: 14%;
+      height: 645px;
+      width: 884px;
     }
   }
 
   @include tablet {
+    text-align: right;
     padding-top: 183px;
     background-size: cover;
   }

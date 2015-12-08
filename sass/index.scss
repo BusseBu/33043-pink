@@ -4,6 +4,7 @@
   padding: 29px 0;
   color: #fff;
   z-index: 1;
+  text-align: center;
 
   &__button {
     display: block;
@@ -159,6 +160,7 @@
   background: #fff;
   padding-top: 40px;
   position: relative;
+  overflow: hidden;
 
   &__headline-wrapper {
     @include desktop {
@@ -261,18 +263,11 @@
   &__image {
     z-index: 1;
     height: 278px;
-
-    img {
-      height: 278px;
-
-      @include tablet {
-        height: 481px;
-      }
-    }
+    position: relative;
 
     @include tablet {
       width: 50%;
-      height: 481px;
+      height: 472px;
     }
 
     @include desktop {
@@ -288,7 +283,45 @@
     padding-top: 67px;
   }
 
+  &__image-screen {
+    vertical-align: bottom;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 142px;
+    margin-left: -71px;
+
+    &--1 {
+      display: none;
+    }
+
+    &--2 {
+      display: none;
+    }
+
+    &--3 {
+      display: block;
+    }
+
+    img {
+      vertical-align: bottom;
+
+      @include tablet {
+        width: 268px;
+      }
+    }
+
+    @include tablet {
+      position: relative;
+      margin: 0 auto;
+      left: 0;
+      bottom: 0;
+      width: 268px;
+    }
+  }
+
 }
+
 
 .article-brief {
   display: none;

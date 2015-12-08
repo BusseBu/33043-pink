@@ -98,32 +98,39 @@
     <main class="main-page">
       <div class="main-wrapper">
         <section class="intro">
-          <img class="intro__background"
-               alt="Background Image"
-               src="img/background-fullsize.jpg"
-               srcset="img/background-mobile@1x.jpg 320w 1x,
-             img/background-mobile@2x.jpg 320w 2x,
-             img/background-mobile@2x.jpg 320w 3x,
-             img/background-tablet@1x.jpg 700w 1x,
-             img/background-tablet@2x.jpg 700w 2x,
-             img/background-fullsize.jpg 1200w"
-               sizes="(max-width: 1200px) 100vw, 710px "
-          >
+          <picture class="intro__background">
+            <source media="(max-width: 700px)"
+                    srcset="img/background-mobile@1x.jpg 1x,
+                            img/background-mobile@2x.jpg 2x,
+                            img/background-mobile@3x.jpg 3x"
+                    sizes="100vw">
+            <source media="(max-width: 1200px)"
+                    srcset="img/background-tablet@1x.jpg 1x,
+                            img/background-tablet@2x.jpg 2x"
+                    sizes="100vw">
+            <source media="(max-width: 2500px)"
+                    srcset="img/background-fullsize.jpg"
+                    sizes="1300px">
+            <img src="img/background-fullsize.jpg" />
+          </picture>
           <div class="main-headline">
             <h2>Взгляните на жизнь иначе!</h2>
           </div>
-          <img class="intro__image"
-               alt="Background Image"
-               src="img/iphone-hand-mobile.png"
-               srcset="img/iphone-hand-mobile.png 320w 1x,
-             img/iphone-hand-mobile@2x.png 320w 2x,
-             img/iphone-hand-mobile@3x.png 320w 3x,
-             img/iphone-hand-tablet@1x.png 700w 1x,
-             img/iphone-hand-tablet@21x.png 700w 2x,
-             img/iphone-hand-desktop@1x.png 1200w 1x,
-             img/iphone-hand-desktop@2x.png 1200w 2x,"
-               sizes="(min-width: 320px) 320px, (min-width: 700px) 656px, (min-width: 1200px) 884px "
-                  >
+          <picture class="intro__image">
+            <source media="(max-width: 700px)"
+                    srcset="img/iphone-hand-mobile.png 1x,
+                            img/iphone-hand-mobile@2x.png 2x,
+                            img/iphone-hand-mobile@3x.png 3x"
+                    sizes="320px">
+            <source media="(max-width: 1200px)"
+                    srcset="img/iphone-hand-tablet@1x.png 1x,
+                            img/iphone-hand-tablet@2x.png 2x"
+                    sizes="656px">
+            <source srcset="img/iphone-hand-desktop@1x.png 1x,
+                            img/iphone-hand-desktop@2x.png 2x"
+                    sizes="884px">
+            <img src="img/iphone-hand-mobile.png" />
+          </picture>
           <div class="applications">
             <a href="#" class="applications__button"><span>Скачать приложение</span></a>
             <div class="applications__icons">
@@ -146,28 +153,78 @@
             <div class="information__items">
               <div class="information__item">
                 <div class="information__small-image">
-                  <img width="292" height="302" src="img/iphone-screen-desktop-1@1x.png" />
+                  <picture>
+                    <source srcset="img/iphone-screen-desktop-1@1x.png 1x,
+                            img/iphone-screen-desktop-1@2x.png 2x"
+                            sizes="292px">
+                    <img width="292px" height="302px" src="img/iphone-screen-desktop-1@2x.png" />
+                  </picture>
                 </div>
                 <h4 class="information__headline">Поднимает настроение</h4>
                 <p class="information__text">Приложение позволит Вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
               </div>
               <div class="information__item">
                 <div class="information__small-image">
-                  <img width="292" height="302" src="img/iphone-screen-desktop-2@1x.png" />
+                  <picture>
+                    <source srcset="img/iphone-screen-desktop-2@1x.png 1x,
+                            img/iphone-screen-desktop-2@2x.png 2x"
+                            sizes="292px">
+                    <img width="292px" height="302px" src="img/iphone-screen-desktop-2@2x.png" />
+                  </picture>
                 </div>
                 <h4 class="information__headline">Меняет мир вокруг</h4>
                 <p class="information__text">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
               </div>
               <div class="information__item">
                 <div class="information__small-image">
-                  <img width="292" height="302" src="img/iphone-screen-desktop-3@1x.png" />
+                  <picture>
+                    <source srcset="img/iphone-screen-desktop-3@1x.png 1x,
+                            img/iphone-screen-desktop-3@2x.png 2x"
+                            sizes="292px">
+                    <img width="292px" height="302px" src="img/iphone-screen-desktop-3@2x.png" />
+                  </picture>
                 </div>
                 <h4 class="information__headline">Заводит новых друзей</h4>
                 <p class="information__text">Ставьте лайки, комментируте, делитесь фотографиями с друзьями и заводите новых</p>
               </div>
             </div>
             <div class="information__image">
-              <img src="img/screen-mobile-3.png" srcset="img/iphone-screen-tablet-3@1x.png 700w">
+              <picture class="information__image-screen information__image-screen--1">
+                <source media="(max-width: 699px)"
+                        srcset="img/iphone-screen-mobile-1@1x.png 1x,
+                                img/iphone-screen-mobile-1@2x.png 2x,
+                                img/iphone-screen-mobile-1@3x.png 3x"
+                        sizes="154px">
+                <source media="(max-width: 1200px)"
+                        srcset="img/iphone-screen-tablet-1@1x.png 1x,
+                                img/iphone-screen-mobile-1@2x.png 2x"
+                        sizes="268px">
+                <img src="img/iphone-screen-mobile-1@3x.png" />
+              </picture>
+              <picture class="information__image-screen information__image-screen--2">
+                <source media="(max-width: 699px)"
+                        srcset="img/iphone-screen-mobile-2@1x.png 1x,
+                                img/iphone-screen-mobile-2@2x.png 2x,
+                                img/iphone-screen-mobile-2@3x.png 3x"
+                        sizes="154px">
+                <source media="(max-width: 1200px)"
+                        srcset="img/iphone-screen-tablet-2@1x.png 1x,
+                                img/iphone-screen-mobile-2@2x.png 2x"
+                        sizes="268px">
+                <img src="img/iphone-screen-mobile-1@3x.png" />
+              </picture>
+              <picture class="information__image-screen information__image-screen--3">
+                <source media="(max-width: 320px)"
+                        srcset="img/iphone-screen-mobile-3@1x.png 1x,
+                                img/iphone-screen-mobile-3@2x.png 2x,
+                                img/iphone-screen-mobile-3@3x.png 3x"
+                        sizes="154px">
+                <source media="(max-width: 700px)"
+                        srcset="img/iphone-screen-tablet-3@1x.png 1x,
+                                img/iphone-screen-mobile-3@2x.png 2x"
+                        sizes="268px">
+                <img src="img/iphone-screen-mobile-1@3x.png" />
+              </picture>
             </div>
           </div>
         </section>
