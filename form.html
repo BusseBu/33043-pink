@@ -102,7 +102,7 @@
             <h2>Конкурс на самое безбашенное путешествие с Пинк</h2>
           </div>
         </section>
-        <form action="/echo" method="post">
+        <form action="/submit" method="post">
           <p class="text text--form">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span>Пожалуйста, заполните форму ниже:</span></p>
           <div class="personal-form">
             <fieldset>
@@ -127,15 +127,15 @@
               <legend align="center" class="form-legend"><span>С каким приложением путешествовали? *</span></legend>
               <div class="form-flex-wrapper">
                 <div class="form-input form-input--radio">
-                  <input class="form-input--radio__radio" type="radio" name="app-check" id="app-ios" checked required>
+                  <input class="form-input--radio__radio" type="radio" name="app-check" id="app-ios" value="app-ios" checked required>
                   <label for="app-ios" class="form-input--radio__label">Pink для iOS</label>
                 </div>
                 <div class="form-input form-input--radio">
-                  <input class="form-input--radio__radio" type="radio" name="app-check" id="app-android">
+                  <input class="form-input--radio__radio" type="radio" name="app-check" id="app-android" value="app-android">
                   <label for="app-android" class="form-input--radio__label">Pink для Android</label>
                 </div>
                 <div class="form-input form-input--radio">
-                  <input class="form-input--radio__radio" type="radio" name="app-check" id="app-wphone">
+                  <input class="form-input--radio__radio" type="radio" name="app-check" id="app-wphone" value="app-wphone">
                   <label for="app-wphone" class="form-input--radio__label">Windows Phone</label>
                 </div>
               </div>
@@ -161,7 +161,7 @@
                   <label class="form-input__label form-input__label--bottom form-input__label--center" for="travel-duration">Продолжительность</label>
                 </div>
                 <div class="form-input form-input--flex">
-                  <input class="form-input__input form-input__input--flex" type="text" name="return-date" id="return-date" value="1 апреля 2015" disabled>
+                  <input class="form-input__input form-input__input--flex" type="text" name="return-date" id="return-date" value="1 апреля 2015" readonly>
                   <label class="form-input__label form-input__label--bottom" for="return-date">Дата возвращения</label>
                 </div>
               </div>
@@ -174,7 +174,7 @@
                 <div class="form-input__plus-minus form-input__plus-minus--minus">
                   <div class="form-input__minus"></div>
                 </div>
-                <input class="form-input__input form-input__input--add form-input__input--add-wider" type="text" name="travel-duration" id="companions" value="2 чел" disabled required>
+                <input class="form-input__input form-input__input--add form-input__input--add-wider" type="text" name="companions" id="companions" value="2 чел" readonly required>
                 <div class="form-input__plus-minus form-input__plus-minus--plus">
                   <div class="form-input__minus"></div>
                   <div class="form-input__plus"></div>
@@ -226,27 +226,27 @@
               <legend align="center" class="form-legend"><span>Ваши безбашенные достижения в путешествии</span></legend>
               <div class="form-flex-wrapper form-flex-wrapper--column">
                 <div class="form-input form-input--checkbox">
-                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-shark" checked>
+                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-shark" value="ach-shark">
                   <label for="ach-shark" class="form-input--checkbox__label">Сделал селфи с акулой</label>
                 </div>
                 <div class="form-input form-input--checkbox">
-                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-beach" checked>
+                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-beach" value="ach-beach">
                   <label for="ach-beach" class="form-input--checkbox__label">Обгорел на пляже</label>
                 </div>
                 <div class="form-input form-input--checkbox">
-                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-chuck">
+                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-chuck" value="ach-chuck">
                   <label for="ach-chuck" class="form-input--checkbox__label">Видел Чака Норриса</label>
                 </div>
                 <div class="form-input form-input--checkbox">
-                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-souv">
+                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-souv" value="ach-souv">
                   <label for="ach-souv" class="form-input--checkbox__label">Накупил сувениров</label>
                 </div>
                 <div class="form-input form-input--checkbox">
-                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-tower" checked>
+                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-tower" value="ach-tower">
                   <label for="ach-tower" class="form-input--checkbox__label">Удержал башню</label>
                 </div>
                 <div class="form-input form-input--checkbox">
-                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-hotel">
+                  <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-hotel" value="ach-hotel">
                   <label for="ach-hotel" class="form-input--checkbox__label">Разгромил отель</label>
                 </div>
               </div>
@@ -255,7 +255,10 @@
           <div class="photos">
             <fieldset>
               <legend align="center" class="form-legend"><span>Ваши фотографии из поездки *</span></legend>
-              <button class="photos__btn"><span>Загрузить фото</span></button>
+              <label for="photos_upload" class="photos__btn">
+                <input class="photos__input" id="photos_upload" type="file">
+                <span>Загрузить фото</span>
+              </label>
               <hr class="form-divider form-divider--photos">
               <div class="photos__items">
                 <div class="photos__item">
@@ -354,7 +357,6 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

@@ -1,24 +1,49 @@
 (function() {
     function inputAdd() {
-       $(".form-input--add").each(function () {
-           $this = $(this);
-           var $input = $this.find("input");
-           var $input_type = $(this).hasClass("form-input--days") ? "days" : "ppl";
-           $input.off("focus").on("focus", function() {
-                $input.val(dateToNumber($input.val()));
-           });
-           $input.off("focusout").on("focusout", function() {
-               $input.val(getCount(dateToNumber($input.val()), ["день", "дня", "дней"]));
-           });
-           $this.find(".form-input__plus-minus").off("click").on("click", function () {
-               var $input_val = dateToNumber($input.val());
-               if ($(this).hasClass("form-input__plus-minus--minus")) {
-                   if ($input_val > 0) $input_val--;
-               }
-               else $input_val++;
-               if ($input.val() !== $input_val) $input.val(($input_type == "days" ? getCount($input_val, ["день", "дня", "дней"]) : $input_val + " чел"));
-           });
-       });
+        var $form_add_list = Array.prototype.slice.call(document.querySelectorAll(".form-input--add"));
+        $form_add_list.forEach(function($el) {
+            var $input_keys_arr = hasClass($el, "form-input--days") ? ["день", "дня", "дней"] : ["чел", "чел", "чел"];
+            var $input = $el.querySelector("input");
+            $input.onfocus = function() {
+                $input.value = (dateToNumber($input.value));
+            };
+            $input.onblur = function() {
+                $input.value = (getCount(dateToNumber($input.value), $input_keys_arr));
+            };
+            var $input_buttons = Array.prototype.slice.call($el.querySelectorAll(".form-input__plus-minus"));
+            $input_buttons.forEach(function($button) {
+                $button.addEventListener("click", function() {
+                    var $input_val = dateToNumber($input.value);
+                    if (hasClass($button, "form-input__plus-minus--minus")) {
+                        if ($input_val > 0) $input_val--;
+                    } else $input_val ++;
+                    if ($input.value !== $input_val) $input.value = getCount($input_val, $input_keys_arr);
+                });
+            });
+        });
+    }
+
+    function formSubmit() {
+        var $form = document.querySelector("form");
+        $form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            function request(data, fn) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("post", "https://echo.htmlacademy.ru/adaptive?" + (new Date().getTime()));
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4) fn(xhr.responseText);
+                };
+                xhr.send(data);
+            }
+            var data = new FormData($form);
+            request(data, function(response) {
+                console.log(response);
+            });
+        });
+    }
+
+    function hasClass($el, $classname) {
+        return $el.className.indexOf($classname) !== -1;
     }
 
     function dateToNumber($date) {
@@ -37,5 +62,6 @@
     }
 
     inputAdd();
+    formSubmit();
 
 })();

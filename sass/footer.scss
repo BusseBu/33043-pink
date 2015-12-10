@@ -87,14 +87,17 @@
   justify-content: space-between;
 
   &__item {
-    width: 20px;
-    height: 20px;
+    width: 44px;
+    height: 44px;
     @include border-radius(50%);
-    border: 12px solid #fff;
-    @include box-shadow(0, 0, 0, 3px, rgba(229, 229, 229, 1));
+    border: 3px solid $grey;
+
+    svg {
+      padding: 12px;
+    }
 
     &:hover {
-      @include box-shadow(0, 0, 0, 3px, rgba(40, 54, 69, 1));
+      border: 3px solid $blue-menu;
     }
 
     &:active {
