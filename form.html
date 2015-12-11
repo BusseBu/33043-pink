@@ -49,12 +49,6 @@
       <symbol width="26.943px" height="34.09px" viewBox="0 0 26.943 34.09" id="htmlacademy">
         <path d="M13.62,0.017L13.472,0L0,1.412v24.661l13.472,8.017l13.43-7.99l0.042-0.026V1.412L13.62,0.017z M25.019,12.127L13.495,5.334  l-0.001-0.104L13.407,5.28l-0.088-0.056v0.109L1.925,12.118V3.147l11.547-1.212l11.547,1.212V12.127z M13.405,6.787L24.923,13.5  l-4.479,2.64l-7.093-4.221l-0.013,1.415l5.904,3.513l-0.86,0.507l-5.031-2.992l-0.013,1.415l3.827,2.275l-0.782,0.523l-3.032-1.787  l-0.013,1.413l1.852,1.091l-1.8,1.081L2.034,13.622L13.405,6.787z M1.925,15.127l11.411,6.791l0.015,1.044l-7.941-4.728L5.395,19.65  l7.979,4.796l0.017,1.076l-7.972-4.741l-0.013,1.415l8.021,4.821l0.045,0.026l8.143-4.872v-1.268l-0.011-0.148v-3.761l3.415-2.036  v10.02L13.472,31.85L1.925,24.979V15.127z"/>
       </symbol>
-      <symbol width="49.945px" height="24.007px" viewBox="0 0 49.945 24.007" id="menu-burger">
-        <path xmlns="http://www.w3.org/2000/svg" id="path-1_1_" d="M1.137,0C0.51,0,0,0.428,0,1.01v1.981c0,0.558,0.494,1.01,1.138,1.01h47.671     c0.628,0,1.138-0.428,1.138-1.01V1.01c0-0.558-0.494-1.01-1.138-1.01H1.137z M1.137,10.003C0.51,10.003,0,10.431,0,11.013v1.98     c0,0.557,0.494,1.01,1.138,1.01h47.671c0.628,0,1.138-0.428,1.138-1.01v-1.98c0-0.558-0.494-1.01-1.138-1.01H1.137z      M1.137,20.005C0.51,20.005,0,20.434,0,21.016v1.981c0,0.557,0.494,1.01,1.138,1.01h47.671c0.628,0,1.138-0.428,1.138-1.01     v-1.981c0-0.558-0.494-1.011-1.138-1.011H1.137z"/>
-      </symbol>
-      <symbol width="23.866px" height="23.866px" viewBox="0 0 23.866 23.866" id="menu-cross">
-        <path xmlns="http://www.w3.org/2000/svg" d="M15.087,11.933l8.56-8.559c0.293-0.293,0.293-0.768,0-1.061L21.554,0.22C21.413,0.079,21.223,0,21.023,0  s-0.39,0.079-0.53,0.22l-8.56,8.56L3.373,0.22c-0.282-0.282-0.78-0.282-1.061,0L0.22,2.313c-0.293,0.293-0.293,0.768,0,1.061  l8.56,8.559l-8.56,8.559c-0.293,0.293-0.293,0.768,0,1.061l2.093,2.094c0.141,0.141,0.331,0.22,0.53,0.22  c0.199,0,0.39-0.079,0.53-0.22l8.561-8.56l8.56,8.56c0.141,0.141,0.331,0.22,0.53,0.22s0.39-0.079,0.53-0.22l2.093-2.094  c0.293-0.293,0.293-0.768,0-1.061L15.087,11.933z"/>
-      </symbol>
     </svg>
     <header class="main-header">
       <div class="main-wrapper">
@@ -66,11 +60,9 @@
             <svg class="logo__glasses" viewBox="0 0 61 40"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#glasses"></use></svg>
             <svg class="logo__letters" viewBox="70 17 76.5 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#letters"></use></svg>
           </a>
-          <div class="main-header__toggle-icon">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-burger"></use></svg>
-          </div>
+          <div class="main-header__toggle-icon"></div>
         </div>
-        <nav class="top-navigation">
+        <nav class="top-navigation" style="display:none;">
           <ul class="top-navigation__list">
             <li class="top-navigation__item"><a href="/33043-pink/index.html">Информация</a><div class="top-navigation__underline"></div></li>
             <li class="top-navigation__item"><a href="#">Блог</a><div class="top-navigation__underline"></div></li>
@@ -256,67 +248,11 @@
             <fieldset>
               <legend align="center" class="form-legend"><span>Ваши фотографии из поездки *</span></legend>
               <label for="photos_upload" class="photos__btn">
-                <input class="photos__input" id="photos_upload" type="file">
+                <input class="photos__input" id="photos_upload" type="file" multiple>
                 <span>Загрузить фото</span>
               </label>
-              <hr class="form-divider form-divider--photos">
+              <hr class="form-divider form-divider--photos" style="display:none;">
               <div class="photos__items">
-                <div class="photos__item">
-                  <div class="photos__close">
-                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
-                  </div>
-                  <img class="photos__image" src="img/upload-image.png">
-                  <div class="photos__label">IMG-1.JPG</div>
-                </div>
-                <div class="photos__item">
-                  <div class="photos__close">
-                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
-                  </div>
-                  <img class="photos__image" src="img/upload-image.png">
-                  <div class="photos__label">IMG-2.JPG</div>
-                </div>
-                <div class="photos__item">
-                  <div class="photos__close">
-                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
-                  </div>
-                  <img class="photos__image" src="img/upload-image.png">
-                  <div class="photos__label">IMG-3.JPG</div>
-                </div>
-                <div class="photos__item">
-                  <div class="photos__close">
-                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
-                  </div>
-                  <img class="photos__image" src="img/upload-image.png">
-                  <div class="photos__label">IMG-4.JPG</div>
-                </div>
-                <div class="photos__item">
-                  <div class="photos__close">
-                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
-                  </div>
-                  <img class="photos__image" src="img/upload-image.png">
-                  <div class="photos__label">IMG-4.JPG</div>
-                </div>
-                <div class="photos__item">
-                  <div class="photos__close">
-                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
-                  </div>
-                  <img class="photos__image" src="img/upload-image.png">
-                  <div class="photos__label">IMG-4.JPG</div>
-                </div>
-                <div class="photos__item">
-                  <div class="photos__close">
-                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
-                  </div>
-                  <img class="photos__image" src="img/upload-image.png">
-                  <div class="photos__label">IMG-4.JPG</div>
-                </div>
-                <div class="photos__item">
-                  <div class="photos__close">
-                    <svg viewBox="-1 0 12 12"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#no"></use></svg>
-                  </div>
-                  <img class="photos__image" src="img/upload-image.png">
-                  <div class="photos__label">IMG-4.JPG</div>
-                </div>
               </div>
             </fieldset>
           </div>
@@ -357,6 +293,7 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript" src="js/tap.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

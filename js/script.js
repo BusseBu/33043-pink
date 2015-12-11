@@ -25,7 +25,8 @@
 
     function formSubmit() {
         var $form = document.querySelector("form");
-        $form.addEventListener("submit", function(event) {
+        if ($form) $form.addEventListener("submit", function(event) {
+            if (!("FormData" in window)) return;
             event.preventDefault();
             function request(data, fn) {
                 var xhr = new XMLHttpRequest();
@@ -40,6 +41,72 @@
                 console.log(response);
             });
         });
+    }
+
+    function navToggle() {
+        var $icon = document.querySelector(".main-header__toggle-icon");
+        document.querySelector(".top-navigation").style.maxHeight = document.querySelectorAll(".top-navigation__item").length * 74;
+        myTap = new Tap($icon);
+        $icon.addEventListener("tap", function() {
+            toggleClass(this, "main-header__toggle-icon--opened");
+            toggleClass(document.querySelector(".top-navigation"), "top-navigation--opened");
+            toggleClass(document.querySelector(".main-header__line"), "main-header__line--opened");
+        });
+    }
+
+    function uploadFile() {
+        var $form = document.querySelector("form");
+        if ($form) $form.querySelector("#photos_upload").addEventListener("change", function() {
+            var $files = Array.prototype.slice.call(this.files);
+            var $i = 0;
+            if ($files.length) $files.forEach(function(file) {
+                function error($message) {
+                    var $alert = document.querySelector(".alert--photos");
+                    if ($alert) {
+                        $alert.innerHTML = "<span>" + $message + "</span>";
+                    } else {
+                        $alert = document.createElement("div");
+                        $alert.className = "alert alert--photos";
+                        $alert.innerHTML = "<span>" + $message + "</span>";
+                        $input = document.querySelector(".photos__btn").nextSibling;
+                        document.querySelector(".photos fieldset").insertBefore($alert, $input);
+                    }
+                }
+                if (file.type.match(/image.*/)) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        $i++;
+                        var $preview = e.target.result;
+                        if (file.size > 1048576) {
+                            error ("Неправильный размер файла!");
+                            return;
+                        }
+                        var $image = document.createElement("div");
+                        $image.className = "photos__item";
+                        $image.innerHTML = "<div class=\"photos__close\">\n"
+                            + "<svg viewBox=\"-1 0 12 12\"><use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#no\"></use></svg></div>\n"
+                            + "<img class=\"photos__image\" src=\"" + $preview + "\">\n"
+                            + "<div class=\"photos__label\">IMG-" + $i + ".JPG</div>";
+                        document.querySelector(".form-divider--photos").style.display = "block";
+                        document.querySelector(".photos__items").appendChild($image);
+                    };
+                } else {
+                    error("Неправильный тип файла!");
+                    return;
+                }
+                reader.readAsDataURL(file);
+            });
+        });
+
+    }
+
+    function toggleClass($el, $classname) {
+        if ($el.className.indexOf($classname) !== -1) {
+            return $el.className = $el.className.replace($classname, "");
+        } else {
+            if ($el.className.match(/\s$/)) return $el.className += $classname;
+            else return $el.className += (" " + $classname);
+        }
     }
 
     function hasClass($el, $classname) {
@@ -63,5 +130,7 @@
 
     inputAdd();
     formSubmit();
+    uploadFile();
+    navToggle();
 
 })();

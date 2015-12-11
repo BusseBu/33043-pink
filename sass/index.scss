@@ -3,11 +3,11 @@
   position: relative;
   padding: 29px 0;
   color: #fff;
-  z-index: 1;
   text-align: center;
 
   &__button {
     display: block;
+    opacity: .99;
     margin: 0 auto 32px;
     width: 275px;
     color: #fff;
@@ -391,6 +391,7 @@
     color: $pink;
     font-size: 14px;
     font-weight: 200;
+    text-decoration: underline;
 
     &:hover {
       text-decoration: none;

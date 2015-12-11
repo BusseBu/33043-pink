@@ -223,9 +223,9 @@ img {
 .top-navigation {
   display: none;
   background: $blue-menu;
-  z-index: 2;
   color: #fff;
   font-weight: 600;
+  z-index: 1000;
 
   &__list {
     list-style: none;
@@ -313,6 +313,10 @@ img {
     top: 16px;
     background: none;
   }
+
+  &--opened {
+    display: block;
+  }
 }
 
 .main-headline {
@@ -383,6 +387,14 @@ img {
 
 .headline:last-child {
   padding-bottom: 0;
+}
+
+.alert {
+  width: 100%;
+  background: $pink;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .intro {

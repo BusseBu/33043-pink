@@ -632,7 +632,6 @@ input:disabled {
 
   &__btn {
     display: block;
-    width: 100%;
     border: 2px solid $grey;
     padding: 19px 0;
     background: #fff;
@@ -730,11 +729,11 @@ input:disabled {
   }
 
   &__image {
-    width: 80px;
+    max-width: 80px;
     margin-bottom: 2px;
 
     @include tablet {
-      width: 120px;
+      max-width: 120px;
       margin-bottom: 8px;
     }
   }
