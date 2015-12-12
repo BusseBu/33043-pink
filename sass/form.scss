@@ -326,7 +326,7 @@ input:disabled {
     }
   }
 
-  &--add-wider {
+  &--companions {
 
     @include tablet {
       width: 252px;
@@ -389,7 +389,7 @@ input:disabled {
       }
     }
 
-    &--add-wider {
+    &--companions {
 
       @include tablet {
         border: 0;

@@ -1,9 +1,15 @@
 (function() {
-    function inputAdd() {
+    function input($el) {
         var $form_add_list = Array.prototype.slice.call(document.querySelectorAll(".form-input--add"));
         $form_add_list.forEach(function($el) {
-            var $input_keys_arr = hasClass($el, "form-input--days") ? ["день", "дня", "дней"] : ["чел", "чел", "чел"];
             var $input = $el.querySelector("input");
+            if (!hasClass($el, "form-input--days")) {
+                var $input_keys_arr = ["чел", "чел", "чел"];
+                var $input_val = dateToNumber($input.value);
+                for ($i = 0; $i <= $input_val; $i++ ) {
+                    changeCompanion($i);
+                }
+            } else $input_keys_arr = ["день", "дня", "дней"];
             $input.onfocus = function() {
                 $input.value = (dateToNumber($input.value));
             };
@@ -13,14 +19,59 @@
             var $input_buttons = Array.prototype.slice.call($el.querySelectorAll(".form-input__plus-minus"));
             $input_buttons.forEach(function($button) {
                 $button.addEventListener("click", function() {
-                    var $input_val = dateToNumber($input.value);
+                    $input_val = dateToNumber($input.value);
                     if (hasClass($button, "form-input__plus-minus--minus")) {
                         if ($input_val > 0) $input_val--;
                     } else $input_val ++;
-                    if ($input.value !== $input_val) $input.value = getCount($input_val, $input_keys_arr);
+                    if ($input.value !== $input_val) {
+                        $input.value = getCount($input_val, $input_keys_arr);
+                        if (!hasClass($el, "form-input--days")) changeCompanion($input_val);
+                    }
                 });
             });
         });
+    }
+
+    function changeCompanion($value) {
+        var $i = document.querySelectorAll(".companion").length;
+        console.log($i, $value);
+        if ($value > $i) {
+            $i++;
+            var $companion = document.createElement("div");
+            var $companion_t = '<div class="companion__wrapper">' +
+                '<div class="number-input">' +
+                '<label class="number-input__label" for="list-number-{{i}}">№</label>' +
+                '<input class="number-input__input" type="text" name="list-number-{{i}}" id="list-number-{{i}}" value="{{i}}" disabled>' +
+                '</div>' +
+                '<div class="double-input">' +
+                '<div class="double-input__wrap double-input__wrap--comp-name">' +
+                '<label class="double-input__label" for="comp-name-{{i}}">Имя: *</label>' +
+                '<input class="double-input__input" type="text" name="comp-name-{{i}}" id="comp-name-{{i}}" value="Введите ваше имя" required>' +
+                '</div>' +
+                '<div class="double-input__wrap double-input__wrap--comp-nickname">' +
+                '<label class="double-input__label" for="comp-nickname-{{i}}">Прозвище:</label>' +
+                '<input class="double-input__input" type="text" name="comp-nickname-{{i}}" id="comp-nickname-{{i}}" value="Ну как же без этого!">' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="companion__delete">удалить</div>';
+            $companion.className = "companion companion--" + $i;
+            $companion.innerHTML = $companion_t.replace(/{{\i}}/g, $i);
+            document.querySelector(".companions fieldset").appendChild($companion);
+            $companion.querySelector(".companion__delete").addEventListener("click", function() {
+                var $node = this.parentNode.parentNode;
+                $node.parentNode.removeChild($node);
+                var $input = document.querySelector(".form-input__input--companions");
+                var $input_val = dateToNumber($input.value);
+                $input_val--;
+                $input.value = getCount($input_val, ["чел", "чел", "чел"]);
+            });
+        } else if ($value < $i) {
+            var $node = document.querySelector(".companion--" + $i);
+            $node.parentNode.removeChild($node);
+        }
+        if ($value > 0) document.querySelector(".form-divider--companions").style.display = "block";
+        else document.querySelector(".form-divider--companions").style.display = "none";
     }
 
     function formSubmit() {
@@ -132,5 +183,4 @@
     formSubmit();
     uploadFile();
     navToggle();
-
 })();
