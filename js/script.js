@@ -1,15 +1,8 @@
 (function() {
-    function input($el) {
+    function inputAdd() {
         var $form_add_list = Array.prototype.slice.call(document.querySelectorAll(".form-input--add"));
         $form_add_list.forEach(function($el) {
             var $input = $el.querySelector("input");
-            if (!hasClass($el, "form-input--days")) {
-                var $input_keys_arr = ["чел", "чел", "чел"];
-                var $input_val = dateToNumber($input.value);
-                for ($i = 0; $i <= $input_val; $i++ ) {
-                    changeCompanion($i);
-                }
-            } else $input_keys_arr = ["день", "дня", "дней"];
             $input.onfocus = function() {
                 $input.value = (dateToNumber($input.value));
             };
@@ -19,22 +12,32 @@
             var $input_buttons = Array.prototype.slice.call($el.querySelectorAll(".form-input__plus-minus"));
             $input_buttons.forEach(function($button) {
                 $button.addEventListener("click", function() {
-                    $input_val = dateToNumber($input.value);
                     if (hasClass($button, "form-input__plus-minus--minus")) {
-                        if ($input_val > 0) $input_val--;
-                    } else $input_val ++;
-                    if ($input.value !== $input_val) {
-                        $input.value = getCount($input_val, $input_keys_arr);
-                        if (!hasClass($el, "form-input--days")) changeCompanion($input_val);
-                    }
+                        changeValue($input, "sub");
+                    } else changeValue($input, "add");
                 });
             });
         });
     }
 
+    function changeValue($el, $op) {
+        if (hasClass($el.parentNode, "form-input--days")) {
+            var $keys_arr = ["день", "дня", "дней"];
+            var $days = true;
+        } else $keys_arr = ["чел", "чел", "чел"];
+        var $val = dateToNumber($el.value);
+        if ($op === "sub" && $val > 0) {
+            $val--;
+            if (!$days) changeCompanion($val);
+        } else if ($op === "add") {
+            $val++;
+            if (!$days) changeCompanion($val);
+        }
+        $el.value = getCount($val, $keys_arr);
+    }
+
     function changeCompanion($value) {
         var $i = document.querySelectorAll(".companion").length;
-        console.log($i, $value);
         if ($value > $i) {
             $i++;
             var $companion = document.createElement("div");
@@ -59,19 +62,28 @@
             $companion.innerHTML = $companion_t.replace(/{{\i}}/g, $i);
             document.querySelector(".companions fieldset").appendChild($companion);
             $companion.querySelector(".companion__delete").addEventListener("click", function() {
-                var $node = this.parentNode.parentNode;
-                $node.parentNode.removeChild($node);
-                var $input = document.querySelector(".form-input__input--companions");
-                var $input_val = dateToNumber($input.value);
-                $input_val--;
-                $input.value = getCount($input_val, ["чел", "чел", "чел"]);
-            });
+                deleteCompanion(this);
+            })
         } else if ($value < $i) {
             var $node = document.querySelector(".companion--" + $i);
             $node.parentNode.removeChild($node);
         }
         if ($value > 0) document.querySelector(".form-divider--companions").style.display = "block";
         else document.querySelector(".form-divider--companions").style.display = "none";
+    }
+
+    function deleteCompanion($el) {
+        var $node = $el.parentNode;
+        $node.parentNode.removeChild($node);
+        var $companions = Array.prototype.slice.call(document.querySelectorAll(".companion"));
+        console.log($companions);
+        $companions.map(function($comp, $i) {
+            $comp.innerHTML = $comp.innerHTML.replace(/\d/ig, $i+1);
+            $comp.querySelector(".companion__delete").addEventListener("click", function() {
+                deleteCompanion(this);
+            })
+        });
+        changeValue(document.querySelector(".companions input"), "sub");
     }
 
     function formSubmit() {
