@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Конкурс</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="build/css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -62,7 +62,7 @@
           </a>
           <div class="main-header__toggle-icon"></div>
         </div>
-        <nav class="top-navigation" style="display:none;">
+        <nav class="top-navigation">
           <ul class="top-navigation__list">
             <li class="top-navigation__item"><a href="/33043-pink/index.html">Информация</a><div class="top-navigation__underline"></div></li>
             <li class="top-navigation__item"><a href="#">Блог</a><div class="top-navigation__underline"></div></li>
@@ -138,7 +138,7 @@
               <legend align="center" class="form-legend"><span>Когда вы путешествовали? *</span></legend>
               <div class="form-flex-wrapper">
                 <div class="form-input form-input--flex">
-                    <input class="form-input__input form-input__input--flex" type="text" name="depart-date" id="depart-date" value="1 апреля 2015" required>
+                    <input class="form-input__input form-input__input--flex" type="date" name="depart-date" id="depart-date" value="1 апреля 2015" required>
                     <label class="form-input__label form-input__label--bottom" for="depart-date">Дата выезда</label>
                 </div>
                 <div class="form-input form-input--add form-input--days">
@@ -166,7 +166,7 @@
                 <div class="form-input__plus-minus form-input__plus-minus--minus">
                   <div class="form-input__minus"></div>
                 </div>
-                <input class="form-input__input form-input__input--add form-input__input--companions" type="text" name="companions" id="companions" value="0 чел" readonly required>
+                <input class="form-input__input form-input__input--add form-input__input--companions" type="text" autocomplete="off" name="companions" id="companions" value="0 чел" readonly required>
                 <div class="form-input__plus-minus form-input__plus-minus--plus">
                   <div class="form-input__minus"></div>
                   <div class="form-input__plus"></div>
@@ -255,7 +255,6 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="js/tap.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="build/js/script.js"></script>
   </body>
 </html>

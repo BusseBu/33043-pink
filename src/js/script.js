@@ -1,40 +1,54 @@
 (function() {
-    function input($el) {
+    function inputAdd() {
         var $form_add_list = Array.prototype.slice.call(document.querySelectorAll(".form-input--add"));
         $form_add_list.forEach(function($el) {
             var $input = $el.querySelector("input");
-            if (!hasClass($el, "form-input--days")) {
-                var $input_keys_arr = ["чел", "чел", "чел"];
-                var $input_val = dateToNumber($input.value);
-                for ($i = 0; $i <= $input_val; $i++ ) {
-                    changeCompanion($i);
-                }
-            } else $input_keys_arr = ["день", "дня", "дней"];
             $input.onfocus = function() {
+                if ($input.readOnly) return;
                 $input.value = (dateToNumber($input.value));
             };
             $input.onblur = function() {
-                $input.value = (getCount(dateToNumber($input.value), $input_keys_arr));
+                if (hasClass($el, "form-input--days")) {
+                    var $keys_arr = ["день", "дня", "дней"];
+                } else $keys_arr = ["чел", "чел", "чел"];
+                $input.value = (getCount(dateToNumber($input.value), $keys_arr));
             };
             var $input_buttons = Array.prototype.slice.call($el.querySelectorAll(".form-input__plus-minus"));
             $input_buttons.forEach(function($button) {
                 $button.addEventListener("click", function() {
-                    $input_val = dateToNumber($input.value);
                     if (hasClass($button, "form-input__plus-minus--minus")) {
-                        if ($input_val > 0) $input_val--;
-                    } else $input_val ++;
-                    if ($input.value !== $input_val) {
-                        $input.value = getCount($input_val, $input_keys_arr);
-                        if (!hasClass($el, "form-input--days")) changeCompanion($input_val);
-                    }
+                        changeValue($input, "sub");
+                    } else changeValue($input, "add");
                 });
             });
         });
+        var $form_date = document.querySelector("#depart-date");
+        $form_date.addEventListener("change", function() {
+            changeDate();
+        });
+    }
+
+    function changeValue($el, $op) {
+        if (hasClass($el.parentNode, "form-input--days")) {
+            var $keys_arr = ["день", "дня", "дней"];
+            var $days = true;
+        } else $keys_arr = ["чел", "чел", "чел"];
+        var $val = dateToNumber($el.value);
+        if ($op === "sub" && $val > 0) {
+            $val--;
+            $el.value = getCount($val, $keys_arr);
+            if ($days) changeDate();
+            else changeCompanion($val);
+        } else if ($op === "add") {
+            $val++;
+            $el.value = getCount($val, $keys_arr);
+            if ($days) changeDate();
+            else changeCompanion($val);
+        }
     }
 
     function changeCompanion($value) {
         var $i = document.querySelectorAll(".companion").length;
-        console.log($i, $value);
         if ($value > $i) {
             $i++;
             var $companion = document.createElement("div");
@@ -59,19 +73,42 @@
             $companion.innerHTML = $companion_t.replace(/{{\i}}/g, $i);
             document.querySelector(".companions fieldset").appendChild($companion);
             $companion.querySelector(".companion__delete").addEventListener("click", function() {
-                var $node = this.parentNode.parentNode;
-                $node.parentNode.removeChild($node);
-                var $input = document.querySelector(".form-input__input--companions");
-                var $input_val = dateToNumber($input.value);
-                $input_val--;
-                $input.value = getCount($input_val, ["чел", "чел", "чел"]);
-            });
+                deleteCompanion(this);
+            })
         } else if ($value < $i) {
-            var $node = document.querySelector(".companion--" + $i);
-            $node.parentNode.removeChild($node);
+            deleteCompanion(document.querySelector(".companions fieldset").lastChild.querySelector(".companion__delete"));
         }
         if ($value > 0) document.querySelector(".form-divider--companions").style.display = "block";
         else document.querySelector(".form-divider--companions").style.display = "none";
+    }
+
+    function deleteCompanion($el) {
+        var $node = $el.parentNode;
+        $node.parentNode.removeChild($node);
+        var $companions = Array.prototype.slice.call(document.querySelectorAll(".companion"));
+        $companions.map(function($comp, $i) {
+            $comp.innerHTML = $comp.innerHTML.replace(/\d/ig, $i+1);
+            $comp.querySelector(".companion__delete").addEventListener("click", function() {
+                deleteCompanion(this);
+            })
+        });
+        changeValue(document.querySelector(".companions input"), "sub");
+    }
+
+    function changeDate() {
+        var moment = require('moment');
+        moment.locale("ru", {
+            months: [
+                "января", "февраля", "марта", "апреля", "мая", "июня",
+                "июля", "августа", "сентября", "октября", "ноября", "декабря"
+            ]
+        });
+        var $day = moment(document.querySelector("#depart-date").value, "DD MMMM YYYY", "ru");
+        if ($day.isValid()) {
+            $add = dateToNumber(document.querySelector("#travel-duration").value);
+            $day.add($add, "days");
+            document.querySelector("#return-date").value = $day.format("D MMMM YYYY");
+        } else alert ("Неверная дата!");
     }
 
     function formSubmit() {
@@ -97,6 +134,7 @@
     function navToggle() {
         var $icon = document.querySelector(".main-header__toggle-icon");
         document.querySelector(".top-navigation").style.maxHeight = document.querySelectorAll(".top-navigation__item").length * 74;
+        var Tap = require('tap.js');
         myTap = new Tap($icon);
         $icon.addEventListener("tap", function() {
             toggleClass(this, "main-header__toggle-icon--opened");
@@ -136,7 +174,7 @@
                         $image.className = "photos__item";
                         $image.innerHTML = "<div class=\"photos__close\">\n"
                             + "<svg viewBox=\"-1 0 12 12\"><use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#no\"></use></svg></div>\n"
-                            + "<img class=\"photos__image\" src=\"" + $preview + "\">\n"
+                            + "<div class=\"photos__image\"><img src=\"" + $preview + "\"></div>\n"
                             + "<div class=\"photos__label\">IMG-" + $i + ".JPG</div>";
                         document.querySelector(".form-divider--photos").style.display = "block";
                         document.querySelector(".photos__items").appendChild($image);
@@ -183,4 +221,5 @@
     formSubmit();
     uploadFile();
     navToggle();
+    changeDate();
 })();

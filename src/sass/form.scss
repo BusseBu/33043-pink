@@ -42,8 +42,16 @@ fieldset {
   }
 }
 
-input:disabled {
+input[readonly] {
   background: #f2f2f2;
+
+  &:hover {
+    border: 2px solid $grey;
+  }
+
+  &:active {
+    border: 2px solid $grey;
+  }
 }
 
 
@@ -128,6 +136,12 @@ input:disabled {
     @include desktop {
       padding: 32px 57px 19px;
     }
+
+    input[type="date"] {
+      ::-webkit-inner-spin-button {
+        display: none;
+      }
+    }
   }
 }
 
@@ -201,30 +215,29 @@ input:disabled {
           display: inline-block;
           background: #fff;
           vertical-align: middle;
-          width: 15px;
-          height: 15px;
+          width: 35px;
+          height: 35px;
           @include border-radius(50%);
-          border: 10px solid #fff;
-          @include box-shadow(0, 0, 0, 2px, rgba(229, 229, 229, 1));
+          border: 2px solid $grey;
           margin: -3px 25px 0 0;
           cursor:pointer;
         }
 
         &:hover {
           &:before {
-            @include box-shadow(0, 0, 0, 2px, rgba(40, 54, 69, 1));
+            border: 2px solid $blue-menu;
           }
         }
 
         &:active {
           &:before {
-            @include box-shadow(0, 0, 0, 2px, rgba(210, 40, 86, 1));
+            border: 2px solid $pink;
           }
         }
       }
 
       &:checked + label:before {
-        background: $pink;
+        background: #fff url('../../img/circle.svg') no-repeat 50% 50%;
       }
 
     }
@@ -242,7 +255,7 @@ input:disabled {
       display: none;
 
       &:checked + label:before {
-        background: url('../img/yes-pink.png') no-repeat 50% 50%;
+        background: url('../../img/yes-pink.png') no-repeat 50% 50%;
       }
     }
 
@@ -331,8 +344,16 @@ input:disabled {
     @include tablet {
       width: 252px;
 
-      input:disabled {
+      input[readonly] {
         background: #fff;
+
+        &:hover {
+          border: 2px solid #fff;
+        }
+
+        &:active {
+          border: 2px solid #fff;
+        }
       }
     }
   }
@@ -734,7 +755,12 @@ input:disabled {
 
     @include tablet {
       max-width: 120px;
+      height: 120px;
+      overflow: hidden;
       margin-bottom: 8px;
+    }
+    img {
+      width: 120px;
     }
   }
 

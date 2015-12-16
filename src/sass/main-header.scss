@@ -27,14 +27,14 @@
     cursor: pointer;
     width: 50px;
     height: 24px;
-    background: url('../img/menu-burger.svg') no-repeat 0 0;
+    background: url('../../img/menu-burger.svg') no-repeat 0 0;
 
     @include desktop {
       display: none;
     }
 
     &:hover {
-      background: url('../img/menu-burger-pink.svg') no-repeat 0 0;
+      background: url('../../img/menu-burger-pink.svg') no-repeat 0 0;
     }
 
     &:active {
@@ -42,10 +42,10 @@
     }
 
     &--opened {
-      background: url('../img/menu-cross.svg') no-repeat 50% 0;
+      background: url('../../img/menu-cross.svg') no-repeat 50% 0;
 
       &:hover {
-        background: url('../img/menu-cross-pink.svg') no-repeat 50% 0;
+        background: url('../../img/menu-cross-pink.svg') no-repeat 50% 0;
       }
     }
   }

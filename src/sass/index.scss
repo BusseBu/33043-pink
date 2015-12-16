@@ -64,17 +64,17 @@
 
   &__icon--apple {
     min-width: 46px;
-    background: url('../img/apple-logo.svg') no-repeat 0 0;
+    background: url('../../img/apple-logo.svg') no-repeat 0 0;
   }
 
   &__icon--android {
     min-width: 42px;
-    background: url('../img/android-logo.svg') no-repeat 0 9px;
+    background: url('../../img/android-logo.svg') no-repeat 0 9px;
   }
 
   &__icon--windows {
     min-width: 44px;
-    background: url('../img/microsoft-logo.svg') no-repeat 0 13px;
+    background: url('../../img/microsoft-logo.svg') no-repeat 0 13px;
   }
 
   &__icon:last-child {
@@ -926,11 +926,11 @@
   &__map {
     position: relative;
     height: 198px;
-    background: url('../img/map.jpg') no-repeat 42% 51%;
+    background: url('../../img/map.jpg') no-repeat 42% 51%;
 
     @include tablet {
       height: 385px;
-      background: url('../img/map.jpg') no-repeat 37% 48%;
+      background: url('../../img/map.jpg') no-repeat 37% 48%;
     }
 
     @include desktop {
