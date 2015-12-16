@@ -21,6 +21,12 @@ module.exports = function(grunt) {
       }
     },
 
+      lintspaces: {
+          style: {
+              src: "*.html"
+          }
+      },
+
     browserify: {
       style: {
         files: {
@@ -61,7 +67,9 @@ module.exports = function(grunt) {
 
     grunt.registerTask("build", [
         "sass",
-        "browserify"
+        "browserify",
+        "csscomb",
+        "lintspaces"
     ]);
 
   // Не редактируйте эту строку
