@@ -1,7 +1,6 @@
 @import 'variables';
-@import 'fonts';
 @import 'mixins';
-
+@import 'fonts';
 
 html {
   height:100%;
@@ -24,7 +23,7 @@ a {
 }
 
 a:active {
-  color: $blue-text;
+  color: $blue;
 }
 
 img {
@@ -222,7 +221,7 @@ img {
 
 .top-navigation {
   display: none;
-  background: $blue-menu;
+  background: $blue;
   color: #fff;
   font-weight: 600;
   z-index: 1000;
@@ -365,7 +364,7 @@ img {
   font-weight: 300;
   padding: 0 30px 27px 30px;
   line-height: 30px;
-  color: $blue-text;
+  color: $blue;
 
   &--contacts:first-child {
     padding-bottom: 0;

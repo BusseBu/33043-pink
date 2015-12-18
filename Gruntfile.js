@@ -14,6 +14,48 @@ module.exports = function(grunt) {
       }
     },
 
+    imagemin: {
+      images: {
+        options: {
+          optimizationLevel : 3
+        },
+        files: [{
+          expand: true,
+          cwd: 'src/img',
+          src: ['**/*.{png,jpg,gif,svg}'],
+          dest: 'build/img'
+        }]
+      }
+    },
+
+    htmlmin: {
+      options: {
+        removeComments: true,
+        collapseWhitespace: true,
+        collapseBooleanAttributes: true,
+        caseSensitive: true,
+        keepClosingSlash: true
+      },
+     html: {
+       files: {
+         "form.min.html" : "form.html",
+         "index.min.html" : "index.html"
+       }
+     }
+    },
+
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'build/css',
+          src: ['*.css', '!*.min.css'],
+          dest: 'build/css',
+          ext: '.min.css'
+        }]
+      }
+    },
+
     csscomb: {
       style: {
         src: "build/css/style.css",
@@ -21,11 +63,22 @@ module.exports = function(grunt) {
       }
     },
 
-      lintspaces: {
-          style: {
-              src: "*.html"
-          }
+    lintspaces: {
+      style: {
+        src: "*.html"
+      }
+    },
+
+    cmq: {
+      options: {
+        log: false
       },
+      style: {
+        files: {
+          "build/css/style.css" : "build/css/style.css"
+        }
+      }
+    },
 
     browserify: {
       style: {
@@ -66,10 +119,14 @@ module.exports = function(grunt) {
   };
 
     grunt.registerTask("build", [
-        "sass",
-        "browserify",
-        "csscomb",
-        "lintspaces"
+      "sass",
+      "browserify",
+      "cmq",
+      "postcss",
+      "csscomb",
+      "imagemin",
+      "htmlmin",
+      "cssmin"
     ]);
 
   // Не редактируйте эту строку

@@ -331,6 +331,7 @@
     [
       "font",
       "font-family",
+      "src",
       "font-size",
       "font-weight",
       "font-style",

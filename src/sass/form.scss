@@ -1,6 +1,7 @@
 form {
   background: #fff;
   padding-top: 28px;
+  color: $blue;
 
   &>div {
     padding: 40px 20px 44px 20px;
@@ -225,7 +226,7 @@ input[readonly] {
 
         &:hover {
           &:before {
-            border: 2px solid $blue-menu;
+            border: 2px solid $blue;
           }
         }
 
@@ -237,7 +238,7 @@ input[readonly] {
       }
 
       &:checked + label:before {
-        background: #fff url('../../img/circle.svg') no-repeat 50% 50%;
+        background: #fff url('../img/circle.svg') no-repeat 50% 50%;
       }
 
     }
@@ -255,7 +256,7 @@ input[readonly] {
       display: none;
 
       &:checked + label:before {
-        background: url('../../img/yes-pink.png') no-repeat 50% 50%;
+        background: url('../img/yes-pink.png') no-repeat 50% 50%;
       }
     }
 
@@ -277,7 +278,7 @@ input[readonly] {
 
       &:hover {
         &:before {
-          border: 2px solid $blue-text;
+          border: 2px solid $blue;
         }
       }
 
@@ -386,7 +387,7 @@ input[readonly] {
     margin: 0 auto;
 
     &:hover {
-      border: 2px solid $blue-text;
+      border: 2px solid $blue;
     }
 
     &:focus {
@@ -445,11 +446,11 @@ input[readonly] {
     }
 
     &:hover {
-      border: 2px solid $blue-text;
+      border: 2px solid $blue;
     }
 
     &:active {
-      background: $blue-text;
+      background: $blue;
 
       .form-input__minus {
         background: #fff;
@@ -615,7 +616,7 @@ input[readonly] {
     }
 
     &:hover {
-      border: 2px solid $blue-text;
+      border: 2px solid $blue;
     }
 
     &:focus {
@@ -664,12 +665,12 @@ input[readonly] {
     color: #283645;
 
     &:hover {
-      border: 2px solid $blue-text;
+      border: 2px solid $blue;
       outline: none;
     }
 
     &:active {
-      background: $blue-text;
+      background: $blue;
       color: #fff;
       outline: none;
     }
@@ -737,13 +738,13 @@ input[readonly] {
       border: 2px solid $blue-bg;
 
       svg {
-        fill: $blue-text;
+        fill: $blue;
       }
     }
 
     &:active {
-      border: 2px solid $blue-text;
-      background: $blue-text;
+      border: 2px solid $blue;
+      background: $blue;
 
       svg {
         fill: #fff;
