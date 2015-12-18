@@ -293,6 +293,10 @@ input[readonly] {
       margin-bottom: 46px;
     }
 
+    @include tablet {
+      margin-bottom: 46px;
+    }
+
   }
 
   &__label {
