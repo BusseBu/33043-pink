@@ -684,17 +684,18 @@ input[readonly] {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    width: 106.5%;
   }
 
   &__item {
     min-width: 80px;
     position: relative;
     text-align: left;
-    margin-right: 13px;
+    margin-right: 18px;
 
     @include tablet {
       min-width: 120px;
-      margin-right: 54px;
+      margin-right: 55px;
     }
   }
 
@@ -702,8 +703,8 @@ input[readonly] {
     position: absolute;
     top: -13px;
     left: 65px;
-    width: 19px;
-    height: 19px;
+    width: 30px;
+    height: 30px;
     background: #fff;
     @include border-radius(50%);
     border: 2px solid $grey;
@@ -714,6 +715,7 @@ input[readonly] {
     svg {
       width: 12px;
       height: 12px;
+      padding: 10px 9px;
       fill: #cacaca;
 
       @include tablet {
@@ -751,12 +753,13 @@ input[readonly] {
 
   &__image {
     max-width: 80px;
+    height: 80px;
     margin-bottom: 2px;
+    overflow: hidden;
 
     @include tablet {
       max-width: 120px;
       height: 120px;
-      overflow: hidden;
       margin-bottom: 8px;
     }
     img {
@@ -770,11 +773,7 @@ input[readonly] {
   }
 
   fieldset {
-    padding-bottom: 0;
-
-    @include desktop {
-      padding-bottom: 30px;
-    }
+    padding-bottom: 30px;
   }
 }
 

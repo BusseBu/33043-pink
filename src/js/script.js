@@ -5,13 +5,13 @@
             var $input = $el.querySelector("input");
             $input.onfocus = function() {
                 if ($input.readOnly) return;
-                $input.value = (dateToNumber($input.value));
+                $input.value = (valueToNumber($input.value));
             };
             $input.onblur = function() {
                 if (hasClass($el, "form-input--days")) {
                     var $keys_arr = ["день", "дня", "дней"];
                 } else $keys_arr = ["чел", "чел", "чел"];
-                $input.value = (getCount(dateToNumber($input.value), $keys_arr));
+                $input.value = (getCount(valueToNumber($input.value), $keys_arr));
             };
             var $input_buttons = Array.prototype.slice.call($el.querySelectorAll(".form-input__plus-minus"));
             $input_buttons.forEach(function($button) {
@@ -33,7 +33,7 @@
             var $keys_arr = ["день", "дня", "дней"];
             var $days = true;
         } else $keys_arr = ["чел", "чел", "чел"];
-        var $val = dateToNumber($el.value);
+        var $val = valueToNumber($el.value);
         if ($op === "sub" && $val > 0) {
             $val--;
             $el.value = getCount($val, $keys_arr);
@@ -76,7 +76,7 @@
                 deleteCompanion(this);
             })
         } else if ($value < $i) {
-            deleteCompanion(document.querySelector(".companions fieldset").lastChild.querySelector(".companion__delete"));
+            document.querySelector(".companions fieldset").lastChild.remove();
         }
         if ($value > 0) document.querySelector(".form-divider--companions").style.display = "block";
         else document.querySelector(".form-divider--companions").style.display = "none";
@@ -105,7 +105,7 @@
         });
         var $day = moment(document.querySelector("#depart-date").value, "DD MMMM YYYY", "ru");
         if ($day.isValid()) {
-            $add = dateToNumber(document.querySelector("#travel-duration").value);
+            $add = valueToNumber(document.querySelector("#travel-duration").value);
             $day.add($add, "days");
             document.querySelector("#return-date").value = $day.format("D MMMM YYYY");
         } else alert ("Неверная дата!");
@@ -113,22 +113,59 @@
 
     function formSubmit() {
         var $form = document.querySelector("form");
-        if ($form) $form.addEventListener("submit", function(event) {
+        var $queue = [];
+        var $i = 0;
+        document.querySelector("#photos_upload").addEventListener("change", function() {
+            var $files = Array.prototype.slice.call(this.files);
+            if ($files.length) $files.forEach(function(file) {
+                $queue.push(preview(file));
+            });
+            this.value = "";
+        });
+        function preview(file) {
+            if (file.type.match(/image.*/)) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var $preview = e.target.result;
+                    var $image = document.createElement("div");
+                    $image.className = "photos__item";
+                    $image.innerHTML = "<div class=\"photos__close\">\n"
+                        + "<svg viewBox=\"-1 0 12 12\"><use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#no\"></use></svg></div>\n"
+                        + "<div class=\"photos__image\"><img src=\"" + $preview + "\"></div>\n"
+                        + "<div class=\"photos__label\">IMG-" + ++$i + ".JPG</div>";
+                    document.querySelector(".form-divider--photos").style.display = "block";
+                    document.querySelector(".photos__items").appendChild($image);
+                    $image.querySelector(".photos__close").addEventListener("click", function() {
+                        $queue = $queue.filter(function ($el) {
+                            return $el != file;
+                        });
+                        this.parentNode.remove();
+                    });
+                };
+                reader.readAsDataURL(file);
+                return file;
+            }
+        }
+        $form.addEventListener("submit", function(event) {
             if (!("FormData" in window)) return;
             event.preventDefault();
-            function request(data, fn) {
-                var xhr = new XMLHttpRequest();
-                xhr.open("post", "https://echo.htmlacademy.ru/adaptive?" + (new Date().getTime()));
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState == 4) fn(xhr.responseText);
-                };
-                xhr.send(data);
-            }
             var data = new FormData($form);
+            $queue.forEach(function($el) {
+                data.append("images", $el);
+            });
             request(data, function(response) {
                 console.log(response);
             });
         });
+    }
+
+    function request(data, fn) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("post", "https://echo.htmlacademy.ru/adaptive?" + (new Date().getTime()));
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) fn(xhr.responseText);
+        };
+        xhr.send(data);
     }
 
     function navToggle() {
@@ -141,52 +178,6 @@
             toggleClass(document.querySelector(".top-navigation"), "top-navigation--opened");
             toggleClass(document.querySelector(".main-header__line"), "main-header__line--opened");
         });
-    }
-
-    function uploadFile() {
-        var $form = document.querySelector("form");
-        if ($form) $form.querySelector("#photos_upload").addEventListener("change", function() {
-            var $files = Array.prototype.slice.call(this.files);
-            var $i = 0;
-            if ($files.length) $files.forEach(function(file) {
-                function error($message) {
-                    var $alert = document.querySelector(".alert--photos");
-                    if ($alert) {
-                        $alert.innerHTML = "<span>" + $message + "</span>";
-                    } else {
-                        $alert = document.createElement("div");
-                        $alert.className = "alert alert--photos";
-                        $alert.innerHTML = "<span>" + $message + "</span>";
-                        $input = document.querySelector(".photos__btn").nextSibling;
-                        document.querySelector(".photos fieldset").insertBefore($alert, $input);
-                    }
-                }
-                if (file.type.match(/image.*/)) {
-                    var reader = new FileReader();
-                    reader.onload = function(e) {
-                        $i++;
-                        var $preview = e.target.result;
-                        if (file.size > 1048576) {
-                            error ("Неправильный размер файла!");
-                            return;
-                        }
-                        var $image = document.createElement("div");
-                        $image.className = "photos__item";
-                        $image.innerHTML = "<div class=\"photos__close\">\n"
-                            + "<svg viewBox=\"-1 0 12 12\"><use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#no\"></use></svg></div>\n"
-                            + "<div class=\"photos__image\"><img src=\"" + $preview + "\"></div>\n"
-                            + "<div class=\"photos__label\">IMG-" + $i + ".JPG</div>";
-                        document.querySelector(".form-divider--photos").style.display = "block";
-                        document.querySelector(".photos__items").appendChild($image);
-                    };
-                } else {
-                    error("Неправильный тип файла!");
-                    return;
-                }
-                reader.readAsDataURL(file);
-            });
-        });
-
     }
 
     function toggleClass($el, $classname) {
@@ -202,8 +193,8 @@
         return $el.className.indexOf($classname) !== -1;
     }
 
-    function dateToNumber($date) {
-        if ($date = $date.replace(/[^\d]/gi, "")) return $date;
+    function valueToNumber($value) {
+        if ($value = $value.replace(/[^\d]/gi, "")) return $value;
         return 0;
     }
 
@@ -219,7 +210,6 @@
 
     inputAdd();
     formSubmit();
-    uploadFile();
     navToggle();
     changeDate();
 })();

@@ -1,4 +1,5 @@
 gosha/
+build/
 node_modules/
 bower_components/
 .DS_Store
@@ -7,4 +8,3 @@ Thumbs.db
 *.sublime*
 *.log
 css/*.css
-*.css.map
