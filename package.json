@@ -15,13 +15,20 @@
   "dependencies": {
     "autoprefixer": "6.1.x",
     "grunt": "0.4.x",
+    "grunt-browserify": "^4.0.1",
+    "grunt-combine-media-queries": "^1.0.19",
     "grunt-contrib-clean": "0.6.x",
     "grunt-contrib-copy": "0.8.x",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-htmlmin": "^0.6.0",
+    "grunt-contrib-imagemin": "^1.0.0",
     "grunt-contrib-watch": "0.6.x",
+    "grunt-csscomb": "^3.1.0",
     "grunt-lintspaces": "0.7.x",
     "grunt-postcss": "0.7.x",
     "grunt-sass": "1.1.x",
-    "load-grunt-tasks": "3.3.x"
+    "load-grunt-tasks": "3.3.x",
+    "moment": "^2.10.6"
   },
   "scripts": {
     "pregosha": "npm install > /dev/null",

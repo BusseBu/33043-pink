@@ -1,6 +1,7 @@
 form {
   background: #fff;
   padding-top: 28px;
+  color: $blue;
 
   &>div {
     padding: 40px 20px 44px 20px;
@@ -42,8 +43,16 @@ fieldset {
   }
 }
 
-input:disabled {
+input[readonly] {
   background: #f2f2f2;
+
+  &:hover {
+    border: 2px solid $grey;
+  }
+
+  &:active {
+    border: 2px solid $grey;
+  }
 }
 
 
@@ -128,6 +137,12 @@ input:disabled {
     @include desktop {
       padding: 32px 57px 19px;
     }
+
+    input[type="date"] {
+      ::-webkit-inner-spin-button {
+        display: none;
+      }
+    }
   }
 }
 
@@ -201,30 +216,29 @@ input:disabled {
           display: inline-block;
           background: #fff;
           vertical-align: middle;
-          width: 15px;
-          height: 15px;
+          width: 35px;
+          height: 35px;
           @include border-radius(50%);
-          border: 10px solid #fff;
-          @include box-shadow(0, 0, 0, 2px, rgba(229, 229, 229, 1));
+          border: 2px solid $grey;
           margin: -3px 25px 0 0;
           cursor:pointer;
         }
 
         &:hover {
           &:before {
-            @include box-shadow(0, 0, 0, 2px, rgba(40, 54, 69, 1));
+            border: 2px solid $blue;
           }
         }
 
         &:active {
           &:before {
-            @include box-shadow(0, 0, 0, 2px, rgba(210, 40, 86, 1));
+            border: 2px solid $pink;
           }
         }
       }
 
       &:checked + label:before {
-        background: $pink;
+        background: #fff url('../img/circle.svg') no-repeat 50% 50%;
       }
 
     }
@@ -264,7 +278,7 @@ input:disabled {
 
       &:hover {
         &:before {
-          border: 2px solid $blue-text;
+          border: 2px solid $blue;
         }
       }
 
@@ -276,6 +290,10 @@ input:disabled {
     }
 
     &:last-child {
+      margin-bottom: 46px;
+    }
+
+    @include tablet {
       margin-bottom: 46px;
     }
 
@@ -331,8 +349,16 @@ input:disabled {
     @include tablet {
       width: 252px;
 
-      input:disabled {
+      input[readonly] {
         background: #fff;
+
+        &:hover {
+          border: 2px solid #fff;
+        }
+
+        &:active {
+          border: 2px solid #fff;
+        }
       }
     }
   }
@@ -365,7 +391,7 @@ input:disabled {
     margin: 0 auto;
 
     &:hover {
-      border: 2px solid $blue-text;
+      border: 2px solid $blue;
     }
 
     &:focus {
@@ -424,11 +450,11 @@ input:disabled {
     }
 
     &:hover {
-      border: 2px solid $blue-text;
+      border: 2px solid $blue;
     }
 
     &:active {
-      background: $blue-text;
+      background: $blue;
 
       .form-input__minus {
         background: #fff;
@@ -594,7 +620,7 @@ input:disabled {
     }
 
     &:hover {
-      border: 2px solid $blue-text;
+      border: 2px solid $blue;
     }
 
     &:focus {
@@ -643,12 +669,12 @@ input:disabled {
     color: #283645;
 
     &:hover {
-      border: 2px solid $blue-text;
+      border: 2px solid $blue;
       outline: none;
     }
 
     &:active {
-      background: $blue-text;
+      background: $blue;
       color: #fff;
       outline: none;
     }
@@ -663,17 +689,18 @@ input:disabled {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    width: 106.5%;
   }
 
   &__item {
     min-width: 80px;
     position: relative;
     text-align: left;
-    margin-right: 13px;
+    margin-right: 18px;
 
     @include tablet {
       min-width: 120px;
-      margin-right: 54px;
+      margin-right: 55px;
     }
   }
 
@@ -681,8 +708,8 @@ input:disabled {
     position: absolute;
     top: -13px;
     left: 65px;
-    width: 19px;
-    height: 19px;
+    width: 30px;
+    height: 30px;
     background: #fff;
     @include border-radius(50%);
     border: 2px solid $grey;
@@ -693,6 +720,7 @@ input:disabled {
     svg {
       width: 12px;
       height: 12px;
+      padding: 10px 9px;
       fill: #cacaca;
 
       @include tablet {
@@ -714,13 +742,13 @@ input:disabled {
       border: 2px solid $blue-bg;
 
       svg {
-        fill: $blue-text;
+        fill: $blue;
       }
     }
 
     &:active {
-      border: 2px solid $blue-text;
-      background: $blue-text;
+      border: 2px solid $blue;
+      background: $blue;
 
       svg {
         fill: #fff;
@@ -730,11 +758,17 @@ input:disabled {
 
   &__image {
     max-width: 80px;
+    height: 80px;
     margin-bottom: 2px;
+    overflow: hidden;
 
     @include tablet {
       max-width: 120px;
+      height: 120px;
       margin-bottom: 8px;
+    }
+    img {
+      width: 120px;
     }
   }
 
@@ -744,11 +778,7 @@ input:disabled {
   }
 
   fieldset {
-    padding-bottom: 0;
-
-    @include desktop {
-      padding-bottom: 30px;
-    }
+    padding-bottom: 30px;
   }
 }
 

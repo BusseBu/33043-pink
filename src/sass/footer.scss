@@ -29,7 +29,7 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
-    color: $blue-text;
+    color: $blue;
 
     @include tablet {
       width: 33%;
@@ -39,14 +39,14 @@
     }
 
     &:hover {
-      color: $blue-text;
+      color: $blue;
       svg {
-        fill: $blue-text;
+        fill: $blue;
       }
     }
 
     &:active {
-      color: $blue-text;
+      color: $blue;
       svg {
         opacity: 0.3;
       }
@@ -97,7 +97,7 @@
     }
 
     &:hover {
-      border: 3px solid $blue-menu;
+      border: 3px solid $blue;
     }
 
     &:active {

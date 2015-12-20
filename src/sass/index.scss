@@ -353,6 +353,28 @@
       margin-right: 59px;
     }
   }
+
+  &__image-text {
+
+    font-weight: bold;
+    position: absolute;
+    color: $pink;
+
+
+    @include tablet {
+      font-size: 100px;
+      top: 100px;
+      left: 125px;
+    }
+
+    @include desktop {
+      font-size: 120px;
+      top: 109px;
+      left: 92px;
+    }
+
+  }
+
   &__brief {
     width: 50%;
     text-align: left;
@@ -362,6 +384,7 @@
       padding: 94px 0;
     }
   }
+
   &__headline {
     font-size: 30px;
     line-height: 36px;
@@ -634,13 +657,13 @@
     position: relative;
     overflow: hidden;
     width: 33%;
-    background: $blue-menu;
+    background: $blue;
     height: 98px;
     vertical-align: middle;
     text-align: center;
     color: #fff;
     border-left: 2px solid $grey;
-    border-bottom: 2px solid $blue-menu;
+    border-bottom: 2px solid $blue;
     background-clip: padding-box;
 
     @include tablet {
@@ -666,11 +689,11 @@
   }
 
   &__th:nth-child(2) {
-    border-left: 2px solid $blue-menu;
+    border-left: 2px solid $blue;
   }
 
   &__th:last-child {
-    border-right: 2px solid $blue-menu;
+    border-right: 2px solid $blue;
   }
 
   &__hit {
@@ -718,7 +741,7 @@
       font-size: 14px;
       text-align: left;
       padding: 0 15px;
-      color: $blue-text;
+      color: $blue;
 
       @include tablet {
         display: table-cell;
@@ -881,7 +904,7 @@
       }
 
       a:hover {
-        color: $blue-text;
+        color: $blue;
         text-decoration: underline;
       }
 
@@ -925,12 +948,13 @@
 
   &__map {
     position: relative;
+  }
+
+  &__map-google {
     height: 198px;
-    background: url('../img/map.jpg') no-repeat 42% 51%;
 
     @include tablet {
       height: 385px;
-      background: url('../img/map.jpg') no-repeat 37% 48%;
     }
 
     @include desktop {
@@ -943,6 +967,7 @@
     height: 100px;
     position: absolute;
     top: 0;
+    z-index: 1;
 
     img {
       width: 100%;
@@ -955,22 +980,6 @@
       @include desktop {
         height: 122px;
       }
-    }
-  }
-
-  &__map-marker {
-    width: 17px;
-    height: 17px;
-    @include border-radius(50%);
-    border: 10px solid #fff;
-    background: $pink;
-    position: absolute;
-    top: 46%;
-    left: 44%;
-
-    @include tablet {
-      top: 54%;
-      left: 48.5%;
     }
   }
 
