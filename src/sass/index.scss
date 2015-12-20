@@ -104,54 +104,37 @@
   }
 
   @include desktop {
-    width: 47%;
+    width: 306px;
     top: 417px;
-    left: 0;
+    left: 10px;
   }
 }
 
 .main-divider {
   position: absolute;
   width: 100%;
-  z-index: 1;
+  z-index: 0;
+  top: -78px;
+  left: 0;
 
-  &--information{
-    svg {
-      use {
-        transform: translate(0, 0px);
+  .main-divider__wrapper {
+    margin-left: -450px;
 
-        @include tablet {
-          transform: translate(450px, 0px);
-        }
-      }
-    }
-
-    @include desktop {
-      top: 325px;
+    @include tablet {
+      margin-left: 0;
     }
   }
 
-
   &--prices {
-    position: relative;
-
-    svg {
-      use {
-        transform: translate(0px, 0px);
-
-        @include tablet {
-          transform: translate(400px, 0px);
-        }
-
-        @include desktop {
-          transform: translate(400px, 0px);
-        }
-      }
-    }
+    top: -74px;
 
     @include desktop {
       margin-bottom: 49px;
     }
+  }
+
+  @include desktop {
+    top: 0;
   }
 }
 
@@ -161,16 +144,18 @@
   padding-top: 40px;
   position: relative;
   overflow: hidden;
+  text-align: center;
 
   &__headline-wrapper {
-    @include desktop {
-      margin-bottom: 78px;
-    }
+    padding: 0 10px;
+    margin: 0 auto;
+    max-width: 960px;
   }
 
   &__items-wrapper {
     background: $grey-bg;
-    padding: 111px 20px 0;
+    position: relative;
+    padding: 113px 20px 0;
 
     @include tablet {
       display: flex;
@@ -179,7 +164,7 @@
     }
 
     @include desktop {
-      padding: 0;
+      padding: 78px 10px 0;
     }
   }
 
@@ -209,15 +194,20 @@
     }
 
     @include desktop {
-      min-width: 292px;
-      max-width: 292px;
+      min-width: 285px;
+      max-width: 285px;
       text-align: center;
       margin-right: 32px;
     }
-  }
 
-  &__item:last-child {
-    margin-right: 0;
+    &:last-child {
+      padding-bottom: 30px;
+
+      @include tablet {
+        margin: 0;
+        padding: 0;
+      }
+    }
   }
 
   &__small-image {
@@ -234,6 +224,7 @@
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 12px;
+    color: #000;
 
     @include desktop {
       font-size: 30px;
@@ -245,7 +236,7 @@
 
   &__text {
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 500;
     line-height: 24px;
 
     @include tablet {
@@ -255,7 +246,6 @@
     @include desktop {
       line-height: 30px;
       font-size: 18px;
-      font-weight: 500;
       padding: 0 20px;
     }
   }
@@ -264,6 +254,19 @@
     z-index: 1;
     height: 278px;
     position: relative;
+
+    img {
+      height: 278px;
+
+      @include tablet {
+        height: 472px;
+      }
+
+      @include desktop {
+        display: none;
+      }
+
+    }
 
     @include tablet {
       width: 50%;
@@ -286,8 +289,8 @@
   &__image-screen {
     vertical-align: bottom;
     position: absolute;
-    bottom: -5px;
-    left: 50%;
+    bottom: 0;
+    left: 48%;
     width: 142px;
     margin-left: -71px;
 
@@ -300,7 +303,12 @@
     }
 
     &--3 {
+      width: 156px;
       display: block;
+
+      @include tablet {
+        width: 142px;
+      }
     }
 
     img {
@@ -319,22 +327,24 @@
       width: 268px;
     }
   }
-
 }
-
 
 .article-brief {
   display: none;
   background: #fff;
   padding: 60px 0;
 
-  @include tablet {
+  &__wrapper {
+    max-width: 960px;
     display: flex;
+    padding: 0 10px;
+    margin: 0 auto;
+    height: 100%;
   }
 
   &__image {
     position: relative;
-    width: 50%;
+    margin-right: 40px;
 
     svg {
       width: 260px;
@@ -354,29 +364,38 @@
     }
   }
 
-  &__image-text {
+  &__image-wrapper {
+    margin: 0 auto;
+    position: relative;
+    width: 260px;
+    height: 300px;
 
+    @include desktop {
+      width: 300px;
+      height: 350px;
+    }
+  }
+
+  &__image-text {
     font-weight: bold;
     position: absolute;
     color: $pink;
 
-
     @include tablet {
       font-size: 100px;
       top: 100px;
-      left: 125px;
+      left: 74px;
     }
 
     @include desktop {
       font-size: 120px;
-      top: 109px;
+      top: 118px;
       left: 92px;
     }
 
   }
 
   &__brief {
-    width: 50%;
     text-align: left;
     padding: 38px 0;
 
@@ -391,6 +410,7 @@
     font-weight: 700;
     margin-bottom: 10px;
     padding-right: 40px;
+    color: #000;
 
     @include desktop {
       margin-bottom: 21px;
@@ -426,20 +446,40 @@
     }
   }
 
+  @include tablet {
+    display: block;
+  }
+
   @include desktop {
-    padding: 30px 120px 21px;
+    padding: 30px 0 21px;
     background: $grey-bg;
   }
 }
 
 .reviews {
   background: #fff;
-  padding: 44px 20px 0;
+  text-align: center;
+
+  &__wrapper {
+    max-width: 960px;
+    padding: 45px 20px 0;
+    margin: 0 auto;
+
+    @include tablet {
+      padding: 10px 10px 0;
+    }
+
+    @include desktop {
+      display: flex;
+      padding: 72px 10px 9px;
+    }
+  }
 
   &__arrow {
     margin: auto;
     cursor: pointer;
     display: none;
+    height: 41px;
 
     svg {
       fill: #bec2c7;
@@ -464,7 +504,8 @@
     }
   }
 
-  &__wrap {
+  &__items {
+    width: 100%;
     margin-bottom: 26px;
 
     @include tablet {
@@ -478,7 +519,6 @@
   }
 
   &__item {
-
     @include tablet {
       display: flex;
       flex-direction: column-reverse;
@@ -487,10 +527,19 @@
 
   &__quotes {
     display: none;
-    margin-bottom: 45px;
+    height: 64px;
+    width: 78px;
+    margin: 0 auto 45px auto;
+    position: relative;
 
     svg {
+      position: absolute;
+      left: -43px;
       margin-right: 2px;
+
+      &:last-child {
+        left: 0;
+      }
     }
 
     @include desktop {
@@ -509,16 +558,18 @@
   &__text {
     font-size: 14px;
     line-height: 30px;
-    font-weight: 200;
+    font-weight: 500;
+
+    span {
+      @include desktop {
+        display: none;
+      }
+    }
 
     @include tablet {
       font-size: 18px;
       line-height: 30px;
       margin-bottom: 35px;
-    }
-
-    @include desktop {
-      font-weight: 500;
     }
   }
 
@@ -551,19 +602,11 @@
       margin-bottom: 4px;
     }
   }
-
-  @include tablet {
-    padding: 10px 40px 0;
-  }
-
-  @include desktop {
-    display: flex;
-    padding: 72px 130px 9px;
-  }
-
 }
 
 .switches {
+  text-align: center;
+
   &__item {
     display: inline-block;
     vertical-align: middle;
@@ -613,20 +656,24 @@
 .prices {
   overflow: hidden;
   background: $grey-bg;
+  position: relative;
 
-  &__wrap {
+  &__wrapper {
     height: 284px;
+    padding-top: 105px;
     position: relative;
-    margin: 25px 0 30px 0 ;
+    max-width: 960px;
+    text-align: center;
+    margin: 25px auto 30px;
 
     @include tablet {
-      margin: 0;
+      margin: 0 auto;
       height: 100%;
-      padding: 0 40px 70px;
+      padding: 0 10px 70px;
     }
 
     @include desktop {
-      padding: 0 130px 95px;
+      padding: 0 10px 95px;
     }
   }
 
@@ -635,7 +682,7 @@
     position: absolute;
     left: -80%;
     width: 260%;
-    border-collapse: collapse;
+    border-spacing: 0;
 
     @include tablet {
       width: 100%;
@@ -663,7 +710,6 @@
     text-align: center;
     color: #fff;
     border-left: 2px solid $grey;
-    border-bottom: 2px solid $blue;
     background-clip: padding-box;
 
     @include tablet {
@@ -686,14 +732,14 @@
         display: table-cell;
       }
     }
-  }
 
-  &__th:nth-child(2) {
-    border-left: 2px solid $blue;
-  }
+    &:nth-child(2) {
+      border-left: 2px solid $blue;
+    }
 
-  &__th:last-child {
-    border-right: 2px solid $blue;
+    &:last-child {
+      border-right: 2px solid $blue;
+    }
   }
 
   &__hit {
@@ -727,6 +773,8 @@
     display: table-cell;
     background: #fff;
     border: 2px solid $grey;
+    border-right: 0;
+    border-top: 0;
     height: 59px;
     position: relative;
     padding: 0 22px;
@@ -760,6 +808,10 @@
 
     @include desktop {
       height: 59px;
+    }
+
+    &:last-child {
+      border-right: 2px solid $grey;
     }
   }
 
@@ -803,8 +855,8 @@
   }
 
   &__td-switch {
-    top: 17px;
-    right: 20px;
+    top: 14px;
+    right: 17px;
     width: 28px;
     height: 28px;
     position: absolute;
@@ -843,9 +895,14 @@
 .contacts {
   background: #fff;
   padding-top: 44px;
+  text-align: center;
 
-  &__wrap {
-    margin-bottom: 50px;
+  &__wrapper {
+    padding: 0 10px;
+    max-width: 960px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto 50px auto;
 
     @include tablet {
       display: flex;
@@ -861,7 +918,11 @@
   }
 
   &__headline-wrapper {
-    margin-bottom: 30px;
+    padding: 0 10px;
+    max-width: 960px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+    position: relative;
 
     @include tablet {
       margin-bottom: 43px;
@@ -966,7 +1027,7 @@
     width: 100%;
     height: 100px;
     position: absolute;
-    top: 0;
+    top: -1px;
     z-index: 1;
 
     img {

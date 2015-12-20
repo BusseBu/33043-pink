@@ -5,9 +5,7 @@
   z-index: 1;
 
   &__line {
-    height: 26px;
-    padding: 20px;
-    clear: both;
+    height: 66px;
     background-color: rgba(0, 0, 0, 0.3);
 
     &--opened {
@@ -15,19 +13,24 @@
     }
 
     @include tablet {
-      height: 30px;
-      padding: 40px;
+      height: 110px;
     }
   }
 
   &__toggle-icon {
-    float:right;
+    position: absolute;
+    top: 21px;
+    right: 20px;
     background-size: cover;
     z-index: 1;
     cursor: pointer;
     width: 50px;
     height: 24px;
     background: url('../img/menu-burger.svg') no-repeat 0 0;
+
+    @include tablet {
+      top: 40px;
+    }
 
     @include desktop {
       display: none;
@@ -48,5 +51,110 @@
         background: url('../img/menu-cross-pink.svg') no-repeat 50% 0;
       }
     }
+  }
+}
+
+.top-navigation {
+  display: none;
+  background: $blue;
+  color: #fff;
+  font-weight: 600;
+  z-index: 1000;
+  position: absolute;
+  top: 66px;
+  left: 0;
+  width: 100%;
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include desktop {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__underline {
+    display: none;
+  }
+
+  &__item {
+    @include box-shadow(0, -2px, 0, -1px, rgba(0, 0, 0, 1));
+    border-top: 1px solid #485461;
+    padding: 25px;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+
+    @include desktop {
+      background: none;
+      border-top: none;
+      font-size: 18px;
+      text-transform: none;
+      font-weight: 200;
+      box-shadow: none;
+      margin-right: 18px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid #000;
+
+      @include desktop {
+        margin-right: 0;
+        border-bottom: 0;
+      }
+    }
+
+    &:hover {
+      a {
+        color: $pink;
+
+        @include desktop {
+          color: #fff;
+        }
+      }
+
+      .top-navigation__underline {
+        @include desktop {
+          display: block;
+          width: 100%;
+          height: 2px;
+          margin-top: 5px;
+          background: #fff;
+          top: 20px;
+        }
+      }
+    }
+    &:active {
+      a {
+        opacity: 0.3
+      }
+
+      .top-navigation__underline {
+        display: none;
+      }
+    }
+  }
+
+  @include desktop {
+    display: block;
+  }
+
+  @include desktop {
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    background: none;
+  }
+
+  &--opened {
+    display: block;
   }
 }

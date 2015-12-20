@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background: #626262;
+  color: $blue;
 }
 
 body, p, h1, h2, h3, h4, h5, h6 {
@@ -33,289 +34,27 @@ img {
 .main-wrapper {
   position: relative;
   width: 100%;
+  height: 100%;
   min-width: 320px;
   text-align: center;
   margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
 
   &--white {
     background: #fff;
   }
 
   @include tablet {
-    max-width: 1200px;
+    max-width: 960px;
   }
 }
 
 @import 'main-header';
 
-.logo {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  text-decoration: none;
+@import 'components/logo';
 
-  &__pink-star {
-    display: none;
-    position: absolute;
-    left: -1px;
-    top: 0;
-    width: 146px;
-    height: 40px;
-    fill: $pink;
 
-    @include desktop {
-      display: block;
-    }
-  }
-
-  &__stars {
-    display: none;
-    position: absolute;
-    left: -1px;
-    top: 0;
-    width: 146px;
-    height: 40px;
-    fill: $pink;
-
-    &--footer {
-      fill: $blue-bg;
-    }
-
-    @include desktop {
-      display: block;
-    }
-  }
-
-  &__glasses {
-    display: none;
-    width: 59px;
-    height: 40px;
-    margin-right: 5px;
-    fill: #fff;
-
-    &--footer {
-      fill: $pink;
-      margin-right: 6px;
-    }
-
-    @include desktop {
-      display: inline;
-    }
-
-  }
-
-  &__full-glasses {
-    width: 59px;
-    height: 40px;
-    display: none;
-    margin-right: 5px;
-    fill: #fff;
-
-    &--footer {
-      display: inline;
-      fill: $pink;
-      margin-right: 6px;
-    }
-
-    @include tablet {
-      display: inline;
-    }
-
-    @include desktop {
-      display: none;
-    }
-  }
-
-  &__letters {
-    display: inline;
-    width: 74px;
-    height: 22px;
-    fill: #fff;
-
-    &--footer {
-      fill: $blue-bg;
-    }
-
-    @include tablet {
-      width: 76px;
-      height: 24px;
-    }
-  }
-
-  @include tablet {
-    left: 40px;
-    top: 25px;
-    width: 146px;
-    height: 40px;
-  }
-
-  @include desktop {
-    left: 130px;
-  }
-
-  &--footer {
-    position: relative;
-    width: 100%;
-    margin-bottom: 37px;
-    text-align: center;
-    left: 0;
-    top: 0;
-
-    @include tablet {
-      width: 33%;
-      margin: 0;
-      text-align: left;
-    }
-  }
-
-  &:hover {
-    svg {
-      fill: $pink;
-    }
-  }
-
-  &:active {
-    opacity: 0.3;
-
-    .logo__pink-star {
-      fill: #fff;
-
-      &--footer {
-        fill: $pink;
-      }
-    }
-
-    .logo__stars {
-      fill: $pink;
-
-      &--footer {
-        fill: $blue-bg;
-      }
-    }
-
-    .logo__glasses {
-      fill: #fff;
-
-      &--footer {
-        fill: $pink;
-      }
-    }
-
-    .logo__full-glasses {
-      fill: #fff;
-
-      &--footer {
-        fill: $pink;
-      }
-    }
-
-    .logo__letters {
-      fill: #fff;
-
-      &--footer {
-        fill: $blue-bg;
-      }
-    }
-  }
-}
-
-.top-navigation {
-  display: none;
-  background: $blue;
-  color: #fff;
-  font-weight: 600;
-  z-index: 1000;
-
-  &__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    @include desktop {
-      display: flex;
-    }
-  }
-
-  &__underline {
-    display: none;
-  }
-
-  &__item {
-    box-shadow: 0 -2px 0 -1px rgba(72, 84, 97, 1), 0 -3px 0 -1px rgba(0, 0, 0, 1);
-    padding: 25px;
-    text-transform: uppercase;
-    position: relative;
-    cursor: pointer;
-
-    @include desktop {
-      background: none;
-      font-size: 18px;
-      text-transform: none;
-      font-weight: 200;
-      box-shadow: none;
-      margin-right: 18px;
-    }
-
-    a {
-      text-decoration: none;
-      color: #fff;
-    }
-
-    &:last-child {
-      border-bottom: 1px solid #000;
-
-      @include desktop {
-        margin-right: 0;
-        border-bottom: 0;
-      }
-    }
-
-    &:hover {
-      a {
-        color: $pink;
-
-        @include desktop {
-          color: #fff;
-        }
-      }
-
-      .top-navigation__underline {
-        @include desktop {
-          display: block;
-          width: 100%;
-          height: 2px;
-          margin-top: 5px;
-          background: #fff;
-          top: 20px;
-        }
-      }
-    }
-    &:active {
-      a {
-        opacity: 0.3
-      }
-
-      .top-navigation__underline {
-        display: none;
-      }
-    }
-  }
-
-  @include desktop {
-    display: block;
-  }
-
-  @include desktop {
-    position: absolute;
-    right: 103px;
-    top: 16px;
-    background: none;
-  }
-
-  &--opened {
-    display: block;
-  }
-}
 
 .main-headline {
   position: relative;
@@ -351,8 +90,8 @@ img {
   }
 
   @include desktop {
-    width: 47%;
-    left: 0;
+    width: 306px;
+    left: 10px;
     top: 213px;
   }
 }
@@ -362,9 +101,13 @@ img {
   font-size: 24px;
   position: relative;
   font-weight: 300;
-  padding: 0 30px 27px 30px;
-  line-height: 30px;
+  line-height: 29px;
   color: $blue;
+  z-index: 2;
+
+  &:first-child {
+    padding-bottom: 28px;
+  }
 
   &--contacts:first-child {
     padding-bottom: 0;
@@ -373,13 +116,11 @@ img {
   @include tablet {
     font-size: 40px;
     line-height: 48px;
-    padding: 0 40px;
   }
 
   @include desktop {
     font-size: 50px;
     line-height: 60px;
-    padding: 0 130px;
   }
 }
 
@@ -396,50 +137,83 @@ img {
 }
 
 .intro {
-  position: relative;
-  padding-top: 85px;
-  min-height: 137px;
   overflow: hidden;
+  background-size: cover;
+  background: url('../img/background-mobile@1x.jpg') no-repeat 50% 0;
 
-  &__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -2;
+  @include media-r(2) {
+    background-image: url('../img/background-mobile@2x.jpg');
+  }
 
+  @include media-r(3) {
+    background-image: url('../img/background-mobile@3x.jpg');
+  }
 
-    img {
-      @include desktop {
-        width: 1300px;
-      }
+  @include tablet {
+    background-size: cover;
+    text-align: right;
+    background-image: url('../img/background-tablet@1x.jpg');
+  }
+
+  @include tablet-res {
+    background-image: url('../img/background-tablet@2x.jpg');
+  }
+
+  @include desktop {
+    background-size: cover;
+    background-image: url('../img/background-fullsize.jpg');
+  }
+
+  &__wrapper {
+    padding: 85px 0 0;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+
+    @include tablet {
+      padding: 183px 10px 0;
+    }
+
+    @include desktop {
+      padding: 204px 10px 0;
     }
   }
 
   &__image {
-    height: 285px;
-    width: 320px;
+    height: 286px;
+    width: 258px;
+    background: transparent url('../img/iphone-hand-mobile.png') 0 0 no-repeat;
+    background-size: cover;
     margin: 0 auto;
 
+    @include media-r(2) {
+      background-image: url('../img/iphone-hand-mobile@2x.png');
+    }
+
+    @include media-r(3) {
+      background-image: url('../img/iphone-hand-mobile@3x.png');
+    }
+
     @include tablet {
-      height: 544px;
+      height: 545px;
       width: 656px;
+      background: url('../img/iphone-hand-tablet@1x.png');
+    }
+
+    @include tablet-res {
+      background: url('../img/iphone-hand-tablet@2x.png');
     }
 
     @include desktop {
       height: 645px;
       width: 884px;
+      background: url('../img/iphone-hand-desktop@1x.png');
     }
-  }
 
-  @include tablet {
-    text-align: right;
-    padding-top: 183px;
-    background-size: cover;
-  }
-
-  @include desktop {
-    padding-top: 204px;
-    background-size: cover;
+    @include desktop-res {
+      background: url('../img/iphone-hand-desktop@2x.png');
+    }
   }
 
   &--form {
@@ -469,17 +243,19 @@ img {
     font-size: 14px;
     line-height: 30px;
     font-weight: 500;
+    max-width: 960px;
+    margin: 0 auto;
     padding-top: 18px;
     text-align: center;
 
     @include tablet {
       font-size: 18px;
-      padding: 18px 70px 42px;
+      padding: 18px 10px 42px;
     }
 
     @include desktop {
       font-size: 18px;
-      padding: 18px 200px 72px;
+      padding: 18px 10px 72px;
     }
   }
 
