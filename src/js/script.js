@@ -158,7 +158,7 @@
         data.append("images", $el);
       });
       request(data, function(response) {
-
+        document.querySelector(".submit__input").className = "submit__input";
         console.log(response);
       });
     });
@@ -166,6 +166,7 @@
 
   function request(data, fn) {
     var xhr = new XMLHttpRequest();
+    document.querySelector(".submit__input").className = "submit__input submit__input--process";
     xhr.open("post", "https://echo.htmlacademy.ru/adaptive?" + (new Date().getTime()));
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) fn(xhr.responseText);

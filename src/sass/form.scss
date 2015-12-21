@@ -880,6 +880,21 @@ input[readonly] {
     text-transform: uppercase;
     cursor: pointer;
 
+    &--process {
+      span {
+        animation: process 2s linear infinite alternate both;
+      }
+    }
+
+    @keyframes process {
+      from {
+        opacity: 0.7;
+      }
+      to {
+        opacity: 0.3;
+      }
+    }
+
     @include tablet {
       width: 300px;
       margin-bottom: 0;
