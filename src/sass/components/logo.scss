@@ -1,0 +1,165 @@
+.logo {
+  position: absolute;
+  left: 18px;
+  top: 21px;
+  text-decoration: none;
+
+  &__pink-star {
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 146px;
+    height: 40px;
+    fill: $pink;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__stars {
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 146px;
+    height: 40px;
+    fill: $pink;
+
+    &--footer {
+      fill: $blue-bg;
+    }
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__glasses {
+    display: none;
+    width: 59px;
+    height: 40px;
+    margin-right: 5px;
+    fill: #fff;
+
+    &--footer {
+      fill: $pink;
+      margin-right: 6px;
+    }
+
+    @include desktop {
+      display: inline;
+    }
+
+  }
+
+  &__full-glasses {
+    width: 59px;
+    height: 40px;
+    display: none;
+    margin-right: 5px;
+    fill: #fff;
+
+    &--footer {
+      display: inline;
+      fill: $pink;
+      margin-right: 6px;
+    }
+
+    @include tablet {
+      display: inline;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__letters {
+    display: inline;
+    width: 76px;
+    height: 26px;
+    fill: #fff;
+
+    &--footer {
+      fill: $blue-bg;
+    }
+
+    @include tablet {
+      width: 76px;
+      height: 24px;
+    }
+  }
+
+  @include tablet {
+    top: 25px;
+    width: 146px;
+    height: 40px;
+  }
+
+  &--footer {
+    position: relative;
+    width: 100%;
+    margin-bottom: 37px;
+    text-align: center;
+    left: 0;
+    top: 0;
+
+    @include tablet {
+      width: 33%;
+      margin: 0;
+      text-align: left;
+    }
+  }
+
+  &:hover {
+    svg {
+      fill: $pink;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+
+    .logo__pink-star {
+      fill: #fff;
+
+      &--footer {
+        fill: $pink;
+      }
+    }
+
+    .logo__stars {
+      fill: $pink;
+
+      &--footer {
+        fill: $blue-bg;
+      }
+    }
+
+    .logo__glasses {
+      fill: #fff;
+
+      &--footer {
+        fill: $pink;
+      }
+    }
+
+    .logo__full-glasses {
+      fill: #fff;
+
+      &--footer {
+        fill: $pink;
+      }
+    }
+
+    .logo__letters {
+      fill: #fff;
+
+      &--footer {
+        fill: $blue-bg;
+      }
+    }
+  }
+}
