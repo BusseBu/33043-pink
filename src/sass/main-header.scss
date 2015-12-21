@@ -58,7 +58,7 @@
   background: $blue;
   color: #fff;
   font-weight: 600;
-  z-index: 1000;
+  z-index: 100;
   position: absolute;
   top: 66px;
   left: 0;
@@ -146,10 +146,8 @@
 
   @include desktop {
     display: block;
-  }
-
-  @include desktop {
     position: absolute;
+    z-index: initial;
     right: 10px;
     top: 17px;
     background: none;

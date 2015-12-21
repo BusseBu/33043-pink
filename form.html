@@ -103,7 +103,7 @@
         <p class="text text--form">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span>Пожалуйста, заполните форму ниже:</span></p>
         <div class="personal-form">
           <div class="form-wrapper">
-            <fieldset>
+            <fieldset class="personal-form__fieldset">
               <div class="form-flex-wrapper">
                 <div class="form-input">
                   <label class="form-input__label" for="name">Имя: *</label>
@@ -123,7 +123,7 @@
         </div>
         <div class="application-form">
           <div class="form-wrapper">
-            <fieldset>
+            <fieldset class="application-form__fieldset">
               <div class="form-legend"><span>С каким приложением путешествовали? *</span></div>
               <div class="form-flex-wrapper">
                 <div class="form-input form-input--radio">
@@ -132,7 +132,7 @@
                 </div>
                 <div class="form-input form-input--radio">
                   <input class="form-input--radio__radio" type="radio" name="app-check" id="app-android" value="app-android">
-                  <label for="app-android" class="form-input--radio__label">Pink для Android</label>
+                  <label for="app-android" class="form-input--radio__label">Pink на Android</label>
                 </div>
                 <div class="form-input form-input--radio">
                   <input class="form-input--radio__radio" type="radio" name="app-check" id="app-wphone" value="app-wphone">
@@ -144,8 +144,8 @@
         </div>
         <div class="travel-form">
           <div class="form-wrapper">
-            <fieldset>
-              <div class="form-legend"><span>Когда вы путешествовали? *</span></div>
+            <fieldset class="travel-form__fieldset">
+              <div class="form-legend form-legend--higher"><span>Когда вы путешествовали? *</span></div>
               <div class="form-flex-wrapper">
                 <div class="form-input form-input--flex">
                     <input class="form-input__input form-input__input--flex" type="text" name="depart-date" id="depart-date" value="1 апреля 2015" required>
@@ -172,8 +172,8 @@
         </div>
         <div class="companions">
           <div class="form-wrapper">
-            <fieldset>
-              <div class="form-legend"><span>Количество попутчиков *</span></div>
+            <fieldset class="companions__fieldset">
+              <div class="form-legend form-legend--lower"><span>Количество попутчиков *</span></div>
               <div class="form-input form-input--add form-input--companions">
                 <div class="form-input__plus-minus form-input__plus-minus--minus">
                   <div class="form-input__minus"></div>
@@ -190,8 +190,8 @@
         </div>
         <div class="achievements">
           <div class="form-wrapper">
-            <fieldset>
-              <div class="form-legend"><span>Ваши безбашенные достижения в путешествии</span></div>
+            <fieldset class="achievements__fieldset">
+              <div class="form-legend form-legend--higher"><span>Ваши безбашенные достижения в путешествии</span></div>
               <div class="form-flex-wrapper form-flex-wrapper--column">
                 <div class="form-input form-input--checkbox">
                   <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-shark" value="ach-shark">
@@ -223,8 +223,8 @@
         </div>
         <div class="photos">
           <div class="form-wrapper">
-            <fieldset>
-              <div class="form-legend"><span>Ваши фотографии из поездки *</span></div>
+            <fieldset class="photos__fieldset">
+              <div class="form-legend form-legend--lower"><span>Ваши фотографии из поездки *</span></div>
               <label for="photos_upload" class="photos__btn">
                 <input class="photos__input" id="photos_upload" type="file" multiple>
                 <span>Загрузить фото</span>
@@ -243,7 +243,7 @@
         </div>
       </form>
     </main>
-    <footer class="footer footer--index">
+    <footer class="footer">
       <div class="footer__wrapper">
         <div class="footer__logo-wrapper">
           <a class="logo logo--footer" href="/33043-pink/index.html">

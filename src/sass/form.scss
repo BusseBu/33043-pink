@@ -24,9 +24,9 @@ form {
 fieldset {
   margin: 0;
   border: 0;
-  padding: 0;
 
   @include tablet {
+    padding: 30px;
     border: 2px solid $grey;
   }
 }
@@ -44,16 +44,13 @@ input[readonly] {
 }
 
 .form-wrapper {
-  padding: 36px 20px 43px;
+  padding: 0 20px;
   max-width: 960px;
+  margin: 0 auto;
   position: relative;
 
-  @include tablet {
-    padding: 0 0 58px;
-  }
-
   @include desktop {
-    padding: 0 0 57px;
+    padding: 0 10px;
   }
 }
 
@@ -89,7 +86,7 @@ input[readonly] {
   }
 
   @include desktop {
-    padding: 0 130px 100px;
+    padding: 0 0 102px;
   }
 }
 
@@ -111,25 +108,75 @@ input[readonly] {
 }
 
 .personal-form {
-  padding-top: 6px;
-}
-
-.travel-form {
-
-  fieldset {
+  &__fieldset {
+    padding: 44px 0 67px;
+    border: 0;
 
     @include desktop {
-      padding: 32px 57px 19px;
-    }
-
-    input[type="date"] {
-      ::-webkit-inner-spin-button {
-        display: none;
-      }
+      padding: 74px 0 65px;
     }
   }
 }
 
+.application-form {
+  padding-bottom: 65px;
+
+  &__fieldset {
+    padding: 36px 0 42px;
+
+    @include tablet {
+      padding: 55px 57px 54px;
+    }
+  }
+}
+
+.travel-form {
+  padding-bottom: 65px;
+
+  &__fieldset {
+    padding: 48px 0;
+
+    @include tablet {
+      padding: 42px 58px 41px;
+    }
+
+    @include desktop {
+      padding: 42px 58px 21px;
+    }
+  }
+}
+
+.companions {
+  padding-bottom: 65px;
+
+  &__fieldset {
+    padding: 35px 0 28px;
+
+    @include tablet {
+      padding: 42px 57px 32px;
+    }
+
+    @include desktop {
+      padding: 42px 57px 36px;
+    }
+  }
+}
+
+.achievements {
+  padding-bottom: 65px;
+
+  &__fieldset {
+    padding: 44px 0 47px;
+
+    @include tablet {
+      padding: 55px 57px 48px;
+    }
+
+    @include tablet {
+      padding: 55px 57px 9px;
+    }
+  }
+}
 
 .form-legend {
   font-size: 14px;
@@ -141,9 +188,17 @@ input[readonly] {
 
   @include tablet {
     position: absolute;
-    top: -12px;
+    top: -10px;
     left: 0;
     width: 100%;
+  }
+
+  &--higher {
+    margin-bottom: 41px;
+  }
+
+  &--lower {
+    margin-bottom: 33px;
   }
 
   span {
@@ -189,7 +244,7 @@ input[readonly] {
           height: 35px;
           @include border-radius(50%);
           border: 2px solid $grey;
-          margin: -3px 25px 0 0;
+          margin: -3px 20px 0 0;
           cursor:pointer;
         }
 
@@ -259,11 +314,15 @@ input[readonly] {
     }
 
     &:last-child {
-      margin-bottom: 46px;
+      margin-bottom: 0;
+
+      @include desktop {
+        margin-bottom: 46px;
+      }
     }
 
-    @include tablet {
-      margin-bottom: 46px;
+    @include desktop {
+      width: auto;
     }
 
   }
@@ -279,16 +338,16 @@ input[readonly] {
     letter-spacing: 0;
 
     @include tablet {
-      padding: 0 0 10px 22px;
+      padding: 0 0 13px 22px;
     }
 
     &--bottom {
       text-align: center;
-      padding: 13px 0 0;
+      padding: 15px 0 2px;
 
       @include tablet {
         text-align: left;
-        padding: 15px 0 0 30px;
+        padding: 17px 0 0 21px;
       }
     }
 
@@ -306,7 +365,7 @@ input[readonly] {
     letter-spacing: -7px;
 
     @include tablet {
-      width: 236px;
+      width: 240px;
     }
 
     @include desktop {
@@ -353,7 +412,8 @@ input[readonly] {
   &__input {
     width: 100%;
     border: 2px solid #e7e7e7;
-    padding: 20px 22px;
+    padding: 20px;
+    letter-spacing: 0.5px;
     height: 64px;
     font-size: 18px;
     color: #283645;
@@ -406,8 +466,9 @@ input[readonly] {
     display: inline-block;
     vertical-align: middle;
     letter-spacing: -7px;
-    width: 59px;
-    height: 59px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
 
     &--minus {
@@ -441,7 +502,7 @@ input[readonly] {
 
     @include tablet {
       width: 240px;
-      margin-bottom: 32px;
+      margin-bottom: 33px;
     }
 
     @include desktop {
@@ -454,11 +515,9 @@ input[readonly] {
   }
 }
 
-
-
 .companion {
   text-align: left;
-  margin-bottom: 35px;
+  margin-bottom: 23px;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
@@ -503,21 +562,21 @@ input[readonly] {
 }
 
 .form-divider {
-  margin: 50px 0 33px 0;
+  margin: 47px 0 34px;
   border: none;
   height: 2px;
   width: 100%;
   background-color: $grey;
 
   @include tablet {
-    margin: 41px 0 34px 0;
+    margin: 41px 0 34px;
   }
 
   &--photos {
-    margin: 33px 0 35px 0;
+    margin: 0 0 35px;
 
-    @include desktop {
-      margin: 40px 0 63px 0;
+    @include tablet {
+      margin: 0 0 65px;
     }
   }
 
@@ -567,6 +626,9 @@ input[readonly] {
 
       @include tablet {
         margin-right: 15px;
+      }
+      @include desktop {
+        margin-right: 20px;
       }
     }
 
@@ -620,16 +682,28 @@ input[readonly] {
   @include desktop {
     margin-right: 15px;
   }
-
 }
 
 .photos {
-  padding-bottom: 0;
+  &__fieldset {
+    padding: 35px 0 7px;
+
+    @include tablet {
+      padding: 42px 57px 0;
+    }
+
+    @include desktop {
+      padding: 42px 57px 31px;
+    }
+  }
 
   &__btn {
     display: block;
+    text-align: center;
     border: 2px solid $grey;
-    padding: 19px 0;
+    box-sizing: border-box;
+    height: 62px;
+    padding: 16px 0 22px;
     background: #fff;
     font-size: 18px;
     text-transform: uppercase;
@@ -637,6 +711,7 @@ input[readonly] {
     cursor: pointer;
     font-weight: 700;
     color: #283645;
+    margin-bottom: 33px;
 
     &:hover {
       border: 2px solid $blue;
@@ -647,6 +722,10 @@ input[readonly] {
       background: $blue;
       color: #fff;
       outline: none;
+    }
+
+    @include tablet {
+      margin-bottom: 42px;
     }
   }
 
@@ -659,27 +738,44 @@ input[readonly] {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    width: 113%;
   }
 
   &__item {
-    min-width: 80px;
+    min-width: 68px;
     position: relative;
     text-align: left;
-    margin-right: 30px;
+    margin: 0 38px 21px 0;
 
     @include tablet {
       min-width: 120px;
-      margin-right: 55px;
+      margin: 0 70px 50px 0;
+    }
+
+    @include desktop {
+      margin: 0 55px 25px 0;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+
+      @include desktop {
+        margin-right: 56px;
+      }
+    }
+
+    &:nth-child(5n) {
+      @include desktop {
+        margin-right: 0;
+      }
     }
   }
 
   &__close {
     position: absolute;
-    top: -13px;
-    left: 65px;
-    width: 30px;
-    height: 30px;
+    top: -16px;
+    left: 51px;
+    width: 28px;
+    height: 28px;
     background: #fff;
     @include border-radius(50%);
     border: 2px solid $grey;
@@ -701,10 +797,10 @@ input[readonly] {
     }
 
     @include tablet {
-      top: -23px;
-      left: 95px;
-      width: 49px;
-      height: 49px;
+      top: -27px;
+      left: 94px;
+      width: 50px;
+      height: 50px;
 
     }
 
@@ -727,15 +823,15 @@ input[readonly] {
   }
 
   &__image {
-    max-width: 80px;
-    height: 80px;
-    margin-bottom: 2px;
+    max-width: 68px;
+    height: 68px;
+    margin-bottom: 6px;
     overflow: hidden;
 
     @include tablet {
       max-width: 120px;
       height: 120px;
-      margin-bottom: 8px;
+      margin-bottom: 13px;
     }
     img {
       width: 120px;
@@ -744,30 +840,29 @@ input[readonly] {
 
   &__label {
     font-size: 12px;
-    margin-bottom: 27px;
-  }
 
-  fieldset {
-    padding-bottom: 30px;
+    @include tablet {
+      font-size: 14px;
+    }
   }
 }
 
 .submit {
   &__wrapper {
-    padding: 25px 10px;
+    padding: 48px 20px;
     max-width: 960px;
     margin: 0 auto;
     position: relative;
     box-sizing: border-box;
 
     @include tablet {
-      padding: 65px 10px 25px;
+      padding: 65px 20px;
       display: flex;
       justify-content: space-between;
     }
 
     @include desktop {
-      padding-bottom: 0;
+      padding: 65px 10px 0;
     }
   }
 
@@ -805,6 +900,7 @@ input[readonly] {
 
   &__required {
     font-size: 14px;
+    text-align: center;
     text-transform: uppercase;
 
     @include tablet {

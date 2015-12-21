@@ -158,6 +158,7 @@
         data.append("images", $el);
       });
       request(data, function(response) {
+
         console.log(response);
       });
     });

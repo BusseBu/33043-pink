@@ -114,8 +114,8 @@
 .social-icons {
   display: flex;
   top: 2px;
-  width: 170px;
-  margin: 38px auto 34px auto;
+  width: 174px;
+  margin: 38px auto 29px auto;
   justify-content: space-between;
 
   &__item {
@@ -139,6 +139,5 @@
 
   @include tablet {
     margin: 0 auto;
-    width: 174px;
   }
 }
