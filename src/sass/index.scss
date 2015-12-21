@@ -20,11 +20,11 @@
     text-decoration: none;
 
     @include tablet {
-      margin: 0 auto 43px;
+      margin: 0 auto 47px;
     }
 
     @include desktop {
-      width: 300px;
+      width: 295px;
       font-size: 21px;
       padding: 9px 0 11px;
       margin: 0 auto 66px;
@@ -50,10 +50,10 @@
     padding: 0 30px;
 
     @include tablet {
-      margin: 0 auto 36px;
+      margin: 0 auto 35px;
     }
 
-    @include tablet {
+    @include desktop {
       margin: 0 auto 55px;
     }
   }
@@ -85,7 +85,6 @@
     font-size: 14px;
     font-weight: 200;
     line-height: 24px;
-    padding: 0 20px;
 
     @include tablet {
       font-size: 18px;
@@ -98,13 +97,12 @@
   @include tablet {
     position: absolute;
     top: 348px;
-    left: 20px;
+    left: 10px;
     background: none;
-    width: 50%;
+    width: 300px;
   }
 
   @include desktop {
-    width: 306px;
     top: 417px;
     left: 10px;
   }
@@ -129,12 +127,13 @@
     top: -74px;
 
     @include desktop {
+      top: -88px;
       margin-bottom: 49px;
     }
   }
 
   @include desktop {
-    top: 0;
+    top: -10px;
   }
 }
 
@@ -164,7 +163,7 @@
     }
 
     @include desktop {
-      padding: 78px 10px 0;
+      padding: 75px 10px 0;
     }
   }
 
@@ -173,9 +172,8 @@
     z-index: 1;
 
     @include tablet {
-      width: 50%;
       text-align: left;
-      padding: 70px 0 0 0;
+      padding: 70px 10px 0 0;
     }
 
     @include desktop {
@@ -194,8 +192,8 @@
     }
 
     @include desktop {
-      min-width: 285px;
-      max-width: 285px;
+      min-width: 290px;
+      max-width: 290px;
       text-align: center;
       margin-right: 32px;
     }
@@ -216,7 +214,7 @@
 
     @include desktop {
       display: block;
-      margin-bottom: 51px;
+      margin-bottom: 55px;
     }
   }
 
@@ -239,20 +237,14 @@
     font-weight: 500;
     line-height: 24px;
 
-    @include tablet {
-      padding: 0 40px 0 0;
-    }
-
     @include desktop {
       line-height: 30px;
       font-size: 18px;
-      padding: 0 20px;
     }
   }
 
   &__image {
     z-index: 1;
-    height: 278px;
     position: relative;
 
     img {
@@ -269,8 +261,8 @@
     }
 
     @include tablet {
-      width: 50%;
-      height: 472px;
+      width: 272px;
+      padding: 10px 40px 0 20px;
     }
 
     @include desktop {
@@ -332,19 +324,25 @@
 .article-brief {
   display: none;
   background: #fff;
-  padding: 60px 0;
 
   &__wrapper {
     max-width: 960px;
     display: flex;
-    padding: 0 10px;
+    padding: 57px 20px 0;
     margin: 0 auto;
     height: 100%;
+
+    @include tablet {
+      padding: 30px 0 21px;
+    }
   }
 
   &__image {
+    margin: 0 auto;
     position: relative;
-    margin-right: 40px;
+    width: 260px;
+    height: 300px;
+    margin-right: 50px;
 
     svg {
       width: 260px;
@@ -358,21 +356,14 @@
     }
 
     @include desktop {
-      text-align: left;
-      width: 33%;
-      margin-right: 59px;
-    }
-  }
-
-  &__image-wrapper {
-    margin: 0 auto;
-    position: relative;
-    width: 260px;
-    height: 300px;
-
-    @include desktop {
       width: 300px;
       height: 350px;
+    }
+
+    @include desktop {
+      text-align: left;
+      width: 33%;
+      margin-right: 65px;
     }
   }
 
@@ -382,15 +373,15 @@
     color: $pink;
 
     @include tablet {
-      font-size: 100px;
-      top: 100px;
-      left: 74px;
+      font-size: 105px;
+      top: 94px;
+      left: 70px;
     }
 
     @include desktop {
       font-size: 120px;
-      top: 118px;
-      left: 92px;
+      top: 110px;
+      left: 90px;
     }
 
   }
@@ -400,7 +391,11 @@
     padding: 38px 0;
 
     @include tablet {
-      padding: 94px 0;
+      padding: 40px 0;
+    }
+
+    @include desktop {
+      padding: 93px 0;
     }
   }
 
@@ -418,15 +413,13 @@
   }
   &__text {
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 500;
     line-height: 24px;
-    padding-right: 40px;
     margin-bottom: 10px;
 
     @include desktop {
       font-size: 18px;
       line-height: 30px;
-      font-weight: 500;
       margin-bottom: 34px;
     }
   }
@@ -451,7 +444,6 @@
   }
 
   @include desktop {
-    padding: 30px 0 21px;
     background: $grey-bg;
   }
 }
@@ -466,12 +458,12 @@
     margin: 0 auto;
 
     @include tablet {
-      padding: 10px 10px 0;
+      padding: 76px 10px 0;
     }
 
     @include desktop {
       display: flex;
-      padding: 72px 10px 9px;
+      padding: 76px 10px 9px;
     }
   }
 
@@ -544,6 +536,7 @@
 
     @include desktop {
       display: block;
+      margin: 0 auto 47px auto;
     }
   }
 
@@ -660,7 +653,7 @@
 
   &__wrapper {
     height: 284px;
-    padding-top: 105px;
+    padding: 105px 0 0;
     position: relative;
     max-width: 960px;
     text-align: center;
@@ -669,11 +662,11 @@
     @include tablet {
       margin: 0 auto;
       height: 100%;
-      padding: 0 10px 70px;
+      padding: 105px 20px 70px;
     }
 
     @include desktop {
-      padding: 0 10px 95px;
+      padding: 154px 10px 95px;
     }
   }
 
@@ -911,16 +904,16 @@
     }
 
     @include desktop {
-      padding: 0 115px;
+      padding: 0;
       justify-content: center;
-      margin-bottom: 0;
+      margin-bottom: 10px;
     }
   }
 
   &__headline-wrapper {
     padding: 0 10px;
     max-width: 960px;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 33px auto;
     text-align: center;
     position: relative;
 
@@ -944,8 +937,16 @@
   }
 
   &__item {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     z-index: 1;
+
+    @include tablet {
+      margin-bottom: 45px;
+    }
+
+    @include desktop {
+      margin-bottom: 0;
+    }
 
     &--phone {
       min-width: 50%;
@@ -972,26 +973,21 @@
       a:active {
         opacity: 0.3;
       }
+
     }
 
     &--address {
       @include tablet {
         min-width: 100%;
         margin-bottom: 20px;
+        line-height: 24px;
       }
 
       @include desktop {
         min-width: 33%;
         order: 2;
+        margin-bottom: 0;
       }
-    }
-
-    @include tablet {
-      margin-bottom: 45px;
-    }
-
-    @include desktop {
-      margin-bottom: 0;
     }
   }
 
@@ -1015,11 +1011,11 @@
     height: 198px;
 
     @include tablet {
-      height: 385px;
+      height: 382px;
     }
 
     @include desktop {
-      height: 522px;
+      height: 512px;
     }
   }
 

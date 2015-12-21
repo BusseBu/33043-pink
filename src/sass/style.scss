@@ -1,5 +1,5 @@
-@import 'variables';
 @import 'mixins';
+@import 'variables';
 @import 'fonts';
 
 html {
@@ -52,9 +52,171 @@ img {
 
 @import 'main-header';
 
-@import 'components/logo';
+.logo {
+  position: absolute;
+  left: 18px;
+  top: 21px;
+  text-decoration: none;
 
+  &__pink-star {
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 146px;
+    height: 40px;
+    fill: $pink;
 
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__stars {
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 146px;
+    height: 40px;
+    fill: $pink;
+
+    &--footer {
+      fill: $blue-bg;
+    }
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__glasses {
+    display: none;
+    width: 59px;
+    height: 40px;
+    margin-right: 5px;
+    fill: #fff;
+
+    &--footer {
+      fill: $pink;
+      margin-right: 6px;
+    }
+
+    @include desktop {
+      display: inline;
+    }
+
+  }
+
+  &__full-glasses {
+    width: 59px;
+    height: 40px;
+    display: none;
+    margin-right: 5px;
+    fill: #fff;
+
+    &--footer {
+      display: inline;
+      fill: $pink;
+      margin-right: 6px;
+    }
+
+    @include tablet {
+      display: inline;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__letters {
+    display: inline;
+    width: 76px;
+    height: 26px;
+    fill: #fff;
+
+    &--footer {
+      fill: $blue-bg;
+    }
+
+    @include tablet {
+      width: 76px;
+      height: 24px;
+    }
+  }
+
+  @include tablet {
+    top: 27px;
+    left: 20px;
+    width: 146px;
+    height: 40px;
+  }
+
+  @include desktop {
+    top: 27px;
+    left: 10px;
+  }
+
+  &--footer {
+    top: -5px;
+    left: 11px;
+
+    @include desktop {
+      left: 0;
+    }
+  }
+
+  &:hover {
+    svg {
+      fill: $pink;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+
+    .logo__pink-star {
+      fill: #fff;
+
+      &--footer {
+        fill: $pink;
+      }
+    }
+
+    .logo__stars {
+      fill: $pink;
+
+      &--footer {
+        fill: $blue-bg;
+      }
+    }
+
+    .logo__glasses {
+      fill: #fff;
+
+      &--footer {
+        fill: $pink;
+      }
+    }
+
+    .logo__full-glasses {
+      fill: #fff;
+
+      &--footer {
+        fill: $pink;
+      }
+    }
+
+    .logo__letters {
+      fill: #fff;
+
+      &--footer {
+        fill: $blue-bg;
+      }
+    }
+  }
+}
 
 .main-headline {
   position: relative;
@@ -85,14 +247,14 @@ img {
   @include tablet {
     width: 50%;
     position: absolute;
-    top: 200px;
-    left: 20px;
+    top: 203px;
+    left: 5px;
   }
 
   @include desktop {
     width: 306px;
     left: 10px;
-    top: 213px;
+    top: 218px;
   }
 }
 
@@ -107,6 +269,10 @@ img {
 
   &:first-child {
     padding-bottom: 28px;
+
+    @include tablet {
+      padding-bottom: 0;
+    }
   }
 
   &--contacts:first-child {
@@ -176,7 +342,7 @@ img {
     }
 
     @include desktop {
-      padding: 204px 10px 0;
+      padding: 209px 10px 0;
     }
   }
 
@@ -188,31 +354,31 @@ img {
     margin: 0 auto;
 
     @include media-r(2) {
-      background-image: url('../img/iphone-hand-mobile@2x.png');
+      background: url('../img/iphone-hand-mobile@2x.png') 0 0 no-repeat;
     }
 
     @include media-r(3) {
-      background-image: url('../img/iphone-hand-mobile@3x.png');
+      background: url('../img/iphone-hand-mobile@3x.png') 0 0 no-repeat;
     }
 
     @include tablet {
       height: 545px;
       width: 656px;
-      background: url('../img/iphone-hand-tablet@1x.png');
+      background: url('../img/iphone-hand-tablet@1x.png') -30px 0 no-repeat;
     }
 
     @include tablet-res {
-      background: url('../img/iphone-hand-tablet@2x.png');
+      background: url('../img/iphone-hand-tablet@2x.png') -30px 0 no-repeat;
     }
 
     @include desktop {
       height: 645px;
       width: 884px;
-      background: url('../img/iphone-hand-desktop@1x.png');
+      background: url('../img/iphone-hand-desktop@1x.png') -11px 0 no-repeat;
     }
 
     @include desktop-res {
-      background: url('../img/iphone-hand-desktop@2x.png');
+      background: url('../img/iphone-hand-desktop@2x.png') -11px 0 no-repeat;
     }
   }
 

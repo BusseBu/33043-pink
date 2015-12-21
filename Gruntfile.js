@@ -8,9 +8,10 @@ module.exports = function(grunt) {
 
     sass: {
       style: {
-        files: {
-          "build/css/style.css": "src/sass/style.scss"
-        }
+        files: [{
+          src: "src/sass/style.scss",
+          dest: "build/css/style.css"
+        }]
       }
     },
 

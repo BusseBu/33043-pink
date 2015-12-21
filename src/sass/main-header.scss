@@ -1,6 +1,5 @@
 .main-header {
   width: 100%;
-  height: 66px;
   position: absolute;
   z-index: 1;
 
@@ -29,7 +28,7 @@
     background: url('../img/menu-burger.svg') no-repeat 0 0;
 
     @include tablet {
-      top: 40px;
+      top: 44px;
     }
 
     @include desktop {
@@ -96,6 +95,7 @@
       font-weight: 200;
       box-shadow: none;
       margin-right: 18px;
+      letter-spacing: 0.5px;
     }
 
     a {
@@ -108,6 +108,7 @@
 
       @include desktop {
         margin-right: 0;
+        padding-right: 10px;
         border-bottom: 0;
       }
     }
@@ -150,7 +151,7 @@
   @include desktop {
     position: absolute;
     right: 10px;
-    top: 16px;
+    top: 17px;
     background: none;
   }
 
