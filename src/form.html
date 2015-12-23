@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Конкурс</title>
-    <link rel="stylesheet" type="text/css" href="build/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -53,7 +53,7 @@
     <header class="main-header">
       <div class="main-header__line">
         <div class="main-wrapper">
-          <a class="logo" href="/33043-pink/index.html">
+          <a class="logo" href="index.html">
             <svg class="logo__stars" viewBox="0 0 146.3 40.375">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars"></use>
             </svg>
@@ -73,17 +73,17 @@
           <div class="main-header__toggle-icon"></div>
           <nav class="top-navigation">
             <ul class="top-navigation__list">
-              <li class="top-navigation__item"><a href="/33043-pink/index.html">Информация</a>
-                <div class="top-navigation__underline"></div>
+              <li class="top-navigation__item">
+                <a href="index.html">Информация</a>
               </li>
-              <li class="top-navigation__item"><a href="#">Блог</a>
-                <div class="top-navigation__underline"></div>
+              <li class="top-navigation__item">
+                <a href="#">Блог</a>
               </li>
-              <li class="top-navigation__item"><a href="#">Отзывы</a>
-                <div class="top-navigation__underline"></div>
+              <li class="top-navigation__item">
+                <a href="#">Отзывы</a>
               </li>
-              <li class="top-navigation__item"><a href="/33043-pink/form.html">Конкурс</a>
-                <div class="top-navigation__underline"></div>
+              <li class="top-navigation__item">
+                <a href="form.html">Конкурс</a>
               </li>
             </ul>
           </nav>
@@ -92,7 +92,6 @@
     </header>
     <main class="form-page">
       <section class="intro intro--form">
-        </picture>
         <div class="main-wrapper">
           <div class="form-main-headline">
             <h2>Конкурс на самое безбашенное путешествие с Пинк</h2>
@@ -100,7 +99,7 @@
         </div>
       </section>
       <form action="/submit" method="post">
-        <p class="text text--form">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span>Пожалуйста, заполните форму ниже:</span></p>
+        <p class="text text--form">Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="text__second-line">Пожалуйста, заполните форму ниже:</span></p>
         <div class="personal-form">
           <div class="form-wrapper">
             <fieldset class="personal-form__fieldset">
@@ -124,7 +123,7 @@
         <div class="application-form">
           <div class="form-wrapper">
             <fieldset class="application-form__fieldset">
-              <div class="form-legend"><span>С каким приложением путешествовали? *</span></div>
+              <div class="form-legend"><span class="form-legend__text">С каким приложением путешествовали? *</span></div>
               <div class="form-flex-wrapper">
                 <div class="form-input form-input--radio">
                   <input class="form-input--radio__radio" type="radio" name="app-check" id="app-ios" value="app-ios" checked required>
@@ -145,7 +144,7 @@
         <div class="travel-form">
           <div class="form-wrapper">
             <fieldset class="travel-form__fieldset">
-              <div class="form-legend form-legend--higher"><span>Когда вы путешествовали? *</span></div>
+              <div class="form-legend form-legend--higher"><span class="form-legend__text">Когда вы путешествовали? *</span></div>
               <div class="form-flex-wrapper">
                 <div class="form-input form-input--flex">
                     <input class="form-input__input form-input__input--flex" type="text" name="depart-date" id="depart-date" value="1 апреля 2015" required>
@@ -173,7 +172,7 @@
         <div class="companions">
           <div class="form-wrapper">
             <fieldset class="companions__fieldset">
-              <div class="form-legend form-legend--lower"><span>Количество попутчиков *</span></div>
+              <div class="form-legend form-legend--lower"><span class="form-legend__text">Количество попутчиков *</span></div>
               <div class="form-input form-input--add form-input--companions">
                 <div class="form-input__plus-minus form-input__plus-minus--minus">
                   <div class="form-input__minus"></div>
@@ -191,7 +190,7 @@
         <div class="achievements">
           <div class="form-wrapper">
             <fieldset class="achievements__fieldset">
-              <div class="form-legend form-legend--higher"><span>Ваши безбашенные достижения в путешествии</span></div>
+              <div class="form-legend form-legend--higher"><span class="form-legend__text">Ваши безбашенные достижения в путешествии</span></div>
               <div class="form-flex-wrapper form-flex-wrapper--column">
                 <div class="form-input form-input--checkbox">
                   <input class="form-input--checkbox__checkbox" type="checkbox" name="ach-check" id="ach-shark" value="ach-shark">
@@ -224,10 +223,10 @@
         <div class="photos">
           <div class="form-wrapper">
             <fieldset class="photos__fieldset">
-              <div class="form-legend form-legend--lower"><span>Ваши фотографии из поездки *</span></div>
+              <div class="form-legend form-legend--lower"><span class="form-legend__text">Ваши фотографии из поездки *</span></div>
               <label for="photos_upload" class="photos__btn">
                 <input class="photos__input" id="photos_upload" type="file" multiple>
-                <span>Загрузить фото</span>
+                <span class="photos__input-text">Загрузить фото</span>
               </label>
               <hr class="form-divider form-divider--photos" style="display:none;">
               <div class="photos__items">
@@ -237,7 +236,7 @@
         </div>
         <div class="submit">
           <div class="submit__wrapper">
-            <button class="submit__input" type="submit"><span>Отправить форму</span></button>
+            <button class="submit__input" type="submit"><span class="sumbit__input-text">Отправить форму</span></button>
             <div class="submit__required"><span class="submit__star">*</span><span class="submit__text"> – обязательные<span class="submit__add-text"> для заполнения</span> поля</span></div>
           </div>
         </div>
@@ -293,6 +292,6 @@
         </a>
       </div>
     </footer>
-    <script type="text/javascript" src="build/js/script.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

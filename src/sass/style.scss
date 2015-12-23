@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif;
   margin: 0;
   padding: 0;
   background: #626262;
@@ -177,6 +177,7 @@ img {
 
     @include desktop {
       left: 0;
+      top: 0;
     }
   }
 
@@ -318,7 +319,7 @@ img {
 .intro {
   overflow: hidden;
   background-size: cover;
-  background: url('../img/background-mobile@1x.jpg') no-repeat 50% 0;
+  background: #293646 url('../img/background-mobile@1x.jpg') no-repeat 50% 0;
 
   @include media-r(2) {
     background-image: url('../img/background-mobile@2x.jpg');
@@ -438,7 +439,7 @@ img {
     }
   }
 
-  span {
+  &__second-line {
     display: none;
 
     @include tablet {

@@ -28,7 +28,8 @@
     "grunt-postcss": "0.7.x",
     "grunt-sass": "1.1.x",
     "load-grunt-tasks": "3.3.x",
-    "moment": "^2.10.6"
+    "moment": "^2.10.6",
+    "tap.js": "^2.1.2"
   },
   "scripts": {
     "pregosha": "npm install > /dev/null",

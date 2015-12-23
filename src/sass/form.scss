@@ -201,7 +201,7 @@ input[readonly] {
     margin-bottom: 33px;
   }
 
-  span {
+  &__text {
     margin: auto;
 
     @include tablet {
@@ -881,7 +881,7 @@ input[readonly] {
     cursor: pointer;
 
     &--process {
-      span {
+      .sumbit__input-text {
         animation: process 2s linear infinite alternate both;
       }
     }
@@ -907,7 +907,7 @@ input[readonly] {
 
     &:active {
       outline: 0;
-      span {
+      .submit__input-text {
         opacity: 0.3;
       }
     }

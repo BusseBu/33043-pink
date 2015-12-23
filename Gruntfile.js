@@ -37,11 +37,14 @@ module.exports = function(grunt) {
         caseSensitive: true,
         keepClosingSlash: true
       },
-     html: {
-       files: {
-         "form.min.html" : "form.html",
-         "index.min.html" : "index.html"
-       }
+      html: {
+        files: [{
+          expand: true,
+          cwd: 'build/',
+          src: ['*.html'],
+          dest: 'build/',
+          ext: '.min.html'
+       }]
      }
     },
 
@@ -53,6 +56,17 @@ module.exports = function(grunt) {
           src: ['*.css', '!*.min.css'],
           dest: 'build/css',
           ext: '.min.css'
+        }]
+      }
+    },
+
+    copy: {
+      main: {
+        files: [{
+          expand: true,
+          cwd: 'src/',
+          src: ['*.html'],
+          dest: 'build/'
         }]
       }
     },
@@ -115,12 +129,21 @@ module.exports = function(grunt) {
           spawn: false,
           livereload: true
         }
+      },
+      html: {
+        files: ["src/*.html"],
+        tasks: ["copy"],
+        options: {
+          spawn: false,
+          livereload: true
+        }
       }
     }
   };
 
     grunt.registerTask("build", [
       "sass",
+      "copy",
       "browserify",
       "cmq",
       "postcss",

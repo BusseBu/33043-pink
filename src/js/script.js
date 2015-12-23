@@ -110,7 +110,7 @@
         $add = valueToNumber(document.querySelector("#travel-duration").value);
         $day.add($add, "days");
         document.querySelector("#return-date").value = $day.format("D MMMM YYYY");
-      } else alert ("Неверная дата!");
+      } else alert ("Пожалуйста, введите верную дату!");
     }
   }
 
@@ -217,5 +217,4 @@
   inputAdd();
   formSubmit();
   navToggle();
-  changeDate();
 })();
