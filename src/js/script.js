@@ -105,7 +105,7 @@
     });
     var $depart_date = document.querySelector("#depart-date");
     if ($depart_date) {
-      var $day = moment(document.querySelector("#depart-date").value, "DD MMMM YYYY", "ru");
+      var $day = moment((document.querySelector("#depart-date").value ? document.querySelector("#depart-date").value : "1 апреля 2015"), "DD MMMM YYYY", "ru");
       if ($day.isValid()) {
         $add = valueToNumber(document.querySelector("#travel-duration").value);
         $day.add($add, "days");

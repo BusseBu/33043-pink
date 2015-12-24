@@ -5,6 +5,12 @@
   color: #fff;
   text-align: center;
 
+  &__wrapper {
+    max-width: 320px;
+    margin: 0 auto;
+    position: relative;
+  }
+
   &__button {
     display: block;
     opacity: .99;
@@ -97,13 +103,14 @@
   @include tablet {
     position: absolute;
     top: 348px;
-    left: 10px;
+    left: 0;
     background: none;
-    width: 300px;
+    width: 50%;
   }
 
   @include desktop {
-    top: 417px;
+    top: 422px;
+    width: 300px;
     left: 10px;
   }
 }
@@ -123,18 +130,29 @@
     }
   }
 
+  @include desktop {
+    top: -10px;
+  }
+
   &--prices {
     top: -74px;
+
+    @include tablet {
+      top: -102px;
+    }
 
     @include desktop {
       top: -88px;
       margin-bottom: 49px;
     }
+
+    @media (min-width: 1200px) {
+      top: -20px;
+    }
   }
 
-  @include desktop {
-    top: -10px;
-  }
+
+
 }
 
 
@@ -148,22 +166,44 @@
   &__headline-wrapper {
     padding: 0 10px;
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 320px;
+
+    @include tablet {
+      max-width: 660px;
+    }
+
+    @include desktop {
+      max-width: 960px;
+    }
   }
 
-  &__items-wrapper {
+  &__items-background {
     background: $grey-bg;
     position: relative;
     padding: 113px 20px 0;
 
     @include tablet {
-      display: flex;
-      flex-direction: row-reverse;
       padding: 50px 0 0;
     }
 
     @include desktop {
       padding: 75px 10px 0;
+    }
+  }
+
+  &__items-wrapper {
+    max-width: 320px;
+    margin: 0 auto;
+    position: relative;
+
+    @include tablet {
+      max-width: 660px;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    @include desktop {
+      max-width: 960px;
     }
   }
 
@@ -280,9 +320,6 @@
 
   &__image-screen {
     vertical-align: bottom;
-    position: absolute;
-    bottom: 0;
-    left: 48%;
     width: 142px;
     margin-left: -71px;
 
@@ -295,6 +332,7 @@
     }
 
     &--3 {
+      margin: 0 auto;
       width: 156px;
       display: block;
 
@@ -326,13 +364,19 @@
   background: #fff;
 
   &__wrapper {
-    max-width: 960px;
+    max-width: 320px;
     display: flex;
     padding: 57px 20px 0;
     margin: 0 auto;
     height: 100%;
+    box-sizing: border-box;
 
     @include tablet {
+      max-width: 660px;
+    }
+
+    @include desktop {
+      max-width: 960px;
       padding: 30px 0 21px;
     }
   }
@@ -450,16 +494,18 @@
   text-align: center;
 
   &__wrapper {
-    max-width: 960px;
+    max-width: 320px;
     padding: 45px 20px 0;
     margin: 0 auto;
 
     @include tablet {
+      max-width: 660px;
       padding: 76px 10px 0;
     }
 
     @include desktop {
       display: flex;
+      max-width: 960px;
       padding: 76px 10px 9px;
     }
   }
@@ -652,17 +698,19 @@
     height: 284px;
     padding: 105px 0 0;
     position: relative;
-    max-width: 960px;
+    max-width: 320px;
     text-align: center;
     margin: 25px auto 30px;
 
     @include tablet {
       margin: 0 auto;
       height: 100%;
+      max-width: 660px;
       padding: 105px 20px 70px;
     }
 
     @include desktop {
+      max-width: 960px;
       padding: 154px 10px 95px;
     }
   }
@@ -889,12 +937,13 @@
 
   &__wrapper {
     padding: 0 10px;
-    max-width: 960px;
+    max-width: 320px;
     text-align: center;
     position: relative;
     margin: 0 auto 50px auto;
 
     @include tablet {
+      max-width: 660px;
       display: flex;
       flex-wrap: wrap;
       margin-bottom: 0;
@@ -902,6 +951,7 @@
 
     @include desktop {
       padding: 0;
+      max-width: 960px;
       justify-content: center;
       margin-bottom: 10px;
     }
@@ -909,16 +959,18 @@
 
   &__headline-wrapper {
     padding: 0 10px;
-    max-width: 960px;
+    max-width: 320px;
     margin: 0 auto 33px auto;
     text-align: center;
     position: relative;
 
     @include tablet {
+      max-width: 660px;
       margin-bottom: 43px;
     }
 
     @include desktop {
+      max-width: 960px;
       margin-bottom: 55px;
     }
   }
@@ -992,7 +1044,7 @@
     color: $pink;
     text-decoration: none;
     font-size: 24px;
-    font-weight: 300;
+    font-weight: 200;
     line-height: 24px;
 
     @include tablet {

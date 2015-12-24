@@ -10,18 +10,21 @@
   }
 
   &__wrapper {
+    max-width: 320px;
     display: block;
+    box-sizing: border-box;
     padding: 13px 10px;
     margin: 0 auto;
-    max-width: 960px;
 
     @include tablet {
+      max-width: 660px;
       display: flex;
       padding: 40px 10px;
       justify-content: space-between;
     }
 
     @include desktop {
+      max-width: 960px;
       padding: 75px 10px;
     }
   }
@@ -125,7 +128,7 @@
     border: 3px solid $grey;
 
     svg {
-      padding: 12px;
+      padding: 12px 14px;
     }
 
     &:hover {

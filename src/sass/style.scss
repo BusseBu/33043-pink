@@ -1,6 +1,5 @@
 @import 'mixins';
 @import 'variables';
-@import 'fonts';
 
 html {
   height:100%;
@@ -39,6 +38,7 @@ img {
   text-align: center;
   margin: 0 auto;
   padding: 0 10px;
+  max-width: 320px;
   box-sizing: border-box;
 
   &--white {
@@ -46,6 +46,10 @@ img {
   }
 
   @include tablet {
+    max-width: 660px;
+  }
+
+  @include desktop {
     max-width: 960px;
   }
 }
@@ -267,8 +271,8 @@ img {
 
   @include desktop {
     width: 306px;
-    left: 10px;
     top: 218px;
+    left: 10px;
   }
 }
 
@@ -346,16 +350,17 @@ img {
 
   &__wrapper {
     padding: 85px 0 0;
-    max-width: 960px;
     margin: 0 auto;
     text-align: center;
     position: relative;
 
     @include tablet {
+      max-width: 660px;
       padding: 183px 10px 0;
     }
 
     @include desktop {
+      max-width: 960px;
       padding: 209px 10px 0;
     }
   }
@@ -423,18 +428,21 @@ img {
     font-size: 14px;
     line-height: 30px;
     font-weight: 500;
-    max-width: 960px;
+    max-width: 320px;
     margin: 0 auto;
     padding-top: 18px;
     text-align: center;
+    box-sizing: border-box;
 
     @include tablet {
+      max-width: 660px;
       font-size: 18px;
       padding: 18px 10px 0;
     }
 
     @include desktop {
       font-size: 18px;
+      max-width: 960px;
       padding: 18px 10px 0;
     }
   }

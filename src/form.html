@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Конкурс</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -52,7 +53,7 @@
     </svg>
     <header class="main-header">
       <div class="main-header__line">
-        <div class="main-wrapper">
+        <div class="main-header__wrapper">
           <a class="logo" href="index.html">
             <svg class="logo__stars" viewBox="0 0 146.3 40.375">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars"></use>
@@ -106,15 +107,15 @@
               <div class="form-flex-wrapper">
                 <div class="form-input">
                   <label class="form-input__label" for="name">Имя: *</label>
-                  <input class="form-input__input" type="text" name="name" id="name" value="Введите ваше имя" required>
+                  <input class="form-input__input" type="text" name="name" id="name" placeholder="Введите ваше имя" required>
                 </div>
                 <div class="form-input">
                   <label class="form-input__label" for="last-name">Фамилия: *</label>
-                  <input class="form-input__input" type="text" name="last-name" id="last-name" value="Укажите фамилию" required>
+                  <input class="form-input__input" type="text" name="last-name" id="last-name" placeholder="Укажите фамилию" required>
                 </div>
                 <div class="form-input">
                   <label class="form-input__label" for="surname">Отчество:</label>
-                  <input class="form-input__input" type="text" name="surname" id="surname" value="Ну и отчество тоже">
+                  <input class="form-input__input" type="text" name="surname" id="surname" placeholder="Ну и отчество тоже">
                 </div>
               </div>
             </fieldset>
@@ -147,14 +148,14 @@
               <div class="form-legend form-legend--higher"><span class="form-legend__text">Когда вы путешествовали? *</span></div>
               <div class="form-flex-wrapper">
                 <div class="form-input form-input--flex">
-                    <input class="form-input__input form-input__input--flex" type="text" name="depart-date" id="depart-date" value="1 апреля 2015" required>
+                    <input class="form-input__input form-input__input--flex" type="text" name="depart-date" id="depart-date" placeholder="1 апреля 2015" required>
                     <label class="form-input__label form-input__label--bottom" for="depart-date">Дата выезда</label>
                 </div>
                 <div class="form-input form-input--add form-input--days">
                   <div class="form-input__plus-minus form-input__plus-minus--minus">
                     <div class="form-input__minus"></div>
                   </div>
-                  <input class="form-input__input form-input__input--add" type="text" name="travel-duration" id="travel-duration" value="10 дней">
+                  <input class="form-input__input form-input__input--add" type="text" name="travel-duration" id="travel-duration" value="0 дней">
                   <div class="form-input__plus-minus form-input__plus-minus--plus">
                     <div class="form-input__minus"></div>
                     <div class="form-input__plus"></div>
@@ -162,7 +163,7 @@
                   <label class="form-input__label form-input__label--bottom form-input__label--center" for="travel-duration">Продолжительность</label>
                 </div>
                 <div class="form-input form-input--flex">
-                  <input class="form-input__input form-input__input--flex" type="text" name="return-date" id="return-date" value="1 апреля 2015" readonly>
+                  <input class="form-input__input form-input__input--flex" type="text" name="return-date" id="return-date" placeholder="1 апреля 2015" readonly>
                   <label class="form-input__label form-input__label--bottom" for="return-date">Дата возвращения</label>
                 </div>
               </div>

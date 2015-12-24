@@ -43,13 +43,31 @@ input[readonly] {
   }
 }
 
+input::-webkit-input-placeholder {
+  color: $blue;
+}
+
+input:-moz-placeholder {
+  color: $blue;
+}
+
+input::-moz-placeholder {
+  color: $blue;
+}
+
 .form-wrapper {
   padding: 0 20px;
-  max-width: 960px;
+  max-width: 300px;
   margin: 0 auto;
   position: relative;
+  box-sizing: border-box;
+
+  @include tablet {
+    max-width: 660px;
+  }
 
   @include desktop {
+    max-width: 960px;
     padding: 0 10px;
   }
 }
@@ -63,7 +81,7 @@ input[readonly] {
 
   h2 {
     font-size: 24px;
-    font-weight: 300;
+    font-weight: 200;
 
     @include tablet {
       font-size: 50px;
@@ -119,7 +137,6 @@ input[readonly] {
 }
 
 .application-form {
-  padding-bottom: 65px;
 
   &__fieldset {
     padding: 36px 0 42px;
@@ -128,11 +145,13 @@ input[readonly] {
       padding: 55px 57px 54px;
     }
   }
+
+  @include tablet {
+    padding-bottom: 65px;
+  }
 }
 
 .travel-form {
-  padding-bottom: 65px;
-
   &__fieldset {
     padding: 48px 0;
 
@@ -144,11 +163,13 @@ input[readonly] {
       padding: 42px 58px 21px;
     }
   }
+
+  @include tablet {
+    padding-bottom: 65px;
+  }
 }
 
 .companions {
-  padding-bottom: 65px;
-
   &__fieldset {
     padding: 35px 0 28px;
 
@@ -160,11 +181,13 @@ input[readonly] {
       padding: 42px 57px 36px;
     }
   }
+
+  @include tablet {
+    padding-bottom: 65px;
+  }
 }
 
 .achievements {
-  padding-bottom: 65px;
-
   &__fieldset {
     padding: 44px 0 47px;
 
@@ -172,9 +195,12 @@ input[readonly] {
       padding: 55px 57px 48px;
     }
 
-    @include tablet {
+    @include desktop {
       padding: 55px 57px 9px;
     }
+  }
+  @include tablet {
+    padding-bottom: 65px;
   }
 }
 
@@ -183,7 +209,9 @@ input[readonly] {
   color: $pink;
   text-transform: uppercase;
   line-height: 19px;
+  padding: 0 20px;
   text-align: center;
+  box-sizing: border-box;
   margin-bottom: 37px;
 
   @include tablet {
@@ -850,18 +878,20 @@ input[readonly] {
 .submit {
   &__wrapper {
     padding: 48px 20px;
-    max-width: 960px;
+    max-width: 320px;
     margin: 0 auto;
     position: relative;
     box-sizing: border-box;
 
     @include tablet {
+      max-width: 660px;
       padding: 65px 20px;
       display: flex;
       justify-content: space-between;
     }
 
     @include desktop {
+      max-width: 960px;
       padding: 65px 10px 0;
     }
   }

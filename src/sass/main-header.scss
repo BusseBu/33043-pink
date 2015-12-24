@@ -3,6 +3,12 @@
   position: absolute;
   z-index: 1;
 
+  &__wrapper {
+    max-width: 960px;
+    position: relative;
+    margin: 0 auto;
+  }
+
   &__line {
     height: 66px;
     background-color: rgba(0, 0, 0, 0.3);
@@ -63,6 +69,7 @@
   top: 66px;
   left: 0;
   width: 100%;
+  text-align: center;
 
   &__list {
     list-style: none;
@@ -93,9 +100,8 @@
       font-size: 18px;
       text-transform: none;
       box-shadow: none;
-      font-weight: 500;
+      font-weight: normal;
       margin-right: 18px;
-      letter-spacing: 0.5px;
     }
 
     a {
@@ -144,7 +150,7 @@
   @include desktop {
     display: block;
     position: absolute;
-    z-index: initial;
+    z-index: 0;
     right: 10px;
     top: 17px;
     background: none;
